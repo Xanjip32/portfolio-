@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+</head>
+
+<body class="bg-[var(--bg-color)]">
+  <main>
+    <section
+      class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('/images/bg_v.png')] bg-[center_top_5%] md:bg-[url('/images/bg_h.png')] md:bg-center">
+      <div class="absolute inset-0 bg-slate-950/50"></div>
+      <div class="relative z-10 flex min-h-screen flex-col">
+        <div class="container mx-auto px-4">
+          <nav class="fixed left-0 top-0 z-50 w-full bg-[var(--bg-color)]">
+            <div class="container mx-auto flex items-center justify-between gap-4 px-4 py-3 text-white">
+              <a href="#" class="text-lg font-semibold"><strong>Sanjeev Shrestha</strong></a>
+
+              <button id="menuBtn" class="rounded-lg p-2 md:hidden" type="button" data-drawer-target="drawer-navigation"
+                data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+
+              <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+                <li><a href="#" class="transition hover:text-[#FF6B57]">Home</a></li>
+                <li><a href="#" class="transition hover:text-[#FF6B57]">About</a></li>
+                <li><a href="#" class="transition hover:text-[#FF6B57]">Project</a></li>
+                <li><a href="#" class="transition hover:text-[#FF6B57]">Contacts</a></li>
+              </ul>
+            </div>
+
+            <!-- drawer component -->
+            <div id="drawer-navigation"
+              class="fixed left-0 top-0 z-40 h-screen w-80 -translate-x-full overflow-y-auto border-r border-gray-700 bg-[#0B1320] p-4 transition-transform md:hidden"
+              tabindex="-1" aria-labelledby="drawer-navigation-label">
+              <div class="flex items-center justify-between border-b border-gray-700 pb-4">
+                <span class="whitespace-nowrap text-lg font-semibold text-white">Menu</span>
+                <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+                  class="rounded-lg p-2 text-gray-300 hover:bg-gray-700 hover:text-white">
+                  <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M6 18 17.94 6M18 18 6.06 6" />
+                  </svg>
+                  <span class="sr-only">Close menu</span>
+                </button>
+              </div>
+
+              <div class="overflow-y-auto py-5">
+                <ul class="space-y-2 font-medium text-gray-100">
+                  <li>
+                    <a href="#"
+                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Home</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">About</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Project</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Contacts</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <!---hero section -->
+        <div class="container mx-auto flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6">
+          <div
+            class="w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0">
+            <div class="text-white">
+              <span class="mb-3 block text-lg text-[#FF6B57]">Hi, I'm</span>
+              <h1 class="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">Sanjeev Shrestha</h1>
+              <p class="max-w-2xl text-base leading-8 sm:text-lg">
+                <strong>Computer Engineering student</strong><br>
+                Aspiring Full-Stack Developer • Networking Enthusiast<br>
+                I enjoy building practical projects, documenting my learning journey,<br>
+                and continuously improving through hands-on practice.
+              </p>
+              <div class="mt-11 flex flex-wrap items-center justify-center gap-6">
+                <a href="#"
+                  class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <i class="fa-solid fa-folder-open mr-2"></i>View My projects
+                </a>
+                <a href="#"
+                  class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105  hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  Download CV <i class="fa-solid fa-download ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <!-- just for spacing i made this div for occuping rright side of hero section -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--bg-color)]">
+      <div class="container mx-auto px-4 py-12 flex flex-col gap-6 lg:flex-row">
+        <!-- left side: Current Focus + Skills in one card -->
+        <div
+          class="flex-1 rounded-2xl border border-white/20 bg-[var(--bg-color)] p-5 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-6">
+          <div class="text-white">
+            <span class="mb-6 flex items-center gap-2 text-lg text-[#FF6B57]">
+              <i class="fa-solid fa-bullseye"></i>
+              <span>Current Focus</span>
+            </span>
+            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              <div
+                class="flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+                  alt="Laravel" class="mb-3 h-10 w-10 object-contain">
+                <span class="font-semibold">Laravel</span>
+                <p class="mt-2 text-sm leading-6 text-gray-300">Full-Stack web development</p>
+              </div>
+              <div
+                class="flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                  alt="Linux" class="mb-3 h-10 w-10 object-contain">
+                <span class="font-semibold">Linux</span>
+                <p class="mt-2 text-sm leading-6 text-gray-300">System & Server Management</p>
+              </div>
+              <div
+                class="flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
+                <i class="devicon-mysql-plain-wordmark mb-3 text-4xl"></i>
+                <span class="font-semibold">MySQL</span>
+                <p class="mt-2 text-sm leading-6 text-gray-300">Database <br> Management</p>
+              </div>
+              <div
+                class="flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
+                <div
+                  class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white">
+                  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white">
+                    <title>Cisco</title>
+                    <path fill="currentColor"
+                      d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206c-.287.132-.54.327-.739.571a2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155" />
+                  </svg>
+                </div>
+                <span class="font-semibold">CCNA</span>
+                <p class="mt-2 text-sm leading-6 text-gray-300">Computer <br> Networks</p>
+              </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="mt-6">
+              <div class="mb-4 flex items-center gap-2 text-lg ">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Skills</span>
+              </div>
+              <div class="flex flex-col gap-4 lg:flex-row">
+                <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
+                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57] ">Comfortable</h3>
+                  <div class="space-y-1 text-white">
+                    <div class="px-2 py-1">HTML5</div>
+                    <div class="px-2 py-1">CSS3</div>
+                    <div class="px-2 py-1">Git</div>
+                    <div class="px-2 py-1">GitHub</div>
+                    <div class="px-2 py-1">Python (Intermediate)</div>
+                  </div>
+                </div>
+                <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
+                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57]">Familiar With</h3>
+                  <div class="space-y-1 text-white">
+                    <div class="px-2 py-1">JavaScript (Basic)</div>
+                    <div class="px-2 py-1">Java (Basic)</div>
+                    <div class="px-2 py-1">PHP (Learning)</div>
+                    <div class="px-2 py-1">MySQL (Basic)</div>
+                    <div class="px-2 py-1">Node.js</div>
+                    <div class="px-2 py-1">Express.js (Basic)</div>
+                  </div>
+                </div>
+                <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
+                  <h3 class="mb-2 text-lg font-semibold  text-[#FF6B57] ">Currently Learning</h3>
+                  <div class="space-y-1 text-white">
+                    <div class="px-2 py-1">Laravel</div>
+                    <div class="px-2 py-1">Linux</div>
+                    <div class="px-2 py-1">CCNA</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- right side: Featured Projects -->
+        <div
+          class="flex-1 rounded-2xl border border-white/20 bg-[var(--bg-color)] p-5 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-6">
+          <div class="text-white">
+            <span class="mb-6 flex items-center gap-2 text-lg text-[#FF6B57]">
+              <i class="fa-solid fa-folder-open"></i>
+              <span>Featured Projects</span>
+            </span>
+            <div class="grid grid-cols-1 gap-4">
+              <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+                <h2 class="font-semibold text-white"><i class="fa-brands fa-edge"></i> Korea Sathi</h2>
+                <p class="mt-2 text-sm leading-6 text-gray-300">Open-Source information hub for Nepali students in South
+                  Korea.</p>
+                <span
+                  class="mt-2 inline-block rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs text-[#FF6B57]">Ongoing</span>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+                <h2 class="font-semibold text-white"><i class="fa-brands fa-python"></i> Python & ML Projects</h2>
+                <p class="mt-2 text-sm leading-6 text-gray-300">MNIST Digit Recognition, Diabetes Prediction, Linear
+                  Regression,<br> File Manager & More.</p>
+                <span
+                  class="mt-2 inline-block rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-400">Completed</span>
+              </div>
+              <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+                <h2 class="font-semibold text-white"><i class="fa-solid fa-folder-minus"></i> The Odin Project</h2>
+                <p class="mt-2 text-sm leading-6 text-gray-300">Landing Page, Calculator, Rock Paper Scissors, Recipes.
+                </p>
+                <span
+                  class="mt-2 inline-block rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-400">Completed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--bg-color)] text-white p-4 sm:p-8">
+      <div class="container mx-auto flex flex-col border border-white/20 p-4 sm:p-6 rounded-xl shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+        <div class="mb-4">
+          <span class="text-xl font-bold ml-2 sm:ml-5"><i class="fa-solid fa-book-open-reader"></i> Learning Journey</span>
+        </div>
+
+        <div class="flex flex-col gap-4 md:flex-row">
+          <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
+            <h3 class="text-[var(--primary)] text-sm sm:text-base">The Odin Project-Foundations</h3>
+            <span class="text-green-500 block mb-2 text-sm">(completed)</span>
+            <p class="text-sm">
+              HTML CSS JavaScript Fundamentals Git & GitHub <br>
+              Command Line Flexbox DOM Manipulation Problem Solving Responsive Design
+            </p>
+            <p class="mt-2 text-sm">Projects: Landing Page, Calculator, Rock Paper Scissors, Etch-a-Sketch, Recipes</p>
+          </div>
+
+          <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
+            <h3 class="text-[var(--primary)] text-sm sm:text-base">CS50's Web Programming</h3>
+            <span class="text-red-500 block mb-2 text-sm">(In progress)</span>
+            <p class="text-sm">
+              Currently working through Harvard's CS50 Web Programming course. So far I've completed the HTML, CSS, and
+              Python portions, explored the fundamentals of Django, and I'm continuing through the remaining topics.
+            </p>
+          </div>
+
+          <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
+            <h3 class="text-[var(--primary)] text-sm sm:text-base">CCNA</h3>
+            <span class="text-red-500 block mb-2 text-sm">(In progress)</span>
+            <p class="text-sm">
+              Network Fundamentals Ethernet OSI Model TCP/IP
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--bg-color)] text-white p-4 sm:p-8">
+      <div class="container mx-auto border border-white/20 rounded-xl p-4 sm:p-6 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+
+        <h2 class="flex items-center gap-2 text-white text-xl font-semibold mb-6 sm:mb-10">
+          📈 Timeline
+        </h2>
+
+        <div class="overflow-x-auto">
+          <div class="relative min-w-[700px]">
+
+            <!-- Gradient Line -->
+            <div class="absolute left-0 right-0 top-7 h-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-sky-500">
+            </div>
+
+            <div class="grid grid-cols-9 gap-4 sm:gap-6 relative z-10">
+
+              <!-- Item -->
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-rose-400 bg-[#090f1d] text-rose-400 shadow-[0_0_18px_rgba(251,113,133,.55)]">
+                  <i class="fa-solid fa-graduation-cap text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  Electrical<br>
+                  Engineering<br>
+                  Diploma
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-pink-400 bg-[#090f1d] text-pink-400 shadow-[0_0_18px_rgba(236,72,153,.55)]">
+                  <i class="fa-solid fa-desktop text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  IT Support<br>
+                  <span class="text-gray-400">@ Vianet</span>
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-fuchsia-400 bg-[#090f1d] text-fuchsia-400 shadow-[0_0_18px_rgba(217,70,239,.55)]">
+                  <i class="fa-solid fa-users text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  CloudFactory
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-violet-400 bg-[#090f1d] text-violet-400 shadow-[0_0_18px_rgba(167,139,250,.55)]">
+                  <i class="fa-solid fa-laptop-code text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  Computer<br>
+                  Engineering<br>
+                  Student
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-indigo-400 bg-[#090f1d] text-indigo-400 shadow-[0_0_18px_rgba(129,140,248,.55)]">
+                  <i class="fa-solid fa-brain text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  Python &<br>
+                  Machine<br>
+                  Learning
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-blue-400 bg-[#090f1d] text-blue-400 shadow-[0_0_18px_rgba(96,165,250,.55)]">
+                  <i class="fa-brands fa-github text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  The Odin<br>
+                  Project<br>
+                  <span class="text-green-400">✔</span>
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-sky-400 bg-[#090f1d] text-sky-400 shadow-[0_0_18px_rgba(56,189,248,.55)]">
+                  <i class="fa-solid fa-book-open text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  CS50 Web<br>
+                  <span class="text-gray-400">(In Progress)</span>
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#090f1d] text-cyan-400 shadow-[0_0_18px_rgba(34,211,238,.55)]">
+                  <i class="fa-solid fa-code text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  Laravel<br>
+                  <span class="text-gray-400">(Current)</span>
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-blue-500 bg-[#090f1d] text-blue-500 shadow-[0_0_18px_rgba(59,130,246,.55)]">
+                  <i class="fa-solid fa-network-wired text-sm sm:text-base"></i>
+                </div>
+
+                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
+                  CCNA<br>
+                  <span class="text-gray-400">(Current)</span>
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <footer class=" p-8 text-center text-sm text-white bg-[var(--bg-color)]">
+    &copy  2026 Sanjeev Shrestha . All rights reserved.
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/3.1.2/flowbite.js"
+      integrity="sha512-c9m0HP/+jR+ZgMbKqLHtvn8nT0IiJiw0NhgSWedfZWi1QvGS39Kz2w4Sbo7rD1eYA+fm7ypCLNR0gbAJv2mHQA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </footer>
+</body>
+
+</html>

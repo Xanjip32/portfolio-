@@ -1,0 +1,35 @@
+
+:root{
+
+--bg-color:#090f1d;
+--bg-light:#161b29;
+--card:#182631;
+--footer:#101A22;
+
+--primary:#FF6B57;
+--primary-hover:#FF7E6C;
+--primary-dark:#E95A47;
+
+--white:#FFFFFF;
+--text:#B9C1CA;
+--muted:#8C98A4;
+--gray:#6B7884;
+
+--border:#263542;
+
+--radius:20px;
+
+--shadow:0 20px 60px rgba(0,0,0,.35);
+
+--transition:.35s ease;
+
+--shadow:#FF6B57;
+
+}
+
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.2s ease-in-out;
+}
+
