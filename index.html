@@ -4,79 +4,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>portfolio</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' https://cdn.jsdelivr.net data:; frame-src https://docs.google.com; connect-src 'self';">
+  <title>Sanjeev Shrestha | Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+    integrity="sha512-mQN7StCzVJl+rwieWt+a/sDM6mucFSI636sn2Jf8SHfBBdaL/rCT6hwE6a/zeDkxMWiVGYYuE4WkeMuRV6u5ng=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    integrity="sha512-6/05LVs+grXBAu5XzdiMFB64yCVF9FL70zWrTKcaTEKygrO7fC5LqfL/SKPpuRpimL2aE0D7Hw/NoED+7+7/VQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-[var(--bg-color)] ">
+<body class="bg-[var(--bg-color)] text-white">
   <main>
     <section
       class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('/images/bg_v.png')] bg-[center_top_5%] md:bg-[url('/images/bg_h.png')] md:bg-center ">
       <div class="absolute inset-0 bg-slate-950/50  "></div>
       <div class="relative z-10 flex min-h-screen flex-col">
         <div class="container mx-auto px-4">
-          <nav class="fixed left-0 top-0 z-50 w-full bg-[var(--bg-color)]">
-            <div class="container mx-auto flex items-center justify-between gap-4 px-4 py-3 text-white">
-              <a href="#" class="text-lg font-semibold"><strong>Sanjeev Shrestha</strong></a>
-
-              <button id="menuBtn" class="rounded-lg p-2 md:hidden" type="button" data-drawer-target="drawer-navigation"
-                data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-                <i class="fa-solid fa-bars"></i>
-              </button>
+          <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--bg-color)]/90 backdrop-blur">
+            <div class="container mx-auto flex items-center justify-between px-4 py-4">
+              <a href="/index.html" class="text-xl font-bold tracking-wide">
+                Sanjeev Shrestha
+              </a>
 
               <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
-                <li><a href="./pages/home.html" class="transition hover:text-[#FF6B57]">Home</a></li>
-                <li><a href="./pages/about.html" class="transition hover:text-[#FF6B57]">About</a></li>
-                <li><a href="./pages/project.html" class="transition hover:text-[#FF6B57]">Project</a></li>
-                <li><a href="./pages/contact.html" class="transition hover:text-[#FF6B57]">Contacts</a></li>
+                <li>
+                  <a href="/index.html" class="text-[#FF6B57]">Home</a>
+                </li>
+                <li>
+                  <a href="/pages/about.html" class="transition hover:text-[#FF6B57]">About</a>
+                </li>
+                <li>
+                  <a href="/pages/project.html" class="transition hover:text-[#FF6B57]">Projects</a>
+                </li>
+                <li>
+                  <a href="/pages/contact.html" class="transition hover:text-[#FF6B57]">Contact</a>
+                </li>
               </ul>
-            </div>
 
-            <!-- drawer component -->
-            <div id="drawer-navigation"
-              class="fixed left-0 top-0 z-40 h-screen w-80 -translate-x-full overflow-y-auto border-r border-gray-700 bg-[#0B1320] p-4 transition-transform md:hidden"
-              tabindex="-1" aria-labelledby="drawer-navigation-label">
-              <div class="flex items-center justify-between border-b border-gray-700 pb-4">
-                <span class="whitespace-nowrap text-lg font-semibold text-white">Menu</span>
-                <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
-                  class="rounded-lg p-2 text-gray-300 hover:bg-gray-700 hover:text-white">
-                  <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M6 18 17.94 6M18 18 6.06 6" />
-                  </svg>
-                  <span class="sr-only">Close menu</span>
-                </button>
-              </div>
-
-              <div class="overflow-y-auto py-5">
-                <ul class="space-y-2 font-medium text-gray-100">
-                  <li>
-                    <a href="#"
-                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Home</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">About</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Project</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Contacts</a>
-                  </li>
-                </ul>
-              </div>
+              <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden" data-drawer-target="drawer-navigation"
+                data-drawer-show="drawer-navigation">
+                <i class="fa-solid fa-bars text-lg"></i>
+              </button>
             </div>
           </nav>
+
+          <!-- Mobile Drawer -->
+          <aside id="drawer-navigation"
+            class="fixed left-0 top-0 z-50 h-screen w-80 -translate-x-full overflow-y-auto border-r border-white/10 bg-[#0B1320] p-5 transition-transform md:hidden">
+            <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+              <h2 class="text-lg font-semibold">Menu</h2>
+              <button type="button" data-drawer-hide="drawer-navigation">
+                <i class="fa-solid fa-xmark text-xl"></i>
+              </button>
+            </div>
+            <ul class="space-y-2">
+              <li>
+                <a href="/index.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3">Home</a>
+              </li>
+              <li>
+                <a href="/pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">About</a>
+              </li>
+              <li>
+                <a href="/pages/project.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">Projects</a>
+              </li>
+              <li>
+                <a href="/pages/contact.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">Contact</a>
+              </li>
+            </ul>
+          </aside>
         </div>
 
         <!---hero section -->
@@ -87,21 +89,21 @@
               <span class="mb-3 block text-lg text-[#FF6B57]">Hi, I'm</span>
               <h1 class="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">Sanjeev Shrestha</h1>
               <p class="max-w-2xl text-base leading-8 sm:text-lg">
-                <strong>Computer Engineering student</strong><br>
-                Aspiring Full-Stack Developer • Networking Enthusiast<br>
-                I enjoy building practical projects, documenting my learning journey,<br>
-                and continuously improving through hands-on practice.
+                <strong>Computer Engineering Student</strong><br>
+                Building Full-Stack Projects & Learning Networking<br>
+                I build practical projects, document my learning, and<br>
+                continuously improve through hands-on practice.
               </p>
               <div class="mt-11 flex flex-wrap items-center justify-center gap-6">
-                <a href="#"
+                <a href="/pages/project.html"
                   class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
                   <i class="fa-solid fa-folder-open mr-2"></i>View My projects
                 </a>
-                <a href="#"
+                <a href="/cv/cv.pdf" target="_blank"
                   class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105  hover:shadow-lg hover:shadow-[#FF6B57]/40">
                   Download CV <i class="fa-solid fa-download ml-2"></i>
                 </a>
-              </div>
+          </div>
             </div>
           </div>
 
@@ -161,37 +163,35 @@
             <!-- Skills -->
             <div class="mt-6">
               <div class="mb-4 flex items-center gap-2 text-lg ">
-                <i class="fa-solid fa-bag-shopping"></i>
+                <i class="fa-solid fa-code"></i>
                 <span>Skills</span>
               </div>
               <div class="flex flex-col gap-4 lg:flex-row">
                 <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
-                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57] ">Comfortable</h3>
+                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57] ">Core Skills</h3>
                   <div class="space-y-1 text-white">
-                    <div class="px-2 py-1">HTML5</div>
-                    <div class="px-2 py-1">CSS3</div>
-                    <div class="px-2 py-1">Git</div>
-                    <div class="px-2 py-1">GitHub</div>
-                    <div class="px-2 py-1">Python (Intermediate)</div>
+                    <div class="px-2 py-1">HTML5 / CSS3</div>
+                    <div class="px-2 py-1">Tailwind CSS</div>
+                    <div class="px-2 py-1">JavaScript</div>
+                    <div class="px-2 py-1">Git & GitHub</div>
+                    <div class="px-2 py-1">Python</div>
                   </div>
                 </div>
                 <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
-                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57]">Familiar With</h3>
+                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57]">Working Knowledge</h3>
                   <div class="space-y-1 text-white">
-                    <div class="px-2 py-1">JavaScript (Basic)</div>
-                    <div class="px-2 py-1">Java (Basic)</div>
-                    <div class="px-2 py-1">PHP (Learning)</div>
-                    <div class="px-2 py-1">MySQL (Basic)</div>
-                    <div class="px-2 py-1">Node.js</div>
-                    <div class="px-2 py-1">Express.js (Basic)</div>
+                    <div class="px-2 py-1">Node.js / Express.js</div>
+                    <div class="px-2 py-1">MySQL</div>
+                    <div class="px-2 py-1">Linux / Server Management</div>
+                    <div class="px-2 py-1">WordPress (Headless CMS)</div>
                   </div>
                 </div>
                 <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
-                  <h3 class="mb-2 text-lg font-semibold  text-[#FF6B57] ">Currently Learning</h3>
+                  <h3 class="mb-2 text-lg font-semibold  text-[#FF6B57] ">Currently Exploring</h3>
                   <div class="space-y-1 text-white">
-                    <div class="px-2 py-1">Laravel</div>
-                    <div class="px-2 py-1">Linux</div>
-                    <div class="px-2 py-1">CCNA</div>
+                    <div class="px-2 py-1">Laravel (Full-Stack)</div>
+                    <div class="px-2 py-1">AI-Assisted Development</div>
+                    <div class="px-2 py-1">CCNA Networking</div>
                   </div>
                 </div>
               </div>
@@ -209,10 +209,9 @@
             <div class="grid grid-cols-1 gap-4">
               <div class="rounded-xl border border-white/10 bg-white/5 p-4">
                 <h2 class="font-semibold text-white"><i class="fa-brands fa-edge"></i> Korea Sathi</h2>
-                <p class="mt-2 text-sm leading-6 text-gray-300">Open-Source information hub for Nepali students in South
-                  Korea.</p>
+                <p class="mt-2 text-sm leading-6 text-gray-300">Student hub for Nepali students in South Korea. Built with headless WordPress CMS, Tailwind CSS, and deployed on Vercel.</p>
                 <span
-                  class="mt-2 inline-block rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs text-[#FF6B57]">Ongoing</span>
+                  class="mt-2 inline-block rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs text-[#FF6B57]">Active</span>
               </div>
               <div class="rounded-xl border border-white/10 bg-white/5 p-4">
                 <h2 class="font-semibold text-white"><i class="fa-brands fa-python"></i> Python & ML Projects</h2>
@@ -411,9 +410,9 @@
     </section>
 
   </main>
-  <footer class=" p-8 text-center text-sm text-white bg-[var(--bg-color)]">
-    &copy 2026 Sanjeev Shrestha . All rights reserved.
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/3.1.2/flowbite.js"
+  <footer class="border-t border-white/10 bg-[var(--bg-color)] p-8 text-center text-sm text-white">
+    &copy; 2026 Sanjeev Shrestha. All rights reserved.
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/3.1.2/flowbite.min.js"
       integrity="sha512-c9m0HP/+jR+ZgMbKqLHtvn8nT0IiJiw0NhgSWedfZWi1QvGS39Kz2w4Sbo7rD1eYA+fm7ypCLNR0gbAJv2mHQA=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </footer>

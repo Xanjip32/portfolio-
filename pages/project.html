@@ -4,110 +4,501 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>portfolio</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' https://cdn.jsdelivr.net data:; frame-src https://docs.google.com; connect-src 'self';">
+
+  <title>Projects | Sanjeev Shrestha</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+    integrity="sha512-mQN7StCzVJl+rwieWt+a/sDM6mucFSI636sn2Jf8SHfBBdaL/rCT6hwE6a/zeDkxMWiVGYYuE4WkeMuRV6u5ng=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Dev Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    integrity="sha512-6/05LVs+grXBAu5XzdiMFB64yCVF9FL70zWrTKcaTEKygrO7fC5LqfL/SKPpuRpimL2aE0D7Hw/NoED+7+7/VQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/style.css">
 
 </head>
 
-<body class="bg-[var(--bg-color)] ">
-  <main>
-    <section
-      class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('/images/bg_v.png')] bg-[center_top_5%] md:bg-[url('/images/bg_h.png')] md:bg-center ">
-      <div class="absolute inset-0 bg-slate-950/50  "></div>
-      <div class="relative z-10 flex min-h-screen flex-col">
-        <div class="container mx-auto px-4">
-          <nav class="fixed left-0 top-0 z-50 w-full bg-[var(--bg-color)]">
-            <div class="container mx-auto flex items-center justify-between gap-4 px-4 py-3 text-white">
-              <a href="#" class="text-lg font-semibold"><strong>Sanjeev Shrestha</strong></a>
+<body class="bg-[var(--bg-color)] text-white">
 
-              <button id="menuBtn" class="rounded-lg p-2 md:hidden" type="button" data-drawer-target="drawer-navigation"
-                data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-                <i class="fa-solid fa-bars"></i>
-              </button>
+  <!-- ================= HEADER ================= -->
 
-              <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
-                <li><a href="./pages/home.html" class="transition hover:text-[#FF6B57]">Home</a></li>
-                <li><a href="./pages/about.html" class="transition hover:text-[#FF6B57]">About</a></li>
-                <li><a href="./pages/project.html" class="transition hover:text-[#FF6B57]">Project</a></li>
-                <li><a href="./pages/contact.html" class="transition hover:text-[#FF6B57]">Contacts</a></li>
-              </ul>
-            </div>
+  <header>
 
-            <!-- drawer component -->
-            <div id="drawer-navigation"
-              class="fixed left-0 top-0 z-40 h-screen w-80 -translate-x-full overflow-y-auto border-r border-gray-700 bg-[#0B1320] p-4 transition-transform md:hidden"
-              tabindex="-1" aria-labelledby="drawer-navigation-label">
-              <div class="flex items-center justify-between border-b border-gray-700 pb-4">
-                <span class="whitespace-nowrap text-lg font-semibold text-white">Menu</span>
-                <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
-                  class="rounded-lg p-2 text-gray-300 hover:bg-gray-700 hover:text-white">
-                  <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M6 18 17.94 6M18 18 6.06 6" />
-                  </svg>
-                  <span class="sr-only">Close menu</span>
-                </button>
-              </div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--bg-color)]/90 backdrop-blur">
 
-              <div class="overflow-y-auto py-5">
-                <ul class="space-y-2 font-medium text-gray-100">
-                  <li>
-                    <a href="#"
-                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Home</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">About</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Project</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Contacts</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
+      <div class="container mx-auto flex items-center justify-between px-4 py-4">
 
-        <!---hero section -->
-        <div class="container mx-auto flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6">
-          <div
-            class="w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0">
-            <div class="text-white">
-              <span class="mb-3 block text-lg text-[#FF6B57]">Hi, I'm</span>
-              <h1 class="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">Sanjeev Shrestha</h1>
-              <p class="max-w-2xl text-base leading-8 sm:text-lg">
-                <strong>Computer Engineering student</strong><br>
-                Aspiring Full-Stack Developer • Networking Enthusiast<br>
-                I enjoy building practical projects, documenting my learning journey,<br>
-                and continuously improving through hands-on practice.
-              </p>
-              <div class="mt-11 flex flex-wrap items-center justify-center gap-6">
-                <a href="#"
-                  class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
-                  <i class="fa-solid fa-folder-open mr-2"></i>View My projects
-                </a>
-                <a href="#"
-                  class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105  hover:shadow-lg hover:shadow-[#FF6B57]/40">
-                  Download CV <i class="fa-solid fa-download ml-2"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+        <!-- Logo -->
+        <a href="/index.html" class="text-xl font-bold tracking-wide">
+          Sanjeev Shrestha
+        </a>
 
-          <div>
-            <!-- just for spacing i made this div for occuping rright side of hero section -->
-          </div>
-        </div>
+        <!-- Desktop Navigation -->
+        <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+
+          <li>
+            <a href="/index.html" class="transition hover:text-[#FF6B57]">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/pages/about.html" class="transition hover:text-[#FF6B57]">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="/pages/project.html" class="text-[#FF6B57]">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="/pages/contact.html" class="transition hover:text-[#FF6B57]">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden" data-drawer-target="drawer-navigation"
+          data-drawer-show="drawer-navigation">
+
+          <i class="fa-solid fa-bars text-lg"></i>
+
+        </button>
+
       </div>
+
+    </nav>
+
+    <!-- Mobile Drawer -->
+
+    <aside id="drawer-navigation"
+      class="fixed left-0 top-0 z-50 h-screen w-80 -translate-x-full overflow-y-auto border-r border-white/10 bg-[#0B1320] p-5 transition-transform md:hidden">
+
+      <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+
+        <h2 class="text-lg font-semibold">
+          Menu
+        </h2>
+
+        <button type="button" data-drawer-hide="drawer-navigation">
+
+          <i class="fa-solid fa-xmark text-xl"></i>
+
+        </button>
+
+      </div>
+
+      <ul class="space-y-2">
+
+        <li>
+          <a href="/index.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="/pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="/pages/project.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="/pages/contact.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </aside>
+
+  </header>
+
+  <!-- ================= MAIN ================= -->
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="relative flex min-h-[45vh] items-center overflow-hidden bg-[var(--bg-color)] md:min-h-[50vh]">
+
+      <!-- background layer, capped width so it doesn't stretch/crop on ultrawide screens -->
+      <div class="absolute inset-0 mx-auto max-w-[1920px]
+                bg-cover bg-top bg-no-repeat
+                bg-[url('/images/bg_v.png')]
+                md:bg-[url('/images/bg_h.png')] md:bg-center">
+      </div>
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-slate-950/60"></div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 container mx-auto px-4">
+
+        <div class="max-w-3xl">
+
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
+
+            <i class="fa-solid fa-code"></i>
+
+            Portfolio
+
+          </span>
+
+          <h1 class="mt-6 text-5xl font-bold tracking-tight md:text-6xl">
+            Projects
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-gray-300">
+
+            A collection of projects I've built throughout my learning journey.
+            From web development and machine learning to networking and electronics,
+            each project represents a step toward becoming a better software engineer.
+
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+
+            <a href="#projects"
+              class="rounded-xl bg-[#FF6B57] px-6 py-3 font-medium transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+
+              View Projects
+
+              <i class="fa-solid fa-arrow-down ml-2"></i>
+
+            </a>
+
+            <a href="https://github.com/Xanjip32" target="_blank"
+              class="rounded-xl border border-white px-6 py-3 font-medium transition duration-300 hover:border-[#FF6B57] hover:text-[#FF6B57]">
+
+              <i class="fa-brands fa-github mr-2"></i>
+
+              GitHub
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Fade -->
+      <div class="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-b from-transparent to-[var(--bg-color)]">
+      </div>
+
     </section>
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects" class="bg-[var(--bg-color)] py-20">
+
+      <div class="container mx-auto px-4">
+
+        <!-- Section Header -->
+
+        <div class="mb-14 text-center">
+
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            Portfolio
+
+          </span>
+
+          <h2 class="mt-5 text-4xl font-bold">
+            Featured Projects
+          </h2>
+
+          <p class="mx-auto mt-4 max-w-2xl text-gray-400 leading-7">
+
+            These are some of the projects I've worked on throughout my learning
+            journey, covering web development, networking, machine learning,
+            and software engineering.
+
+          </p>
+
+        </div>
+
+        <!-- KoreaSathi Featured -->
+        <div
+          class="overflow-hidden rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 mb-6">
+          <div class="grid gap-0 md:grid-cols-[320px_1fr]">
+            <img src="/images/koreasathi-preview.png" alt="KoreaSathi Preview"
+              class="h-64 w-full object-cover md:h-full">
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-earth-asia text-[#FF6B57] text-xl"></i>
+                  <h3 class="text-2xl font-bold">KoreaSathi</h3>
+                </div>
+                <span class="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-400">
+                  <i class="fa-solid fa-circle text-[8px] mr-1"></i>Active
+                </span>
+              </div>
+              <p class="mt-4 text-gray-300 leading-7">
+                Nepal Korea Student Hub — A free open-source platform centralizing trusted information for Nepali students
+                in South Korea. Built with headless WordPress CMS for content management, Tailwind CSS for styling, and
+                deployed on Vercel. Covers visas, jobs, banking, immigration, emergencies, and more.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">HTML</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">Tailwind CSS</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">JavaScript</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">WordPress (Headless)</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">Vercel</span>
+              </div>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="https://korea-sathi.vercel.app/" target="_blank"
+                  class="rounded-xl bg-[#FF6B57] px-5 py-2.5 text-sm text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  Live Demo
+                  <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+                </a>
+                <a href="https://github.com/Xanjip32/KoreaSathi" target="_blank"
+                  class="rounded-lg border border-white px-5 py-2.5 text-sm transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+                  <i class="fa-brands fa-github mr-2"></i>GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+          <!-- Solar Incubator -->
+          <div
+            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-solar-panel text-[#FF6B57] text-xl"></i>
+                <h4 class="text-base font-bold text-white">Solar-Powered Egg Incubator</h4>
+              </div>
+              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20">Hardware
+                Build</span>
+            </div>
+            <p class="text-gray-300 mb-3 text-sm leading-relaxed">
+              A self-taught electronics build from my school years — inverter PCB, a repurposed
+              transformer, and an old lead-acid battery for backup power. No formal circuit design,
+              no CAD — just YouTube, trial and error, and a soldering iron.
+            </p>
+            <a href="https://github.com/Xanjip32/Nepal-Solar-Hybrid-Incubator" target="_blank"
+              class="text-sm text-gray-300 underline hover:text-[#FF6B57] transition">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+
+          <!-- Student Management App -->
+          <div
+            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-users-gear text-[#FF6B57] text-xl"></i>
+                <h4 class="text-base font-bold text-white">Student Management App</h4>
+              </div>
+              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20">Coursework
+                Project</span>
+            </div>
+            <p class="text-gray-300 mb-3 text-sm leading-relaxed">
+              Built during coursework on instructor-provided starter code. Extended it with search,
+              filtering, and sorting. Covers Node.js, Express, and REST API basics.
+            </p>
+            <a href="https://github.com/Xanjip32/Student-Management-App" target="_blank"
+              class="text-sm text-gray-300 underline hover:text-[#FF6B57] transition">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+
+          <!-- Laravel (Ongoing) -->
+          <div
+            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-[#FF6B57] text-sm"></i>
+                <h4 class="text-sm font-bold text-white leading-tight">Full-Stack<br>with Laravel</h4>
+              </div>
+              <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full border border-yellow-500/40">
+                <i class="fa-solid fa-circle-notch fa-spin mr-1"></i>Ongoing
+              </span>
+            </div>
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed">
+              Documenting my full-stack learning journey with Laravel — practice projects and notes
+              covering front-end (HTML, CSS, JavaScript) and back-end (PHP, Laravel).
+            </p>
+            <a href="https://github.com/Xanjip32/full-Stack-development-with-Laravel-" target="_blank"
+              class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+
+          <!-- CCNA (Ongoing) -->
+          <div
+            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-network-wired text-[#FF6B57] text-sm"></i>
+                <h4 class="text-sm font-bold text-white">CCNA Study Documentation</h4>
+              </div>
+              <span
+                class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full border border-yellow-500/40 whitespace-nowrap">
+                <i class="fa-solid fa-circle-notch fa-spin mr-1"></i>Ongoing
+              </span>
+            </div>
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed">
+              Documenting my CCNA prep — following Jeremy's IT Lab and Cisco Networking Academy.
+              Includes study notes, router/switch configuration examples, and lab practice.
+            </p>
+            <div class="flex flex-wrap gap-1 mb-3">
+              <span
+                class="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full border border-white/20">Networking</span>
+              <span
+                class="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full border border-white/20">Cisco</span>
+            </div>
+            <a href="https://github.com/Xanjip32/CCNA" target="_blank"
+              class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+
+          <!-- CS50 (Paused) -->
+          <div
+            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-[#FF6B57] text-sm"></i>
+                <h4 class="text-sm font-bold text-white">CS50: Web Programming</h4>
+              </div>
+              <span
+                class="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full border border-gray-500/40 whitespace-nowrap">
+                <i class="fa-solid fa-pause mr-1"></i>Paused
+              </span>
+            </div>
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed">
+              Studied Harvard's CS50 Web Programming — completed assignments through the Python/Flask
+              track and studied Django. Paused here for now, may pick it back up later.
+            </p>
+            <a href="https://github.com/Xanjip32/CS50-s-Web-Programming-with-Python-and-JavaScript" target="_blank"
+              class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+
+          <!-- MNIST (Learning Project) -->
+          <div
+            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-brain text-[#FF6B57] text-sm"></i>
+                <h4 class="text-sm font-bold text-white">MNIST Digit Classifier</h4>
+              </div>
+              <span
+                class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20 whitespace-nowrap">
+                <i class="fa-solid fa-book-open mr-1"></i>Self-Study
+              </span>
+            </div>
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed">
+              Followed a tutorial to build an ML pipeline on MNIST — neural networks with NumPy,
+              scikit-learn, and CNNs with TensorFlow. Completed as a learning exercise.
+            </p>
+            <a href="https://github.com/Xanjip32/mnist_project" target="_blank"
+              class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Practice & Learning Exercises -->
+        <div
+          class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/50 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_20px_#FF6B57]/20">
+          <div class="flex items-center gap-2 mb-1">
+            <i class="fa-solid fa-laptop-code text-[#FF6B57]"></i>
+            <h4 class="text-base font-bold text-white">The Odin Project — Foundations</h4>
+          </div>
+          <p class="text-gray-400 text-xs mb-4">
+            Core projects completed during The Odin Project foundations course.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            <a href="https://github.com/Xanjip32/Calculator" target="_blank"
+              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-calculator text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300">Calculator</span>
+            </a>
+            <a href="https://github.com/Xanjip32/Landing_page" target="_blank"
+              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-window-maximize text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300">Landing Page</span>
+            </a>
+            <a href="https://github.com/Xanjip32/etch-a-sketch" target="_blank"
+              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-pen-nib text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300">Etch-a-Sketch</span>
+            </a>
+            <a href="https://github.com/Xanjip32/rock_sissors_paper-" target="_blank"
+              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-hand-scissors text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300">Rock Paper Scissors</span>
+            </a>
+            <a href="https://github.com/Xanjip32/tic_tac_toe" target="_blank"
+              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-border-none text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300">Tic Tac Toe</span>
+            </a>
+            <a href="https://github.com/Xanjip32/odin-recipes" target="_blank"
+              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-utensils text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300">Odin Recipes</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="border-t border-white/10 bg-[var(--bg-color)] p-8 text-center text-sm text-white">
+    &copy; 2026 Sanjeev Shrestha. All rights reserved.
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/3.1.2/flowbite.js"
+    integrity="sha512-c9m0HP/+jR+ZgMbKqLHtvn8nT0IiJiw0NhgSWedfZWi1QvGS39Kz2w4Sbo7rD1eYA+fm7ypCLNR0gbAJv2mHQA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>
