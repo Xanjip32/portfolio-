@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+</head>
+
+<body class="bg-[var(--bg-color)] ">
+  <main>
+    <section
+      class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('/images/bg_v.png')] bg-[center_top_5%] md:bg-[url('/images/bg_h.png')] md:bg-center ">
+      <div class="absolute inset-0 bg-slate-950/50  "></div>
+      <div class="relative z-10 flex min-h-screen flex-col">
+        <div class="container mx-auto px-4">
+          <nav class="fixed left-0 top-0 z-50 w-full bg-[var(--bg-color)]">
+            <div class="container mx-auto flex items-center justify-between gap-4 px-4 py-3 text-white">
+              <a href="#" class="text-lg font-semibold"><strong>Sanjeev Shrestha</strong></a>
+
+              <button id="menuBtn" class="rounded-lg p-2 md:hidden" type="button" data-drawer-target="drawer-navigation"
+                data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+
+              <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+                <li><a href="./pages/home.html" class="transition hover:text-[#FF6B57]">Home</a></li>
+                <li><a href="./pages/about.html" class="transition hover:text-[#FF6B57]">About</a></li>
+                <li><a href="./pages/project.html" class="transition hover:text-[#FF6B57]">Project</a></li>
+                <li><a href="./pages/contact.html" class="transition hover:text-[#FF6B57]">Contacts</a></li>
+              </ul>
+            </div>
+
+            <!-- drawer component -->
+            <div id="drawer-navigation"
+              class="fixed left-0 top-0 z-40 h-screen w-80 -translate-x-full overflow-y-auto border-r border-gray-700 bg-[#0B1320] p-4 transition-transform md:hidden"
+              tabindex="-1" aria-labelledby="drawer-navigation-label">
+              <div class="flex items-center justify-between border-b border-gray-700 pb-4">
+                <span class="whitespace-nowrap text-lg font-semibold text-white">Menu</span>
+                <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+                  class="rounded-lg p-2 text-gray-300 hover:bg-gray-700 hover:text-white">
+                  <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M6 18 17.94 6M18 18 6.06 6" />
+                  </svg>
+                  <span class="sr-only">Close menu</span>
+                </button>
+              </div>
+
+              <div class="overflow-y-auto py-5">
+                <ul class="space-y-2 font-medium text-gray-100">
+                  <li>
+                    <a href="#"
+                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Home</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">About</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Project</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="flex items-center rounded-lg px-3 py-2 text-white transition hover:bg-gray-700">Contacts</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <!---hero section -->
+        <div class="container mx-auto flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6">
+          <div
+            class="w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0">
+            <div class="text-white">
+              <span class="mb-3 block text-lg text-[#FF6B57]">Hi, I'm</span>
+              <h1 class="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">Sanjeev Shrestha</h1>
+              <p class="max-w-2xl text-base leading-8 sm:text-lg">
+                <strong>Computer Engineering student</strong><br>
+                Aspiring Full-Stack Developer • Networking Enthusiast<br>
+                I enjoy building practical projects, documenting my learning journey,<br>
+                and continuously improving through hands-on practice.
+              </p>
+              <div class="mt-11 flex flex-wrap items-center justify-center gap-6">
+                <a href="#"
+                  class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <i class="fa-solid fa-folder-open mr-2"></i>View My projects
+                </a>
+                <a href="#"
+                  class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105  hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  Download CV <i class="fa-solid fa-download ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <!-- just for spacing i made this div for occuping rright side of hero section -->
+          </div>
+        </div>
+      </div>
+    </section>
