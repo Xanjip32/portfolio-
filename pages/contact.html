@@ -30,18 +30,25 @@
         </a>
         <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
           <li>
-            <a href="/index.html" class="transition hover:text-[#FF6B57]">Home</a>
+            <a href="/index.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_home">Home</a>
           </li>
           <li>
-            <a href="/pages/about.html" class="transition hover:text-[#FF6B57]">About</a>
+            <a href="/pages/about.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_about">About</a>
           </li>
           <li>
-            <a href="/pages/project.html" class="transition hover:text-[#FF6B57]">Projects</a>
+            <a href="/pages/project.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_projects">Projects</a>
           </li>
           <li>
-            <a href="/pages/contact.html" class="text-[#FF6B57]">Contact</a>
+            <a href="/pages/certificates.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_certificates">Certificates</a>
+          </li>
+          <li>
+            <a href="/pages/contact.html" class="text-[#FF6B57]" data-i18n="nav_contact">Contact</a>
           </li>
         </ul>
+        <button id="langToggle" type="button" onclick="toggleLang()" class="flex items-center gap-1.5 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+          <i class="fa-solid fa-globe"></i>
+          <span id="langLabel">EN</span>
+        </button>
         <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden" data-drawer-target="drawer-navigation"
           data-drawer-show="drawer-navigation">
           <i class="fa-solid fa-bars text-lg"></i>
@@ -59,18 +66,25 @@
       </div>
       <ul class="space-y-2">
         <li>
-          <a href="/index.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">Home</a>
+          <a href="/index.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_home">Home</a>
         </li>
         <li>
-          <a href="/pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">About</a>
+          <a href="/pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_about">About</a>
         </li>
         <li>
-          <a href="/pages/project.html" class="block rounded-lg px-4 py-3 hover:bg-white/10">Projects</a>
+          <a href="/pages/project.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_projects">Projects</a>
         </li>
         <li>
-          <a href="/pages/contact.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3">Contact</a>
+          <a href="/pages/certificates.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_certificates">Certificates</a>
+        </li>
+        <li>
+          <a href="/pages/contact.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav_contact">Contact</a>
         </li>
       </ul>
+      <button onclick="toggleLang()" class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-3 text-sm font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+        <i class="fa-solid fa-globe"></i>
+        <span data-i18n="lang_switch">Switch to 한국어</span>
+      </button>
     </aside>
   </header>
 
@@ -81,9 +95,9 @@
         <div class="container mx-auto flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6 mt-16">
           <div class="w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0">
             <div class="text-white">
-              <h2 class="text-2xl font-bold text-white mb-2 tracking-tight">Get In Touch</h2>
+              <h2 class="text-2xl font-bold text-white mb-2 tracking-tight" data-i18n="contact_title">Get In Touch</h2>
               <p class="text-gray-100 mb-6 leading-relaxed">
-                Just want to say hi? I'd love to hear from you.
+                <span data-i18n="contact_desc">Just want to say hi? I'd love to hear from you.</span>
               </p>
 
               <div class="overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
@@ -117,8 +131,33 @@
   </main>
 
   <footer class="border-t border-white/10 bg-[var(--bg-color)] p-8 text-center text-sm text-white">
-    &copy; 2026 Sanjeev Shrestha. All rights reserved.
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/3.1.2/flowbite.min.js"
+    <span data-i18n="footer">&copy; 2026 Sanjeev Shrestha. All rights reserved.</span>
+    <script>
+    const translations = {
+      en: {
+        nav_home: "Home", nav_about: "About", nav_projects: "Projects", nav_certificates: "Certificates", nav_contact: "Contact",
+        lang_switch: "Switch to 한국어",
+        contact_title: "Get In Touch", contact_desc: "Just want to say hi? I'd love to hear from you.",
+        footer: "\u00a9 2026 Sanjeev Shrestha. All rights reserved."
+      },
+      ko: {
+        nav_home: "\ud648", nav_about: "\uc11c\ubcf4", nav_projects: "\ud504\ub85c\uc81d\ud2b8", nav_certificates: "\uc9c8\uc790", nav_contact: "\uc5f0\ub77d",
+        lang_switch: "English\ub85c \uc804\ud658",
+        contact_title: "\uc5f0\ub77d\ud558\uae30", contact_desc: "\uc548\ub155\ud558\uc138\uc694? \ud655\uc2dc \ub204\uc2dc\uace0 \uc2f6\uc2b5\ub2c8\ub2e4.",
+        footer: "\u00a9 2026 Sanjeev Shrestha. \ubaa8\ub4e0 \uad8c\ud55c \ubcf4\uc720\ub41c \uc2dc\ubb38\ud569\ub2c8\ub2e4."
+      }
+    };
+    let currentLang = localStorage.getItem('lang') || 'en';
+    function toggleLang() { currentLang = currentLang === 'en' ? 'ko' : 'en'; localStorage.setItem('lang', currentLang); applyLang(); }
+    function applyLang() {
+      const t = translations[currentLang];
+      document.getElementById('langLabel').textContent = currentLang === 'en' ? 'EN' : 'KO';
+      document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if (t[key]) el.textContent = t[key]; });
+    }
+    applyLang();
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/3.1.2/flowbite.min.js"
       integrity="sha512-c9m0HP/+jR+ZgMbKqLHtvn8nT0IiJiw0NhgSWedfZWi1QvGS39Kz2w4Sbo7rD1eYA+fm7ypCLNR0gbAJv2mHQA=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </footer>
