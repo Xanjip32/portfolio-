@@ -89,20 +89,18 @@
       <div class="relative z-10 flex min-h-screen flex-col">
         <div class="container mx-auto px-4">
           <div class="flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6 lg:justify-start">
-            <div class="w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0 scroll-fade">
+            <div class="mt-40 w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0 scroll-fade m-[10px]">
               <div class="text-white">
                 <span class="mb-3 block text-lg text-[#FF6B57]" data-i18n="home.greeting">Hi, I'm</span>
                 <h1 class="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">Sanjeev Shrestha</h1>
                 <p class="max-w-2xl text-base leading-8 sm:text-lg">
-                  <strong data-i18n="home.title">Computer Engineering Student</strong><br>
-                  <span data-i18n="home.subtitle">Building Full-Stack Projects & Learning Networking</span><br>
-                  <span data-i18n="home.desc">I build practical projects, document my learning, and continuously improve through hands-on practice.</span>
+                  <span data-i18n="home.title">I went from fixing networks in Nepal to studying AI & Computer Engineering in Busan — and I'm building KoreaSathi so other Nepali students don't have to figure Korea out alone.</span>
                 </p>
                 <div class="mt-11 flex flex-wrap items-center justify-center gap-6">
                   <a href="#projects" class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
                     <i class="fa-solid fa-folder-open mr-2"></i><span data-i18n="home.view_projects">View My projects</span>
                   </a>
-                  <a href="cv/cv.pdf" target="_blank" class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <a href="cv/cv.pdf" target="_blank" class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:border-white/25">
                     <span data-i18n="home.download_cv">Download CV</span> <i class="fa-solid fa-download ml-2"></i>
                   </a>
                 </div>
@@ -113,87 +111,493 @@
       </div>
     </section>
 
-    <!-- HOME: Focus + Skills + Education -->
-    <section class="bg-[var(--bg-color)]">
-      <div class="container mx-auto px-4 py-12 flex flex-col gap-6 lg:flex-row">
-        <div class="flex-1 rounded-2xl border border-white/20 bg-[var(--bg-color)] p-5 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-6 scroll-fade">
-          <div class="text-white">
-            <span class="mb-6 flex items-center gap-2 text-lg text-[#FF6B57]">
-              <i class="fa-solid fa-bullseye"></i>
-              <span data-i18n="home.section_focus">Current Focus</span>
-            </span>
-            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              <div class="flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" class="mb-3 h-10 w-10 object-contain">
-                <span class="font-semibold">Laravel</span>
-                <p class="mt-2 text-sm leading-6 text-gray-300" data-i18n="home.focus_laravel_desc">Full-Stack web development</p>
-              </div>
-              <div class="flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" class="mb-3 h-10 w-10 object-contain">
-                <span class="font-semibold">Linux</span>
-                <p class="mt-2 text-sm leading-6 text-gray-300" data-i18n="home.focus_linux_desc">System & Server Management</p>
-              </div>
-              <div class="flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" class="mb-3 h-10 w-10 object-contain">
-                <span class="font-semibold">MySQL</span>
-                <p class="mt-2 text-sm leading-6 text-gray-300" data-i18n="home.focus_mysql_desc">Database<br> Management</p>
-              </div>
-              <div class="flex min-h-[180px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white">
-                  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white">
-                    <title>Cisco</title>
-                    <path fill="currentColor" d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206c-.287.132-.54.327-.739.571a2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155zm-1.764 2.627a.518.518 0 00-.517.518v1.155c0 .286.232.518.517.518a.518.518 0 00.518-.518v-1.155a.518.518 0 00-.518-.518zm-3.495-1.833a.518.518 0 00-.517.518v2.988c0 .286.231.518.517.518a.518.518 0 00.517-.518v-2.988a.518.518 0 00-.517-.518zm-1.764 0a.518.518 0 00-.518.518v2.988c0 .286.232.518.518.518a.518.518 0 00.517-.518v-2.988a.518.518 0 00-.517-.518zm-1.764 0a.518.518 0 00-.517.518v2.988c0 .286.231.518.517.518a.518.518 0 00.518-.518v-2.988a.518.518 0 00-.518-.518zm-1.763 0a.518.518 0 00-.518.518v2.988c0 .286.232.518.518.518a.518.518 0 00.517-.518v-2.988a.518.518 0 00-.517-.518zm-1.764 0a.518.518 0 00-.517.518v2.988c0 .286.231.518.517.518a.518.518 0 00.518-.518v-2.988a.518.518 0 00-.518-.518zm-1.764 0a.518.518 0 00-.517.518v2.988c0 .286.231.518.517.518a.518.518 0 00.518-.518v-2.988a.518.518 0 00-.518-.518zM10.1 2.073c-.263-.043-.529-.043-.793 0L6.33 2.94l1.88 1.361 1.224-.72v7.264l-1.247.733-1.88-1.085-2.497 1.442 1.944 1.123 2.498 1.442 2.498-1.442 1.943-1.123-2.497-1.442-1.88 1.085-1.247-.733V3.58l1.224.72 1.88-1.361-2.977-.867z"/>
-                  </svg>
-                </div>
-                <span class="font-semibold">CCNA</span>
-                <p class="mt-2 text-sm leading-6 text-gray-300" data-i18n="home.focus_ccna_desc">Computer<br> Networks</p>
-              </div>
-            </div>
+<!-- HOME: Skills -->
+<section class="bg-[var(--bg-color)]">
+  <div class="container mx-auto px-4 py-12">
 
-            <div class="mt-6">
-              <div class="mb-4 flex items-center gap-2 text-lg ">
-                <i class="fa-solid fa-code"></i>
-                <span data-i18n="home.section_skills">Skills</span>
-              </div>
-              <div class="flex flex-col gap-4 lg:flex-row">
-                <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
-                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57]" data-i18n="home.skills_core">Core Skills</h3>
-                  <div class="space-y-1 text-white">
-                    <div class="px-2 py-1">HTML5 / CSS3</div>
-                    <div class="px-2 py-1">Tailwind CSS</div>
-                    <div class="px-2 py-1">JavaScript</div>
-                    <div class="px-2 py-1">Git & GitHub</div>
-                    <div class="px-2 py-1">Python</div>
-                  </div>
-                </div>
-                <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
-                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57]" data-i18n="home.skills_working">Working Knowledge</h3>
-                  <div class="space-y-1 text-white">
-                    <div class="px-2 py-1">Node.js / Express.js</div>
-                    <div class="px-2 py-1">MySQL</div>
-                    <div class="px-2 py-1" data-i18n="home.skill_linux_server">Linux / Server Management</div>
-                    <div class="px-2 py-1" data-i18n="home.skill_wordpress">WordPress (Headless CMS)</div>
-                  </div>
-                </div>
-                <div class="flex-1 rounded-xl border border-white/10 bg-white/5 p-3">
-                  <h3 class="mb-2 text-lg font-semibold text-[#FF6B57]" data-i18n="home.skills_exploring">Currently Exploring</h3>
-                  <div class="space-y-1 text-white">
-                    <div class="px-2 py-1" data-i18n="home.skill_laravel_fs">Laravel (Full-Stack)</div>
-                    <div class="px-2 py-1" data-i18n="home.skill_ai">AI-Assisted Development</div>
-                    <div class="px-2 py-1" data-i18n="home.skill_ccna">CCNA Networking</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="rounded-2xl border border-white/20 bg-[var(--bg-color)] p-5 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-6 scroll-fade">
+
+      <div class="text-white">
+
+        <!-- Section Title -->
+        <span class="mb-6 flex items-center gap-2 text-lg text-[#FF6B57]">
+          <i class="fa-solid fa-code"></i>
+          <span data-i18n="home.section_skills">Skills</span>
+        </span>
+
+        <!-- Dashboard Layout -->
+        <div class="grid grid-cols-1 gap-6 xl:grid-cols-12">
+
+          <!-- LEFT COLUMN -->
+          <div class="flex flex-col gap-6 xl:col-span-6">
+
+            <!-- Current Focus -->
+            <!-- We'll add this next -->
+             <!-- ================= Current Focus ================= -->
+<div class="rounded-xl border border-white/20 bg-[var(--bg-color)]/70 backdrop-blur-sm p-4 flex-1 flex flex-col">
+
+  <h3 class="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-300">
+    <i class="fa-solid fa-bullseye text-[#FF6B57]"></i>
+    <span data-i18n="home.section_focus">Current Focus</span>
+  </h3>
+
+  <div class="grid grid-cols-2 gap-2 xl:grid-cols-4 flex-1">
+
+    <!-- Laravel -->
+    <div class="group rounded-lg border border-white/10 bg-[var(--bg-color)]/50 p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B57]/40 hover:bg-[var(--bg-color)]/70">
+
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+        class="mb-2 h-7 w-7"
+        alt="Laravel">
+
+      <h4 class="text-xs font-semibold text-white">
+        Laravel
+      </h4>
+
+      <p
+        class="mt-1 text-[10px] leading-4 text-gray-300"
+        data-i18n="home.focus_laravel_desc">
+        Full-Stack Web Development
+      </p>
+
+    </div>
+
+    <!-- Linux -->
+    <div class="group rounded-lg border border-white/10 bg-[var(--bg-color)]/50 p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B57]/40 hover:bg-[var(--bg-color)]/70">
+
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+        class="mb-2 h-7 w-7"
+        alt="Linux">
+
+      <h4 class="text-xs font-semibold text-white">
+        Linux
+      </h4>
+
+      <p
+        class="mt-1 text-[10px] leading-4 text-gray-300"
+        data-i18n="home.focus_linux_desc">
+        Server Management
+      </p>
+
+    </div>
+
+    <!-- MySQL -->
+    <div class="group rounded-lg border border-white/10 bg-[var(--bg-color)]/50 p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B57]/40 hover:bg-[var(--bg-color)]/70">
+
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+        class="mb-2 h-7 w-7"
+        alt="MySQL">
+
+      <h4 class="text-xs font-semibold text-white">
+        MySQL
+      </h4>
+
+      <p
+        class="mt-1 text-[10px] leading-4 text-gray-300"
+        data-i18n="home.focus_mysql_desc">
+        Database Design
+      </p>
+
+    </div>
+
+    <!-- CCNA -->
+    <div class="group rounded-lg border border-white/10 bg-[var(--bg-color)]/50 p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF6B57]/40 hover:bg-[var(--bg-color)]/70">
+
+      <div class="mb-2 flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-500/15">
+        <i class="fa-solid fa-network-wired text-xs text-cyan-400"></i>
+      </div>
+
+      <h4 class="text-xs font-semibold text-white">
+        CCNA
+      </h4>
+
+      <p
+        class="mt-1 text-[10px] leading-4 text-gray-300"
+        data-i18n="home.focus_ccna_desc">
+        Networking
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+            <!-- Tech Stack -->
+            <!-- We'll add this after Current Focus -->
+             <!-- ================= Tech Stack ================= -->
+<div class="rounded-xl border border-white/20 bg-[var(--bg-color)]/70 backdrop-blur-sm p-4 flex-1 flex flex-col">
+
+  <h3 class="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-300">
+    <i class="fa-solid fa-layer-group text-[#FF6B57]"></i>
+    <span data-i18n="home.section_tech_stack">Tech Stack</span>
+  </h3>
+
+  <div class="grid grid-cols-1 gap-3 lg:grid-cols-3 flex-1">
+
+    <!-- Core Skills -->
+    <div class="rounded-lg border border-white/10 bg-[var(--bg-color)]/50 p-3 transition-all duration-300 hover:border-[#FF6B57]/40 hover:bg-[var(--bg-color)]/70 flex flex-col">
+
+      <div class="mb-3 flex items-center gap-2">
+        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FF6B57]/10">
+          <i class="fa-solid fa-code text-[#FF6B57]"></i>
         </div>
 
-        <div class="flex-1 rounded-2xl border border-white/20 bg-[var(--bg-color)] p-3 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-4 overflow-y-auto max-h-[650px] scroll-fade">
-          <div class="text-white">
-            <span class="mb-4 flex items-center gap-2 text-base text-[#FF6B57]">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <span data-i18n="home.section_education">Education &amp; Experience</span>
+        <div>
+          <h4 class="text-sm font-semibold text-white" data-i18n="home.skills_core">
+            Core Skills
+          </h4>
+
+          <p class="text-[10px] text-gray-300"
+             data-i18n="home.skills_core_desc">
+            Daily technologies
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-sm flex-1">
+
+        <div class="flex items-center gap-2">
+          <i class="fa-brands fa-html5 w-5 text-orange-400"></i>
+          <span class="text-gray-300">HTML5 / CSS3</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <i class="fa-brands fa-css3-alt w-5 text-sky-400"></i>
+          <span class="text-gray-300">Tailwind CSS</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <i class="fa-brands fa-js w-5 text-yellow-300"></i>
+          <span class="text-gray-300">JavaScript</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <i class="fa-brands fa-git-alt w-5 text-red-400"></i>
+          <span class="text-gray-300">Git & GitHub</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <i class="fa-brands fa-python w-5 text-blue-400"></i>
+          <span class="text-gray-300">Python</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Working Knowledge -->
+    <div class="rounded-lg border border-white/10 bg-[var(--bg-color)]/50 p-3 transition-all duration-300 hover:border-[#FF6B57]/40 hover:bg-[var(--bg-color)]/70 flex flex-col">
+
+      <div class="mb-3 flex items-center gap-2" >
+        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FF6B57]/10">
+          <i class="fa-solid fa-laptop-code text-[#FF6B57]"></i>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-white"
+              data-i18n="home.skills_working">
+            Working Knowledge
+          </h4>
+
+          <p class="text-[10px] text-gray-300"
+             data-i18n="home.skills_working_desc">
+            Comfortable with
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-sm flex-1">
+
+        <div class="flex items-center gap-2">
+          <i class="fa-brands fa-node-js w-5 text-green-400"></i>
+          <span class="text-gray-300">Node.js / Express.js</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+               class="h-5 w-5">
+          <span class="text-gray-300">MySQL</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <i class="fa-brands fa-wordpress w-5 text-blue-400"></i>
+          <span class="text-gray-300" data-i18n="home.skill_wordpress">
+            Headless WordPress
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Exploring -->
+    <div class="rounded-lg border border-white/10 bg-[var(--bg-color)]/50 p-3 transition-all duration-300 hover:border-[#FF6B57]/40 hover:bg-[var(--bg-color)]/70 flex flex-col">
+
+      <div class="mb-3 flex items-center gap-2">
+        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FF6B57]/10">
+          <i class="fa-solid fa-compass text-[#FF6B57]"></i>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-white"
+              data-i18n="home.skills_exploring">
+            Currently Exploring
+          </h4>
+
+          <p class="text-[10px] text-gray-300"
+             data-i18n="home.skills_exploring_desc">
+            Learning next
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-sm flex-1">
+
+        <div class="flex items-center gap-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+               class="h-5 w-5">
+          <span class="text-gray-300" data-i18n="home.skill_laravel_fs">
+            Laravel
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-robot w-5 text-violet-400"></i>
+          <span class="text-gray-300" data-i18n="home.skill_ai">
+            AI Development
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-network-wired w-5 text-cyan-400"></i>
+          <span class="text-gray-300" data-i18n="home.skill_ccna">
+            CCNA Networking
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="xl:col-span-6">
+
+            <!-- Learning Journey -->
+            <!-- We'll add this last -->
+             <!-- ================= Learning Journey ================= -->
+<div class="rounded-xl border border-white/20 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 h-full flex flex-col">
+
+  <h3 class="mb-5 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-300">
+    <i class="fa-solid fa-book-open-reader text-[#FF6B57]"></i>
+    <span data-i18n="home.section_learning">Learning</span>
+    <span data-i18n="home.section_journey">Journey</span>
+  </h3>
+
+  <div class="space-y-4 flex-1 overflow-y-auto">
+
+    <!-- Odin -->
+    <div class="rounded-xl border border-white/10 bg-[var(--bg-color)]/50 p-4 transition-all duration-300 hover:border-green-500/40 hover:bg-[var(--bg-color)]/70">
+
+      <div class="flex flex-col gap-4 md:flex-row md:items-start">
+
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-500/10">
+          <i class="fa-solid fa-code text-xl text-green-400"></i>
+        </div>
+
+        <div class="flex-1">
+
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+
+            <h4 class="font-semibold text-white">
+              The Odin Project
+            </h4>
+
+            <span
+              class="rounded-full bg-green-500/15 px-3 py-1 text-[10px] text-green-400"
+              data-i18n="home.status_completed">
+              Completed
             </span>
+
+          </div>
+
+          <p
+            class="mt-2 text-sm leading-6 text-gray-300"
+            data-i18n="home.odin_desc">
+            HTML, CSS, JavaScript, Git & GitHub, Command Line, Flexbox, DOM Manipulation, Responsive Design and Problem Solving.
+          </p>
+
+          <div class="mt-3 h-2 overflow-hidden rounded-full bg-white/10">
+            <div class="h-full w-full rounded-full bg-green-500"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Laravel -->
+    <div class="rounded-xl border border-white/10 bg-[var(--bg-color)]/50 p-4 transition-all duration-300 hover:border-red-500/40 hover:bg-[var(--bg-color)]/70">
+
+      <div class="flex flex-col gap-4 md:flex-row md:items-start">
+
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-500/10">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+               class="h-8 w-8"
+               alt="Laravel">
+        </div>
+
+        <div class="flex-1">
+
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+
+            <h4 class="font-semibold text-white">
+              Full-Stack with Laravel
+            </h4>
+
+            <span
+              class="rounded-full bg-red-500/15 px-3 py-1 text-[10px] text-red-400"
+              data-i18n="home.status_inprogress">
+              In Progress
+            </span>
+
+          </div>
+
+          <p
+            class="mt-2 text-sm leading-6 text-gray-300"
+            data-i18n="home.laravel_desc">
+            Learning PHP, Blade Templates, Authentication, MySQL, MVC Architecture and REST APIs.
+          </p>
+
+          <div class="mt-3 h-2 overflow-hidden rounded-full bg-white/10">
+            <div class="h-full w-2/5 rounded-full bg-[#FF6B57]"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CCNA -->
+    <div class="rounded-xl border border-white/10 bg-[var(--bg-color)]/50 p-4 transition-all duration-300 hover:border-cyan-500/40 hover:bg-[var(--bg-color)]/70">
+
+      <div class="flex flex-col gap-4 md:flex-row md:items-start">
+
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
+          <i class="fa-solid fa-network-wired text-xl text-cyan-400"></i>
+        </div>
+
+        <div class="flex-1">
+
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+
+            <h4 class="font-semibold text-white">
+              CCNA
+            </h4>
+
+            <span
+              class="rounded-full bg-red-500/15 px-3 py-1 text-[10px] text-red-400"
+              data-i18n="home.status_inprogress">
+              In Progress
+            </span>
+
+          </div>
+
+          <p
+            class="mt-2 text-sm leading-6 text-gray-300"
+            data-i18n="home.ccna_desc">
+            Network Fundamentals, TCP/IP, Ethernet, IPv4, Routing and Switching.
+          </p>
+
+          <div class="mt-3 h-2 overflow-hidden rounded-full bg-white/10">
+            <div class="h-full w-1/3 rounded-full bg-cyan-400"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CS50 -->
+    <div class="rounded-xl border border-white/10 bg-[var(--bg-color)]/50 p-4 transition-all duration-300 hover:border-yellow-500/40 hover:bg-[var(--bg-color)]/70">
+
+      <div class="flex flex-col gap-4 md:flex-row md:items-start">
+
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-yellow-500/10">
+          <i class="fa-solid fa-graduation-cap text-xl text-yellow-400"></i>
+        </div>
+
+        <div class="flex-1">
+
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+
+            <h4 class="font-semibold text-white">
+              CS50 Web Programming
+            </h4>
+
+            <span
+              class="rounded-full bg-yellow-500/15 px-3 py-1 text-[10px] text-yellow-400"
+              data-i18n="home.status_paused">
+              Paused
+            </span>
+
+          </div>
+
+          <p
+            class="mt-2 text-sm leading-6 text-gray-300"
+            data-i18n="home.cs50_desc">
+            HTML,CSS,python, Django, SQL and modern web development concepts.
+          </p>
+
+          <div class="mt-3 h-2 overflow-hidden rounded-full bg-white/10">
+            <div class="h-full w-3/4 rounded-full bg-yellow-400"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- HOME: Timeline -->
+    <section class="bg-[var(--bg-color)]">
+      <div class="container mx-auto px-4 py-12">
+        <div class="rounded-2xl border border-white/20 bg-[var(--bg-color)] p-5 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-6 scroll-fade">
+          <div class="text-white">
+            <span class="mb-6 flex items-center gap-2 text-lg text-[#FF6B57]">
+              <i class="fa-solid fa-stream"></i>
+              <span data-i18n="home.section_timeline">Timeline</span>
+            </span>
+
+            <!-- Vertical Timeline -->
             <div class="relative ml-3 pl-6 space-y-7">
               <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-rose-500 via-fuchsia-500 to-violet-500 shadow-[0_0_8px_rgba(217,70,239,.6),0_0_16px_rgba(217,70,239,.3)]"></div>
 
@@ -246,153 +650,24 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- HOME: Learning Journey -->
-    <section class="bg-[var(--bg-color)] text-white p-4 sm:p-8">
-      <div class="container mx-auto flex flex-col border border-white/20 p-4 sm:p-6 rounded-xl shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
-        <div class="mb-4">
-          <span class="text-xl font-bold ml-2 sm:ml-5"><i class="fa-solid fa-book-open-reader"></i> <span data-i18n="home.section_learning">Learning</span>
-            <span data-i18n="home.section_journey">Journey</span></span>
-        </div>
-        <div class="flex flex-col gap-4 md:flex-row">
-          <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
-            <h3 class="text-[var(--primary)] text-sm sm:text-base">The Odin Project-Foundations</h3>
-            <span class="text-green-500 block mb-2 text-sm" data-i18n="home.status_completed">(completed)</span>
-            <p class="text-sm" data-i18n="home.odin_desc">
-              HTML CSS JavaScript Fundamentals Git & GitHub<br>
-              Command Line Flexbox DOM Manipulation Problem Solving Responsive Design
-            </p>
-            <p class="mt-2 text-sm" data-i18n="home.odin_projects">Projects: Landing Page, Calculator, Rock Paper Scissors, Etch-a-Sketch, Recipes</p>
-          </div>
-          <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
-            <h3 class="text-[var(--primary)] text-sm sm:text-base">CS50's Web Programming</h3>
-            <span class="text-yellow-500 block mb-2 text-sm" data-i18n="home.status_paused">(Paused)</span>
-            <p class="text-sm" data-i18n="home.cs50_desc">
-              Completed assignments through the Python/Flask track and studied Django. Paused for now.
-            </p>
-          </div>
-          <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
-            <h3 class="text-[var(--primary)] text-sm sm:text-base">Full-Stack with Laravel</h3>
-            <span class="text-red-500 block mb-2 text-sm" data-i18n="home.status_inprogress">(In progress)</span>
-            <p class="text-sm" data-i18n="home.laravel_desc">
-              Learning full-stack web development with Laravel — PHP, Blade templates, MySQL, authentication, and REST APIs.
-            </p>
-          </div>
-          <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
-            <h3 class="text-[var(--primary)] text-sm sm:text-base">CCNA</h3>
-            <span class="text-red-500 block mb-2 text-sm" data-i18n="home.status_inprogress">(In progress)</span>
-            <p class="text-sm" data-i18n="home.ccna_desc">
-              Network Fundamentals Ethernet OSI Model TCP/IP
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOME: Timeline -->
-    <section class="bg-[var(--bg-color)] text-white p-4 sm:p-8">
-      <div class="container mx-auto border border-white/20 rounded-xl p-4 sm:p-6 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
-        <h2 class="flex items-center gap-2 text-white text-xl font-semibold mb-6 sm:mb-10">
-          <span data-i18n="home.section_timeline">📈 Timeline</span>
-        </h2>
-        <div class="overflow-x-auto">
-          <div class="relative min-w-[700px]">
-            <div class="absolute left-0 right-0 top-7 h-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-sky-500"></div>
-            <div class="grid grid-cols-9 gap-4 sm:gap-6 relative z-10">
-              <div class="text-center">
-                <a href="#certificates">
-                  <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-rose-400 bg-[#090f1d] text-rose-400 shadow-[0_0_18px_rgba(251,113,133,.55)] hover:scale-110 transition-transform duration-300 cursor-pointer">
-                    <i class="fa-solid fa-graduation-cap text-sm sm:text-base"></i>
+              <!-- Milestones (compact) -->
+              <div class="relative">
+                <div class="absolute -left-[33px] top-1 h-5 w-5 rounded-full border-2 border-sky-400 bg-[#090f1d] shadow-[0_0_12px_rgba(56,189,248,.55)]"></div>
+                <div>
+                  <span class="text-xs text-gray-400">Ongoing</span>
+                  <div class="flex items-center gap-2 mt-0.5"><i class="fa-solid fa-laptop-code text-sky-400 text-sm"></i><h2 class="font-semibold text-white">Milestones & Learning</h2></div>
+                  <div class="mt-2 flex flex-wrap gap-2">
+                    <span class="inline-flex items-center gap-1 rounded-full bg-white/10 border border-white/10 px-2.5 py-1 text-xs text-white"><i class="fa-solid fa-brain text-indigo-400"></i> Python & ML</span>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-white/10 border border-white/10 px-2.5 py-1 text-xs text-white"><i class="fa-brands fa-github text-gray-300"></i> Odin Project <span class="text-green-400">&#10003;</span></span>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-white/10 border border-white/10 px-2.5 py-1 text-xs text-white"><i class="fa-solid fa-book-open text-sky-400"></i> CS50 Web <span class="text-gray-400">(In Progress)</span></span>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-white/10 border border-white/10 px-2.5 py-1 text-xs text-white"><i class="fa-solid fa-code text-cyan-400"></i> Laravel <span class="text-gray-400">(Current)</span></span>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-white/10 border border-white/10 px-2.5 py-1 text-xs text-white"><i class="fa-solid fa-network-wired text-blue-500"></i> CCNA <span class="text-gray-400">(Current)</span></span>
                   </div>
-                  <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                    <span data-i18n="home.tl_elec_1">Electrical</span><br>
-                    <span data-i18n="home.tl_elec_2">Engineering</span><br>
-                    <span data-i18n="home.tl_elec_3">Diploma</span>
-                  </p>
-                </a>
-              </div>
-              <div class="text-center">
-                <a href="#certificates">
-                  <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-pink-400 bg-[#090f1d] text-pink-400 shadow-[0_0_18px_rgba(236,72,153,.55)] hover:scale-110 transition-transform duration-300 cursor-pointer">
-                    <i class="fa-solid fa-desktop text-sm sm:text-base"></i>
-                  </div>
-                  <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                    <span data-i18n="home.tl_it">IT Support</span><br>
-                    <span class="text-gray-400">@ Vianet</span>
-                  </p>
-                </a>
-              </div>
-              <div class="text-center">
-                <a href="#certificates">
-                  <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-fuchsia-400 bg-[#090f1d] text-fuchsia-400 shadow-[0_0_18px_rgba(217,70,239,.55)] hover:scale-110 transition-transform duration-300 cursor-pointer">
-                    <i class="fa-solid fa-users text-sm sm:text-base"></i>
-                  </div>
-                  <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">CloudFactory</p>
-                </a>
-              </div>
-              <div class="text-center">
-                <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-violet-400 bg-[#090f1d] text-violet-400 shadow-[0_0_18px_rgba(167,139,250,.55)]">
-                  <i class="fa-solid fa-laptop-code text-sm sm:text-base"></i>
                 </div>
-                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                  <span data-i18n="home.tl_ce_1">Computer</span><br>
-                  <span data-i18n="home.tl_ce_2">Engineering</span><br>
-                  <span data-i18n="home.tl_ce_3">Student</span>
-                </p>
-              </div>
-              <div class="text-center">
-                <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-indigo-400 bg-[#090f1d] text-indigo-400 shadow-[0_0_18px_rgba(129,140,248,.55)]">
-                  <i class="fa-solid fa-brain text-sm sm:text-base"></i>
-                </div>
-                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                  <span data-i18n="home.tl_python_1">Python &</span><br>
-                  <span data-i18n="home.tl_python_2">Machine</span><br>
-                  <span data-i18n="home.tl_python_3">Learning</span>
-                </p>
-              </div>
-              <div class="text-center">
-                <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-blue-400 bg-[#090f1d] text-blue-400 shadow-[0_0_18px_rgba(96,165,250,.55)]">
-                  <i class="fa-brands fa-github text-sm sm:text-base"></i>
-                </div>
-                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                  <span data-i18n="home.tl_odin_1">The Odin</span><br>
-                  <span data-i18n="home.tl_odin_2">Project</span><br>
-                  <span class="text-green-400">&#10003;</span>
-                </p>
-              </div>
-              <div class="text-center">
-                <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-sky-400 bg-[#090f1d] text-sky-400 shadow-[0_0_18px_rgba(56,189,248,.55)]">
-                  <i class="fa-solid fa-book-open text-sm sm:text-base"></i>
-                </div>
-                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                  CS50 Web<br>
-                  <span class="text-gray-400" data-i18n="home.status_inprogress_paren">(In Progress)</span>
-                </p>
-              </div>
-              <div class="text-center">
-                <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#090f1d] text-cyan-400 shadow-[0_0_18px_rgba(34,211,238,.55)]">
-                  <i class="fa-solid fa-code text-sm sm:text-base"></i>
-                </div>
-                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                  Laravel<br>
-                  <span class="text-gray-400" data-i18n="home.status_current">(Current)</span>
-                </p>
-              </div>
-              <div class="text-center">
-                <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-blue-500 bg-[#090f1d] text-blue-500 shadow-[0_0_18px_rgba(59,130,246,.55)]">
-                  <i class="fa-solid fa-network-wired text-sm sm:text-base"></i>
-                </div>
-                <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                  CCNA<br>
-                  <span class="text-gray-400" data-i18n="home.status_current">(Current)</span>
-                </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -416,20 +691,21 @@
           </p>
         </div>
 
-        <div class="overflow-hidden rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 mb-6 scroll-fade">
-          <div class="grid gap-0 md:grid-cols-[320px_1fr]">
-            <img src="images/koreasathi-preview.png" alt="KoreaSathi Preview" loading="lazy" class="h-64 w-full object-cover md:h-full">
-            <div class="p-6">
+        <div class="overflow-hidden rounded-2xl border-2 border-[#FF6B57]/30 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_30px_rgba(255,107,87,0.15)] hover:shadow-[0_8px_40px_rgba(255,107,87,0.25)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.01] mb-6 scroll-fade">
+          <div class="grid gap-0 md:grid-cols-[380px_1fr]">
+            <img src="images/koreasathi-preview.png" alt="KoreaSathi Preview" loading="lazy" class="h-72 w-full object-cover md:h-full md:min-h-[420px]">
+            <div class="p-6 sm:p-8">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                  <i class="fa-solid fa-earth-asia text-[#FF6B57] text-xl"></i>
-                  <h3 class="text-2xl font-bold">KoreaSathi</h3>
+                  <i class="fa-solid fa-earth-asia text-[#FF6B57] text-2xl"></i>
+                  <h3 class="text-3xl font-bold">KoreaSathi</h3>
                 </div>
                 <span class="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-400">
                   <i class="fa-solid fa-circle text-[8px] mr-1"></i><span data-i18n="projects.status_active">Active</span>
                 </span>
               </div>
-              <p class="mt-4 text-gray-300 leading-7" data-i18n="projects.koreasathi_desc">
+              <p class="mt-4 text-sm text-[#FF6B57]/80 italic leading-relaxed">"The resource I wish existed when I was figuring this out myself."</p>
+              <p class="mt-3 text-gray-300 leading-7" data-i18n="projects.koreasathi_desc">
                 Nepal Korea Student Hub &mdash; A free open-source platform centralizing trusted information for Nepali students
                 in South Korea. Built with headless WordPress CMS for content management, Tailwind CSS for styling, and
                 deployed on Vercel. Covers visas, jobs, banking, immigration, emergencies, and more.
@@ -455,7 +731,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 transition-all duration-300 hover:border-white/25 hover:-translate-y-1 scroll-fade">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-3">
                 <i class="fa-solid fa-solar-panel text-[#FF6B57] text-xl"></i>
@@ -472,7 +748,7 @@
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 transition-all duration-300 hover:border-white/25 hover:-translate-y-1 scroll-fade">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-3">
                 <i class="fa-solid fa-users-gear text-[#FF6B57] text-xl"></i>
@@ -491,7 +767,7 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 transition-all duration-300 hover:border-white/25 hover:-translate-y-1 scroll-fade">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-code text-[#FF6B57] text-sm"></i>
@@ -509,7 +785,7 @@
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 transition-all duration-300 hover:border-white/25 hover:-translate-y-1 scroll-fade">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-network-wired text-[#FF6B57] text-sm"></i>
@@ -531,7 +807,7 @@
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 transition-all duration-300 hover:border-white/25 hover:-translate-y-1 scroll-fade">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-graduation-cap text-[#FF6B57] text-sm"></i>
@@ -549,7 +825,7 @@
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 transition-all duration-300 hover:border-white/25 hover:-translate-y-1 scroll-fade">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-brain text-[#FF6B57] text-sm"></i>
@@ -569,7 +845,7 @@
           </div>
         </div>
 
-        <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/50 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_20px_#FF6B57]/20 scroll-fade">
+        <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/50 backdrop-blur-sm p-6 transition-all duration-300 hover:border-white/25 scroll-fade">
           <div class="flex items-center gap-2 mb-1">
             <i class="fa-solid fa-laptop-code text-[#FF6B57]"></i>
             <h4 class="text-base font-bold text-white" data-i18n="projects.odin_title">The Odin Project &mdash; Foundations</h4>
@@ -578,27 +854,27 @@
             Core projects completed during The Odin Project foundations course.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            <a href="https://github.com/Xanjip32/Calculator" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/Calculator" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-white/25 transition">
               <i class="fa-solid fa-calculator text-[#FF6B57] mb-1 block text-lg"></i>
               <span class="text-xs text-gray-300" data-i18n="projects.odin_calc">Calculator</span>
             </a>
-            <a href="https://github.com/Xanjip32/Landing_page" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/Landing_page" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-white/25 transition">
               <i class="fa-solid fa-window-maximize text-[#FF6B57] mb-1 block text-lg"></i>
               <span class="text-xs text-gray-300" data-i18n="projects.odin_landing">Landing Page</span>
             </a>
-            <a href="https://github.com/Xanjip32/etch-a-sketch" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/etch-a-sketch" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-white/25 transition">
               <i class="fa-solid fa-pen-nib text-[#FF6B57] mb-1 block text-lg"></i>
               <span class="text-xs text-gray-300" data-i18n="projects.odin_sketch">Etch-a-Sketch</span>
             </a>
-            <a href="https://github.com/Xanjip32/rock_sissors_paper-" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/rock_sissors_paper-" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-white/25 transition">
               <i class="fa-solid fa-hand-scissors text-[#FF6B57] mb-1 block text-lg"></i>
               <span class="text-xs text-gray-300" data-i18n="projects.odin_rps">Rock Paper Scissors</span>
             </a>
-            <a href="https://github.com/Xanjip32/tic_tac_toe" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/tic_tac_toe" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-white/25 transition">
               <i class="fa-solid fa-border-none text-[#FF6B57] mb-1 block text-lg"></i>
               <span class="text-xs text-gray-300" data-i18n="projects.odin_tic">Tic Tac Toe</span>
             </a>
-            <a href="https://github.com/Xanjip32/odin-recipes" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/odin-recipes" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-white/25 transition">
               <i class="fa-solid fa-utensils text-[#FF6B57] mb-1 block text-lg"></i>
               <span class="text-xs text-gray-300" data-i18n="projects.odin_recipes">Odin Recipes</span>
             </a>
@@ -618,7 +894,7 @@
             <!-- Left: Photo -->
             <div class="flex justify-center lg:justify-start lg:sticky lg:top-28 lg:self-start">
               <div class="relative">
-                <img src="images/bg_v.png" alt="Sanjeev Shrestha" loading="lazy" class="w-48 h-48 lg:w-[280px] lg:h-[280px] object-cover rounded-2xl border-2 border-[#FF6B57]/40 shadow-[0_0_30px_rgba(255,107,87,.25)]">
+                <img src="images/bg_v.png" alt="Sanjeev Shrestha" loading="lazy" class="w-48 h-48 lg:w-[280px] lg:h-[280px] object-cover rounded-2xl border-2 border-[#FF6B57]/40">
               </div>
             </div>
 
@@ -710,7 +986,7 @@
           <div class="flex flex-col gap-8 lg:flex-row scroll-fade">
             <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
               <div class="flex items-center gap-4 mb-6">
-                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-rose-400 bg-[#090f1d] text-rose-400 shadow-[0_0_18px_rgba(251,113,133,.55)]">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-rose-400 bg-[#090f1d] text-rose-400">
                   <span class="text-2xl font-bold">&#127475;&#127473;</span>
                 </div>
                 <div>
@@ -746,7 +1022,7 @@
           <div class="flex flex-col gap-8 lg:flex-row scroll-fade">
             <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
               <div class="flex items-center gap-4 mb-6">
-                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-orange-400 bg-[#090f1d] text-orange-400 shadow-[0_0_18px_rgba(251,146,60,.55)]">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-orange-400 bg-[#090f1d] text-orange-400">
                   <span class="text-2xl font-bold">&#127470;&#127475;</span>
                 </div>
                 <div>
@@ -782,7 +1058,7 @@
           <div class="flex flex-col gap-8 lg:flex-row scroll-fade">
             <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
               <div class="flex items-center gap-4 mb-6">
-                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-sky-400 bg-[#090f1d] text-sky-400 shadow-[0_0_18px_rgba(56,189,248,.55)]">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-sky-400 bg-[#090f1d] text-sky-400">
                   <span class="text-2xl font-bold">&#127468;&#127463;</span>
                 </div>
                 <div>
@@ -818,7 +1094,7 @@
           <div class="flex flex-col gap-8 lg:flex-row scroll-fade">
             <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
               <div class="flex items-center gap-4 mb-6">
-                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-violet-400 bg-[#090f1d] text-violet-400 shadow-[0_0_18px_rgba(167,139,250,.55)]">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-violet-400 bg-[#090f1d] text-violet-400">
                   <span class="text-2xl font-bold">&#127472;&#127479;</span>
                 </div>
                 <div>
@@ -916,7 +1192,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm transition-all duration-300 hover:border-white/25 hover:-translate-y-1 overflow-hidden scroll-fade">
             <img src="images/cert/vianet.jpg" alt="Vianet Experience Letter" loading="lazy" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
@@ -933,7 +1209,7 @@
             </div>
           </div>
 
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm transition-all duration-300 hover:border-white/25 hover:-translate-y-1 overflow-hidden scroll-fade">
             <img src="images/cert/cloudfactory experience letter 01.jpg" alt="CloudFactory Experience Letter" loading="lazy" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
@@ -950,7 +1226,7 @@
             </div>
           </div>
 
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm transition-all duration-300 hover:border-white/25 hover:-translate-y-1 overflow-hidden scroll-fade">
             <img src="images/cert/industrail_electricain.jpg" alt="Industrial Electrician Certificate" loading="lazy" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
@@ -967,7 +1243,7 @@
             </div>
           </div>
 
-          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm transition-all duration-300 hover:border-white/25 hover:-translate-y-1 overflow-hidden scroll-fade">
             <img src="images/cert/cisco_packet_tracer.png" alt="Cisco Packet Tracer Certificate" loading="lazy" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
@@ -1058,11 +1334,11 @@
                 <h3 class="text-lg font-semibold text-[#FF6B57] mb-4"><i class="fa-solid fa-share-nodes mr-2"></i>Reach Me</h3>
                 <ul class="space-y-4">
                   <li>
-                    <a href="mailto:aaryassuu40@gmail.com" class="flex items-center gap-3 text-gray-300 hover:text-[#FF6B57] transition group">
+                    <a href="mailto:csjibu@gmail.com" class="flex items-center gap-3 text-gray-300 hover:text-[#FF6B57] transition group">
                       <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 group-hover:border-[#FF6B57]/40 group-hover:bg-[#FF6B57]/10 transition">
                         <i class="fa-solid fa-envelope text-sm"></i>
                       </span>
-                      <span class="text-sm">aaryassuu40@gmail.com</span>
+                      <span class="text-sm">csjibu@gmail.com</span>
                     </a>
                   </li>
                   <li>

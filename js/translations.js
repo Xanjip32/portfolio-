@@ -27,9 +27,7 @@ var translations = {
     /* — index.html — */
     home: {
       greeting:       "Hi, I'm",
-      title:          "Computer Engineering Student",
-      subtitle:       "Building Full-Stack Projects & Learning Networking",
-      desc:           "I build practical projects, document my learning, and continuously improve through hands-on practice.",
+      title:          "I went from fixing networks in Nepal to studying AI & Computer Engineering in Busan — and I'm building KoreaSathi so other Nepali students don't have to figure Korea out alone.",
       view_projects:  "View My projects",
       download_cv:    "Download CV",
 
@@ -38,15 +36,22 @@ var translations = {
       focus_linux_desc:   "System & Server Management",
       focus_mysql_desc:   "Database Management",
       focus_ccna_desc:    "Computer Networks",
+      focus_laravel_ext:  "Building full-stack apps with PHP, Blade templates, authentication, and REST APIs.",
+      focus_linux_ext:    "Managing servers, configuring services, and automating deployments.",
+      focus_mysql_ext:    "Designing relational databases with optimized queries and schemas.",
+      focus_ccna_ext:     "Studying network fundamentals, routing, switching, and TCP/IP protocols.",
 
-      section_skills: "Skills",
-      skills_core:    "Core Skills",
-      skills_working: "Working Knowledge",
-      skills_exploring:"Currently Exploring",
-      skill_linux_server: "Linux / Server Management",
-      skill_wordpress:    "WordPress (Headless CMS)",
-      skill_laravel_fs:   "Laravel (Full-Stack)",
-      skill_ai:           "AI-Assisted Development",
+      section_skills:     "Skills",
+      section_tech_stack: "Tech Stack",
+      skills_core:        "Core Skills",
+      skills_core_desc:   "Daily technologies",
+      skills_working:     "Working Knowledge",
+      skills_working_desc:"Comfortable with",
+      skills_exploring:   "Currently Exploring",
+      skills_exploring_desc: "Learning next",
+      skill_wordpress:    "Headless WordPress",
+      skill_laravel_fs:   "Laravel",
+      skill_ai:           "AI Development",
       skill_ccna:         "CCNA Networking",
 
       section_education: "Education & Experience",
@@ -243,9 +248,7 @@ var translations = {
 
     home: {
       greeting:       "안녕하세요, 저는",
-      title:          "컴퓨터공학과 학생",
-      subtitle:       "풀스택 프로젝트 개발 & 네트워킹 학습 중",
-      desc:           "실용적인 프로젝트를 만들고, 학습 과정을 기록하며, 실습을 통해 지속적으로 성장합니다.",
+      title:          "네팔에서 네트워크 수리부터 시작해 부산에서 AI 컴퓨터공학을 전공하고 있고, 다른 네팔 유학생들이 한국에서 혼자 헤매지 않도록 KoreaSathi를 만들고 있습니다.",
       view_projects:  "프로젝트 보기",
       download_cv:    "이력서 다운로드",
 
