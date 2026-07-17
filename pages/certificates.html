@@ -7,63 +7,32 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' https://cdn.jsdelivr.net data:; frame-src https://docs.google.com; connect-src 'self';">
-
   <title>Certificates | Sanjeev Shrestha</title>
-
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
     integrity="sha512-mQN7StCzVJl+rwieWt+a/sDM6mucFSI636sn2Jf8SHfBBdaL/rCT6hwE6a/zeDkxMWiVGYYuE4WkeMuRV6u5ng=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     integrity="sha512-6/05LVs+grXBAu5XzdiMFB64yCVF9FL70zWrTKcaTEKygrO7fC5LqfL/SKPpuRpimL2aE0D7Hw/NoED+7+7/VQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <link rel="stylesheet" href="/style.css">
-
 </head>
 
 <body class="bg-[var(--bg-color)] text-white">
 
-  <!-- ================= HEADER ================= -->
-
   <header>
-
     <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--bg-color)]/90 backdrop-blur">
-
       <div class="container mx-auto flex items-center justify-between px-4 py-4">
-
-        <a href="/index.html" class="text-xl font-bold tracking-wide">
-          Sanjeev Shrestha
-        </a>
-
+        <a href="/index.html" class="text-xl font-bold tracking-wide">Sanjeev Shrestha</a>
         <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
-
-          <li>
-            <a href="/index.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_home">Home</a>
-          </li>
-
-          <li>
-            <a href="/pages/about.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_about">About</a>
-          </li>
-
-          <li>
-            <a href="/pages/project.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_projects">Projects</a>
-          </li>
-
-          <li>
-            <a href="/pages/certificates.html" class="text-[#FF6B57]" data-i18n="nav_certificates">Certificates</a>
-          </li>
-
-          <li>
-            <a href="/pages/contact.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_contact">Contact</a>
-          </li>
-
+          <li><a href="/index.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_home">Home</a></li>
+          <li><a href="/pages/about.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_about">About</a></li>
+          <li><a href="/pages/project.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="/pages/certificates.html" class="text-[#FF6B57]" data-i18n="nav_certificates">Certificates</a></li>
+          <li><a href="/pages/contact.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_contact">Contact</a></li>
         </ul>
-
         <button id="langToggle" type="button" onclick="toggleLang()" class="flex items-center gap-1.5 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
           <i class="fa-solid fa-globe"></i>
           <span id="langLabel">EN</span>
@@ -72,286 +41,154 @@
           data-drawer-show="drawer-navigation">
           <i class="fa-solid fa-bars text-lg"></i>
         </button>
-
       </div>
-
     </nav>
 
     <aside id="drawer-navigation"
       class="fixed left-0 top-0 z-50 h-screen w-80 -translate-x-full overflow-y-auto border-r border-white/10 bg-[#0B1320] p-5 transition-transform md:hidden">
-
       <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-        <h2 class="text-lg font-semibold">Menu</h2>
+        <h2 class="text-lg font-semibold" data-i18n="menu">Menu</h2>
         <button type="button" data-drawer-hide="drawer-navigation">
           <i class="fa-solid fa-xmark text-xl"></i>
         </button>
       </div>
-
       <ul class="space-y-2">
-
-        <li>
-          <a href="/index.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_home">Home</a>
-        </li>
-
-        <li>
-          <a href="/pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_about">About</a>
-        </li>
-
-        <li>
-          <a href="/pages/project.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_projects">Projects</a>
-        </li>
-
-        <li>
-          <a href="/pages/certificates.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav_certificates">Certificates</a>
-        </li>
-
-        <li>
-          <a href="/pages/contact.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_contact">Contact</a>
-        </li>
-
+        <li><a href="/index.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_home">Home</a></li>
+        <li><a href="/pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_about">About</a></li>
+        <li><a href="/pages/project.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="/pages/certificates.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav_certificates">Certificates</a></li>
+        <li><a href="/pages/contact.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_contact">Contact</a></li>
       </ul>
       <button onclick="toggleLang()" class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-3 text-sm font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
         <i class="fa-solid fa-globe"></i>
         <span data-i18n="lang_switch">Switch to 한국어</span>
       </button>
     </aside>
-
   </header>
 
-  <!-- ================= MAIN ================= -->
-
   <main>
-
-    <!-- ================= HERO ================= -->
-
     <section class="relative flex min-h-[45vh] items-center overflow-hidden bg-[var(--bg-color)] md:min-h-[50vh]">
-
-      <div class="absolute inset-0 mx-auto max-w-[1920px]
-                bg-cover bg-top bg-no-repeat
-                bg-[url('/images/bg_v.png')]
-                md:bg-[url('/images/bg_h.png')] md:bg-center">
-      </div>
-
+      <div class="absolute inset-0 mx-auto max-w-[1920px] bg-cover bg-top bg-no-repeat bg-[url('/images/bg_v.png')] md:bg-[url('/images/bg_h.png')] md:bg-center"></div>
       <div class="absolute inset-0 bg-slate-950/60"></div>
-
       <div class="relative z-10 container mx-auto px-4">
-
         <div class="max-w-3xl">
-
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
-
+          <span class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
             <i class="fa-solid fa-certificate"></i>
-
-            Experience
-
+            <span data-i18n="cert_badge">Experience</span>
           </span>
-
-          <h1 class="mt-6 text-5xl font-bold tracking-tight md:text-6xl">
-            Certificates
-          </h1>
-
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-gray-300">
-
+          <h1 class="mt-6 text-5xl font-bold tracking-tight md:text-6xl" data-i18n="cert_hero_title">Certificates</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-gray-300" data-i18n="cert_hero_desc">
             Professional experience letters and certifications earned throughout
             my career in IT support, field engineering, and electrical work.
-
           </p>
-
           <div class="mt-8 flex flex-wrap gap-4">
-
-            <a href="#certificates"
-              class="rounded-xl bg-[#FF6B57] px-6 py-3 font-medium transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B57]/40">
-
+            <a href="#certificates" class="rounded-xl bg-[#FF6B57] px-6 py-3 font-medium transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B57]/40">
               <span data-i18n="cert_view">View Certificates</span>
               <i class="fa-solid fa-arrow-down ml-2"></i>
-
             </a>
-
           </div>
-
         </div>
-
       </div>
-
-      <div class="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-b from-transparent to-[var(--bg-color)]">
-      </div>
-
+      <div class="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-b from-transparent to-[var(--bg-color)]"></div>
     </section>
 
-    <!-- ================= CERTIFICATES ================= -->
-
     <section id="certificates" class="bg-[var(--bg-color)] py-20">
-
       <div class="container mx-auto px-4">
-
         <div class="mb-14 text-center">
-
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
-
+          <span class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
             <i class="fa-solid fa-award"></i>
-
-            Portfolio
-
+            <span data-i18n="proj_portfolio">Portfolio</span>
           </span>
-
-          <h2 class="mt-5 text-4xl font-bold">
-            <span data-i18n="cert_section_title">Experience Letters</span>
-          </h2>
-          <p class="mx-auto mt-4 max-w-2xl text-gray-400 leading-7" data-i18n="cert_section_desc">Documents from my professional roles in Nepal — spanning IT support, field engineering, and electrical work.</p>
-
+          <h2 class="mt-5 text-4xl font-bold" data-i18n="cert_section_title">Experience Letters</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-gray-400 leading-7" data-i18n="cert_section_desc">
+            Documents from my professional roles in Nepal — spanning IT support,
+            field engineering, and electrical work.
+          </p>
         </div>
 
-        <!-- Certificate Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          <!-- Vianet - IT Support -->
-          <div id="vianet"
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-
-            <img src="/images/cert/vianet.jpg" alt="Vianet Experience Letter"
-              class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
-
+          <!-- Vianet -->
+          <div id="vianet" class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <img src="/images/cert/vianet.jpg" alt="Vianet Experience Letter" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
-
               <div class="flex items-center justify-between mb-3">
-
                 <div class="flex items-center gap-3">
                   <i class="fa-solid fa-desktop text-[#FF6B57] text-xl"></i>
-                  <h3 class="text-lg font-bold text-white">IT Support</h3>
+                  <h3 class="text-lg font-bold text-white" data-i18n="cert_vianet_title">IT Support</h3>
                 </div>
-
-                <span
-                  class="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-400 border border-pink-500/40">
-                  Vianet
-                </span>
-
+                <span class="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-400 border border-pink-500/40">Vianet</span>
               </div>
-
-              <p class="text-gray-300 text-sm leading-relaxed">
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="cert_vianet_desc">
                 Experience letter from my role as an IT Support Technician at Vianet —
                 network installation, troubleshooting, and customer support.
               </p>
-
             </div>
-
           </div>
 
           <!-- CloudFactory -->
-          <div id="cloudfactory"
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-
-            <img src="/images/cert/cloudfactory experience letter 01.jpg" alt="CloudFactory Experience Letter"
-              class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
-
+          <div id="cloudfactory" class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <img src="/images/cert/cloudfactory experience letter 01.jpg" alt="CloudFactory Experience Letter" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
-
               <div class="flex items-center justify-between mb-3">
-
                 <div class="flex items-center gap-3">
                   <i class="fa-solid fa-users text-[#FF6B57] text-xl"></i>
                   <h3 class="text-lg font-bold text-white">CloudFactory</h3>
                 </div>
-
-                <span
-                  class="rounded-full bg-fuchsia-500/20 px-3 py-1 text-xs text-fuchsia-400 border border-fuchsia-500/40">
-                  Experience Letter
-                </span>
-
+                <span class="rounded-full bg-fuchsia-500/20 px-3 py-1 text-xs text-fuchsia-400 border border-fuchsia-500/40" data-i18n="tag_exp_letter">Experience Letter</span>
               </div>
-
-              <p class="text-gray-300 text-sm leading-relaxed">
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="cert_cf_desc">
                 Experience letter from CloudFactory — data operations and
                 field support role.
               </p>
-
             </div>
-
           </div>
 
           <!-- Industrial Electrician -->
-          <div id="electrician"
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-
-            <img src="/images/cert/industrail_electricain.jpg" alt="Industrial Electrician Certificate"
-              class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
-
+          <div id="electrician" class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <img src="/images/cert/industrail_electricain.jpg" alt="Industrial Electrician Certificate" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
-
               <div class="flex items-center justify-between mb-3">
-
                 <div class="flex items-center gap-3">
                   <i class="fa-solid fa-bolt text-[#FF6B57] text-xl"></i>
-                  <h3 class="text-lg font-bold text-white">Industrial Electrician</h3>
+                  <h3 class="text-lg font-bold text-white" data-i18n="cert_elec_title">Industrial Electrician</h3>
                 </div>
-
-                <span
-                  class="rounded-full bg-rose-500/20 px-3 py-1 text-xs text-rose-400 border border-rose-500/40">
-                  Diploma
-                </span>
-
+                <span class="rounded-full bg-rose-500/20 px-3 py-1 text-xs text-rose-400 border border-rose-500/40" data-i18n="tag_diploma">Diploma</span>
               </div>
-
-              <p class="text-gray-300 text-sm leading-relaxed">
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="cert_elec_desc">
                 Electrical Engineering Diploma — foundational qualification in
                 electrical systems and industrial wiring.
               </p>
-
             </div>
-
           </div>
 
-          <!-- Cisco Packet Tracer -->
-          <div id="cisco"
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-
-            <img src="/images/cert/cisco_packet_tracer.png" alt="Cisco Packet Tracer Certificate"
-              class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
-
+          <!-- Cisco -->
+          <div id="cisco" class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <img src="/images/cert/cisco_packet_tracer.png" alt="Cisco Packet Tracer Certificate" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
-
               <div class="flex items-center justify-between mb-3">
-
                 <div class="flex items-center gap-3">
                   <i class="fa-solid fa-network-wired text-[#FF6B57] text-xl"></i>
-                  <h3 class="text-lg font-bold text-white">Cisco Packet Tracer</h3>
+                  <h3 class="text-lg font-bold text-white" data-i18n="cert_cisco_title">Cisco Packet Tracer</h3>
                 </div>
-
-                <span
-                  class="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-400 border border-sky-500/40">
-                  Certificate
-                </span>
-
+                <span class="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-400 border border-sky-500/40" data-i18n="tag_certificate">Certificate</span>
               </div>
-
-              <p class="text-gray-300 text-sm leading-relaxed">
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="cert_cisco_desc">
                 Getting Started with Cisco Packet Tracer — networking fundamentals
                 and packet simulation.
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
 
-  <!-- ================= LIGHTBOX ================= -->
-
-  <div id="lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onclick="closeLightbox()">
-    <button type="button" class="absolute top-4 right-4 text-white text-3xl hover:text-[#FF6B57] transition-colors z-50" onclick="closeLightbox()">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-    <img id="lightbox-img" src="" alt="Certificate" class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
-  </div>
-
+    <div id="lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onclick="closeLightbox()">
+      <button type="button" class="absolute top-4 right-4 text-white text-3xl hover:text-[#FF6B57] transition-colors z-50" onclick="closeLightbox()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Certificate" class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+    </div>
   </main>
-
-  <!-- ================= FOOTER ================= -->
 
   <footer class="border-t border-white/10 bg-[var(--bg-color)] p-8 text-center text-sm text-white">
     <span data-i18n="footer">&copy; 2026 Sanjeev Shrestha. All rights reserved.</span>
@@ -363,36 +200,52 @@
       document.getElementById('lightbox').classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox() {
       document.getElementById('lightbox').classList.add('hidden');
       document.body.style.overflow = '';
     }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightbox();
-    });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
   </script>
 
   <script>
     const translations = {
       en: {
+        menu: "Menu",
         nav_home: "Home", nav_about: "About", nav_projects: "Projects", nav_certificates: "Certificates", nav_contact: "Contact",
         lang_switch: "Switch to 한국어",
         cert_badge: "Experience", cert_hero_title: "Certificates",
         cert_hero_desc: "Professional experience letters and certifications earned throughout my career in IT support, field engineering, and electrical work.",
-        cert_view: "View Certificates", cert_section_title: "Experience Letters",
+        cert_view: "View Certificates", proj_portfolio: "Portfolio",
+        cert_section_title: "Experience Letters",
         cert_section_desc: "Documents from my professional roles in Nepal — spanning IT support, field engineering, and electrical work.",
+        cert_vianet_title: "IT Support",
+        cert_vianet_desc: "Experience letter from my role as an IT Support Technician at Vianet — network installation, troubleshooting, and customer support.",
+        tag_exp_letter: "Experience Letter",
+        cert_cf_desc: "Experience letter from CloudFactory — data operations and field support role.",
+        cert_elec_title: "Industrial Electrician", tag_diploma: "Diploma",
+        cert_elec_desc: "Electrical Engineering Diploma — foundational qualification in electrical systems and industrial wiring.",
+        cert_cisco_title: "Cisco Packet Tracer", tag_certificate: "Certificate",
+        cert_cisco_desc: "Getting Started with Cisco Packet Tracer — networking fundamentals and packet simulation.",
         footer: "\u00a9 2026 Sanjeev Shrestha. All rights reserved."
       },
       ko: {
+        menu: "\ub9e4\ub274",
         nav_home: "\ud648", nav_about: "\uc11c\ubcf4", nav_projects: "\ud504\ub85c\uc81d\ud2b8", nav_certificates: "\uc9c8\uc790", nav_contact: "\uc5f0\ub77d",
         lang_switch: "English\ub85c \uc804\ud658",
         cert_badge: "\uacbd\ub825", cert_hero_title: "\uc9c8\uc790",
         cert_hero_desc: "IT \uc9c0\uc6d0, \ud604\uc7a5 \uacf5\ud559, \uc804\uc790\uae30 \uacfc\uc815\uc5d0\uc11c \ubc1b\uc740 \uc9c1\uc5c5 \ubb38\uc11c\ub4fc\uacfc \uc790\uaca9\uc99d\uc1a1 \ub4f1\uc785\ub2c8\ub2e4.",
-        cert_view: "\uc9c8\uc790 \ubcf4\uae30", cert_section_title: "\uacbd\ub825 \ubb38\uc11c",
+        cert_view: "\uc9c8\uc790 \ubcf4\uae30", proj_portfolio: "\ud3ec\ud0c0\ud3f4",
+        cert_section_title: "\uacbd\ub825 \ubb38\uc11c",
         cert_section_desc: "\ub124\ud30c\ub974\uc5d0\uc11c \ud558\ub294 \uc9c1\uc5c5 \uacfc\uc815\uc5d0\uc11c \ubc1b\uc740 \ubb38\uc11c\ub4fc — IT \uc9c0\uc6d0, \ud604\uc7a5 \uacf5\ud559, \uc804\uc790\uae30 \uacfc\uc815.",
-        footer: "\u00a9 2026 Sanjeev Shrestha. \ubaa8\ub4e0 \uad8c\ud55c \ubcf4\uc720\ub41c \uc2dc\ubb38\ud569\ub2c8\ub2e4."
+        cert_vianet_title: "IT \uc9c0\uc6d0",
+        cert_vianet_desc: "Vianet\uc5d0\uc11c IT \uc9c0\uc6d0 \ud0a4\ud2b8\ub85c \uacf5\uc791\ud558\ub294 \ub3d9\uc548 \uacbd\ub825 \ubb38\uc11c — \ub124\ud2b8\uc6cc\ud0b9 \uc124\uc815, \ubb38\uc81c \ud574\uacb0, \uace0\uac1d \uc9c0\uc6d0.",
+        tag_exp_letter: "\uacbd\ub825 \ubb38\uc11c",
+        cert_cf_desc: "CloudFactory \uacbd\ub825 \ubb38\uc11c — \ub370\uc774\ud130 \uc6b4\uc601 \ubc0f \ud604\uc7a5 \uc9c0\uc6d0.",
+        cert_elec_title: "\uc804\uc790\uae30 \uacfc\ud0a4\uc2a4\ud2b8", tag_diploma: "\ud65c\ub3d9",
+        cert_elec_desc: "\uc804\uc790\uae30 \uacf5\ud559 \ud65c\ub3d9 — \uc804\uc790\uae30 \uc2dc\uc2a4\ud15c \ubc0f \uc0ac\uc5c5 \uc804\uc120 \uae30\ubcf8 \uc790\uaca9\uc99d\uc1a1.",
+        cert_cisco_title: "Cisco Packet Tracer", tag_certificate: "\uc9c8\uc790",
+        cert_cisco_desc: "Cisco Packet Tracer \uc5c0\ud559 \uc2dc\uc791 — \ub124\ud2b8\uc6cc\ud0b9 \uae30\ubcf8 \ubc0f \ud328\ud0b9 \uc2dc\ub098\ubaa8\uc774\uc81c\uc774\uc158.",
+        footer: "\u00a9 2026 Sanjeev Shrestha. \ubaa8\ub4e0 \uad8c\ud55c \ubcf4\uc720\ub41c \ub204\uc2dc\ub294 \uc8fc\uc5d0 \ub2e4\ub978 \uc2dc\ubb38\ud569\ub2c8\ub2e4."
       }
     };
     let currentLang = localStorage.getItem('lang') || 'en';

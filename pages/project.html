@@ -7,225 +7,114 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' https://cdn.jsdelivr.net data:; frame-src https://docs.google.com; connect-src 'self';">
-
   <title>Projects | Sanjeev Shrestha</title>
-
-  <!-- Tailwind -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
     integrity="sha512-mQN7StCzVJl+rwieWt+a/sDM6mucFSI636sn2Jf8SHfBBdaL/rCT6hwE6a/zeDkxMWiVGYYuE4WkeMuRV6u5ng=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Dev Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     integrity="sha512-6/05LVs+grXBAu5XzdiMFB64yCVF9FL70zWrTKcaTEKygrO7fC5LqfL/SKPpuRpimL2aE0D7Hw/NoED+7+7/VQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="/style.css">
-
 </head>
 
 <body class="bg-[var(--bg-color)] text-white">
 
-  <!-- ================= HEADER ================= -->
-
   <header>
-
-    <!-- Navigation -->
     <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--bg-color)]/90 backdrop-blur">
-
       <div class="container mx-auto flex items-center justify-between px-4 py-4">
-
-        <!-- Logo -->
-        <a href="/index.html" class="text-xl font-bold tracking-wide">
-          Sanjeev Shrestha
-        </a>
-
-        <!-- Desktop Navigation -->
+        <a href="/index.html" class="text-xl font-bold tracking-wide">Sanjeev Shrestha</a>
         <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
-          <li>
-            <a href="/index.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_home">Home</a>
-          </li>
-          <li>
-            <a href="/pages/about.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_about">About</a>
-          </li>
-          <li>
-            <a href="/pages/project.html" class="text-[#FF6B57]" data-i18n="nav_projects">Projects</a>
-          </li>
-          <li>
-            <a href="/pages/certificates.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_certificates">Certificates</a>
-          </li>
-          <li>
-            <a href="/pages/contact.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_contact">Contact</a>
-          </li>
+          <li><a href="/index.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_home">Home</a></li>
+          <li><a href="/pages/about.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_about">About</a></li>
+          <li><a href="/pages/project.html" class="text-[#FF6B57]" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="/pages/certificates.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_certificates">Certificates</a></li>
+          <li><a href="/pages/contact.html" class="transition hover:text-[#FF6B57]" data-i18n="nav_contact">Contact</a></li>
         </ul>
-
         <button id="langToggle" type="button" onclick="toggleLang()" class="flex items-center gap-1.5 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
           <i class="fa-solid fa-globe"></i>
           <span id="langLabel">EN</span>
         </button>
-        <!-- Mobile Menu Button -->
         <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden" data-drawer-target="drawer-navigation"
           data-drawer-show="drawer-navigation">
-
           <i class="fa-solid fa-bars text-lg"></i>
-
         </button>
-
       </div>
-
     </nav>
-
-    <!-- Mobile Drawer -->
 
     <aside id="drawer-navigation"
       class="fixed left-0 top-0 z-50 h-screen w-80 -translate-x-full overflow-y-auto border-r border-white/10 bg-[#0B1320] p-5 transition-transform md:hidden">
-
       <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-
-        <h2 class="text-lg font-semibold">
-          Menu
-        </h2>
-
+        <h2 class="text-lg font-semibold" data-i18n="menu">Menu</h2>
         <button type="button" data-drawer-hide="drawer-navigation">
-
           <i class="fa-solid fa-xmark text-xl"></i>
-
         </button>
-
       </div>
-
       <ul class="space-y-2">
-        <li>
-          <a href="/index.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_home">Home</a>
-        </li>
-        <li>
-          <a href="/pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_about">About</a>
-        </li>
-        <li>
-          <a href="/pages/project.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav_projects">Projects</a>
-        </li>
-        <li>
-          <a href="/pages/certificates.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_certificates">Certificates</a>
-        </li>
-        <li>
-          <a href="/pages/contact.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_contact">Contact</a>
-        </li>
+        <li><a href="/index.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_home">Home</a></li>
+        <li><a href="/pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_about">About</a></li>
+        <li><a href="/pages/project.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="/pages/certificates.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_certificates">Certificates</a></li>
+        <li><a href="/pages/contact.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav_contact">Contact</a></li>
       </ul>
       <button onclick="toggleLang()" class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-3 text-sm font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
         <i class="fa-solid fa-globe"></i>
         <span data-i18n="lang_switch">Switch to 한국어</span>
       </button>
     </aside>
-
   </header>
 
-  <!-- ================= MAIN ================= -->
-
   <main>
-
-    <!-- ================= HERO ================= -->
-
     <section class="relative flex min-h-[45vh] items-center overflow-hidden bg-[var(--bg-color)] md:min-h-[50vh]">
-
-      <!-- background layer, capped width so it doesn't stretch/crop on ultrawide screens -->
-      <div class="absolute inset-0 mx-auto max-w-[1920px]
-                bg-cover bg-top bg-no-repeat
-                bg-[url('/images/bg_v.png')]
-                md:bg-[url('/images/bg_h.png')] md:bg-center">
-      </div>
-
-      <!-- Overlay -->
+      <div class="absolute inset-0 mx-auto max-w-[1920px] bg-cover bg-top bg-no-repeat bg-[url('/images/bg_v.png')] md:bg-[url('/images/bg_h.png')] md:bg-center"></div>
       <div class="absolute inset-0 bg-slate-950/60"></div>
-
-      <!-- Hero Content -->
       <div class="relative z-10 container mx-auto px-4">
-
         <div class="max-w-3xl">
-
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
+          <span class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
             <i class="fa-solid fa-code"></i>
             <span data-i18n="proj_badge">Portfolio</span>
           </span>
-
           <h1 class="mt-6 text-5xl font-bold tracking-tight md:text-6xl" data-i18n="proj_hero_title">Projects</h1>
-
           <p class="mt-6 max-w-2xl text-lg leading-8 text-gray-300" data-i18n="proj_hero_desc">
             A collection of projects I've built throughout my learning journey.
             From web development and machine learning to networking and electronics,
             each project represents a step toward becoming a better software engineer.
           </p>
-
           <div class="mt-8 flex flex-wrap gap-4">
-
-            <a href="#projects"
-              class="rounded-xl bg-[#FF6B57] px-6 py-3 font-medium transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+            <a href="#projects" class="rounded-xl bg-[#FF6B57] px-6 py-3 font-medium transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B57]/40">
               <span data-i18n="proj_view">View Projects</span>
               <i class="fa-solid fa-arrow-down ml-2"></i>
             </a>
-
-            <a href="https://github.com/Xanjip32" target="_blank"
-              class="rounded-xl border border-white px-6 py-3 font-medium transition duration-300 hover:border-[#FF6B57] hover:text-[#FF6B57]">
-
-              <i class="fa-brands fa-github mr-2"></i>
-
-              GitHub
-
+            <a href="https://github.com/Xanjip32" target="_blank" class="rounded-xl border border-white px-6 py-3 font-medium transition duration-300 hover:border-[#FF6B57] hover:text-[#FF6B57]">
+              <i class="fa-brands fa-github mr-2"></i>GitHub
             </a>
-
           </div>
-
         </div>
-
       </div>
-
-      <!-- Bottom Fade -->
-      <div class="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-b from-transparent to-[var(--bg-color)]">
-      </div>
-
+      <div class="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-b from-transparent to-[var(--bg-color)]"></div>
     </section>
 
-    <!-- ================= PROJECTS ================= -->
-
     <section id="projects" class="bg-[var(--bg-color)] py-20">
-
       <div class="container mx-auto px-4">
-
-        <!-- Section Header -->
-
         <div class="mb-14 text-center">
-
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
-
+          <span class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
             <i class="fa-solid fa-folder-open"></i>
-
-            Portfolio
-
+            <span data-i18n="proj_portfolio">Portfolio</span>
           </span>
-
           <h2 class="mt-5 text-4xl font-bold" data-i18n="proj_featured">Featured Projects</h2>
-
           <p class="mx-auto mt-4 max-w-2xl text-gray-400 leading-7" data-i18n="proj_featured_desc">
             These are some of the projects I've worked on throughout my learning
             journey, covering web development, networking, machine learning,
             and software engineering.
           </p>
-
         </div>
 
         <!-- KoreaSathi Featured -->
-        <div
-          class="overflow-hidden rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 mb-6">
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 mb-6">
           <div class="grid gap-0 md:grid-cols-[320px_1fr]">
-            <img src="/images/koreasathi-preview.png" alt="KoreaSathi Preview"
-              class="h-64 w-full object-cover md:h-full">
+            <img src="/images/koreasathi-preview.png" alt="KoreaSathi Preview" class="h-64 w-full object-cover md:h-full">
             <div class="p-6">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
@@ -233,10 +122,10 @@
                   <h3 class="text-2xl font-bold">KoreaSathi</h3>
                 </div>
                 <span class="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-400">
-                  <i class="fa-solid fa-circle text-[8px] mr-1"></i>Active
+                  <i class="fa-solid fa-circle text-[8px] mr-1"></i><span data-i18n="status_active">Active</span>
                 </span>
               </div>
-              <p class="mt-4 text-gray-300 leading-7">
+              <p class="mt-4 text-gray-300 leading-7" data-i18n="koreasathi_desc">
                 Nepal Korea Student Hub — A free open-source platform centralizing trusted information for Nepali students
                 in South Korea. Built with headless WordPress CMS for content management, Tailwind CSS for styling, and
                 deployed on Vercel. Covers visas, jobs, banking, immigration, emergencies, and more.
@@ -245,17 +134,15 @@
                 <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">HTML</span>
                 <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">Tailwind CSS</span>
                 <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">JavaScript</span>
-                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">WordPress (Headless)</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs" data-i18n="tech_wp_headless">WordPress (Headless)</span>
                 <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">Vercel</span>
               </div>
               <div class="mt-6 flex flex-wrap gap-3">
-                <a href="https://korea-sathi.vercel.app/" target="_blank"
-                  class="rounded-xl bg-[#FF6B57] px-5 py-2.5 text-sm text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
-                  Live Demo
+                <a href="https://korea-sathi.vercel.app/" target="_blank" class="rounded-xl bg-[#FF6B57] px-5 py-2.5 text-sm text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <span data-i18n="live_demo">Live Demo</span>
                   <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
                 </a>
-                <a href="https://github.com/Xanjip32/KoreaSathi" target="_blank"
-                  class="rounded-lg border border-white px-5 py-2.5 text-sm transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+                <a href="https://github.com/Xanjip32/KoreaSathi" target="_blank" class="rounded-lg border border-white px-5 py-2.5 text-sm transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
                   <i class="fa-brands fa-github mr-2"></i>GitHub
                 </a>
               </div>
@@ -265,204 +152,169 @@
 
         <!-- Project Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-
           <!-- Solar Incubator -->
-          <div
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-3">
                 <i class="fa-solid fa-solar-panel text-[#FF6B57] text-xl"></i>
-                <h4 class="text-base font-bold text-white">Solar-Powered Egg Incubator</h4>
+                <h4 class="text-base font-bold text-white" data-i18n="proj_solar_title">Solar-Powered Egg Incubator</h4>
               </div>
-              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20">Hardware
-                Build</span>
+              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20" data-i18n="tag_hardware">Hardware Build</span>
             </div>
-            <p class="text-gray-300 mb-3 text-sm leading-relaxed">
+            <p class="text-gray-300 mb-3 text-sm leading-relaxed" data-i18n="proj_solar_desc">
               A self-taught electronics build from my school years — inverter PCB, a repurposed
               transformer, and an old lead-acid battery for backup power. No formal circuit design,
               no CAD — just YouTube, trial and error, and a soldering iron.
             </p>
-            <a href="https://github.com/Xanjip32/Nepal-Solar-Hybrid-Incubator" target="_blank"
-              class="text-sm text-gray-300 underline hover:text-[#FF6B57] transition">
+            <a href="https://github.com/Xanjip32/Nepal-Solar-Hybrid-Incubator" target="_blank" class="text-sm text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="view_github">
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
 
           <!-- Student Management App -->
-          <div
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-3">
                 <i class="fa-solid fa-users-gear text-[#FF6B57] text-xl"></i>
-                <h4 class="text-base font-bold text-white">Student Management App</h4>
+                <h4 class="text-base font-bold text-white" data-i18n="proj_student_title">Student Management App</h4>
               </div>
-              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20">Coursework
-                Project</span>
+              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20" data-i18n="tag_coursework">Coursework Project</span>
             </div>
-            <p class="text-gray-300 mb-3 text-sm leading-relaxed">
+            <p class="text-gray-300 mb-3 text-sm leading-relaxed" data-i18n="proj_student_desc">
               Built during coursework on instructor-provided starter code. Extended it with search,
               filtering, and sorting. Covers Node.js, Express, and REST API basics.
             </p>
-            <a href="https://github.com/Xanjip32/Student-Management-App" target="_blank"
-              class="text-sm text-gray-300 underline hover:text-[#FF6B57] transition">
+            <a href="https://github.com/Xanjip32/Student-Management-App" target="_blank" class="text-sm text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="view_github">
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
-
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-
-          <!-- Laravel (Ongoing) -->
-          <div
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+          <!-- Laravel -->
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-code text-[#FF6B57] text-sm"></i>
-                <h4 class="text-sm font-bold text-white leading-tight">Full-Stack<br>with Laravel</h4>
+                <h4 class="text-sm font-bold text-white leading-tight" data-i18n="proj_laravel_title">Full-Stack<br>with Laravel</h4>
               </div>
               <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full border border-yellow-500/40">
-                <i class="fa-solid fa-circle-notch fa-spin mr-1"></i>Ongoing
+                <i class="fa-solid fa-circle-notch fa-spin mr-1"></i><span data-i18n="status_ongoing">Ongoing</span>
               </span>
             </div>
-            <p class="text-gray-300 mb-3 text-xs leading-relaxed">
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed" data-i18n="proj_laravel_desc">
               Documenting my full-stack learning journey with Laravel — practice projects and notes
               covering front-end (HTML, CSS, JavaScript) and back-end (PHP, Laravel).
             </p>
-            <a href="https://github.com/Xanjip32/full-Stack-development-with-Laravel-" target="_blank"
-              class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition">
+            <a href="https://github.com/Xanjip32/full-Stack-development-with-Laravel-" target="_blank" class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="view_github">
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
 
-          <!-- CCNA (Ongoing) -->
-          <div
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+          <!-- CCNA -->
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-network-wired text-[#FF6B57] text-sm"></i>
-                <h4 class="text-sm font-bold text-white">CCNA Study Documentation</h4>
+                <h4 class="text-sm font-bold text-white" data-i18n="proj_ccna_title">CCNA Study Documentation</h4>
               </div>
-              <span
-                class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full border border-yellow-500/40 whitespace-nowrap">
-                <i class="fa-solid fa-circle-notch fa-spin mr-1"></i>Ongoing
+              <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full border border-yellow-500/40 whitespace-nowrap">
+                <i class="fa-solid fa-circle-notch fa-spin mr-1"></i><span data-i18n="status_ongoing">Ongoing</span>
               </span>
             </div>
-            <p class="text-gray-300 mb-3 text-xs leading-relaxed">
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed" data-i18n="proj_ccna_desc">
               Documenting my CCNA prep — following Jeremy's IT Lab and Cisco Networking Academy.
               Includes study notes, router/switch configuration examples, and lab practice.
             </p>
             <div class="flex flex-wrap gap-1 mb-3">
-              <span
-                class="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full border border-white/20">Networking</span>
-              <span
-                class="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full border border-white/20">Cisco</span>
+              <span class="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full border border-white/20" data-i18n="tag_networking">Networking</span>
+              <span class="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full border border-white/20">Cisco</span>
             </div>
-            <a href="https://github.com/Xanjip32/CCNA" target="_blank"
-              class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition">
+            <a href="https://github.com/Xanjip32/CCNA" target="_blank" class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="view_github">
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
 
-          <!-- CS50 (Paused) -->
-          <div
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+          <!-- CS50 -->
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-graduation-cap text-[#FF6B57] text-sm"></i>
-                <h4 class="text-sm font-bold text-white">CS50: Web Programming</h4>
+                <h4 class="text-sm font-bold text-white" data-i18n="proj_cs50_title">CS50: Web Programming</h4>
               </div>
-              <span
-                class="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full border border-gray-500/40 whitespace-nowrap">
-                <i class="fa-solid fa-pause mr-1"></i>Paused
+              <span class="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full border border-gray-500/40 whitespace-nowrap">
+                <i class="fa-solid fa-pause mr-1"></i><span data-i18n="status_paused">Paused</span>
               </span>
             </div>
-            <p class="text-gray-300 mb-3 text-xs leading-relaxed">
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed" data-i18n="proj_cs50_desc">
               Studied Harvard's CS50 Web Programming — completed assignments through the Python/Flask
               track and studied Django. Paused here for now, may pick it back up later.
             </p>
-            <a href="https://github.com/Xanjip32/CS50-s-Web-Programming-with-Python-and-JavaScript" target="_blank"
-              class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition">
+            <a href="https://github.com/Xanjip32/CS50-s-Web-Programming-with-Python-and-JavaScript" target="_blank" class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="view_github">
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
 
-          <!-- MNIST (Learning Project) -->
-          <div
-            class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
+          <!-- MNIST -->
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-brain text-[#FF6B57] text-sm"></i>
-                <h4 class="text-sm font-bold text-white">MNIST Digit Classifier</h4>
+                <h4 class="text-sm font-bold text-white" data-i18n="proj_mnist_title">MNIST Digit Classifier</h4>
               </div>
-              <span
-                class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20 whitespace-nowrap">
-                <i class="fa-solid fa-book-open mr-1"></i>Self-Study
+              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20 whitespace-nowrap">
+                <i class="fa-solid fa-book-open mr-1"></i><span data-i18n="tag_selfstudy">Self-Study</span>
               </span>
             </div>
-            <p class="text-gray-300 mb-3 text-xs leading-relaxed">
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed" data-i18n="proj_mnist_desc">
               Followed a tutorial to build an ML pipeline on MNIST — neural networks with NumPy,
               scikit-learn, and CNNs with TensorFlow. Completed as a learning exercise.
             </p>
-            <a href="https://github.com/Xanjip32/mnist_project" target="_blank"
-              class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition">
+            <a href="https://github.com/Xanjip32/mnist_project" target="_blank" class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="view_github">
               View on GitHub <i class="fa-brands fa-github ml-1"></i>
             </a>
           </div>
-
         </div>
 
-        <!-- Practice & Learning Exercises -->
-        <div
-          class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/50 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_20px_#FF6B57]/20">
+        <!-- Odin Project -->
+        <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/50 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_20px_#FF6B57]/20">
           <div class="flex items-center gap-2 mb-1">
             <i class="fa-solid fa-laptop-code text-[#FF6B57]"></i>
-            <h4 class="text-base font-bold text-white">The Odin Project — Foundations</h4>
+            <h4 class="text-base font-bold text-white" data-i18n="proj_odin_title">The Odin Project — Foundations</h4>
           </div>
-          <p class="text-gray-400 text-xs mb-4">
+          <p class="text-gray-400 text-xs mb-4" data-i18n="proj_odin_desc">
             Core projects completed during The Odin Project foundations course.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            <a href="https://github.com/Xanjip32/Calculator" target="_blank"
-              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/Calculator" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
               <i class="fa-solid fa-calculator text-[#FF6B57] mb-1 block text-lg"></i>
-              <span class="text-xs text-gray-300">Calculator</span>
+              <span class="text-xs text-gray-300" data-i18n="odin_calc">Calculator</span>
             </a>
-            <a href="https://github.com/Xanjip32/Landing_page" target="_blank"
-              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/Landing_page" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
               <i class="fa-solid fa-window-maximize text-[#FF6B57] mb-1 block text-lg"></i>
-              <span class="text-xs text-gray-300">Landing Page</span>
+              <span class="text-xs text-gray-300" data-i18n="odin_landing">Landing Page</span>
             </a>
-            <a href="https://github.com/Xanjip32/etch-a-sketch" target="_blank"
-              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/etch-a-sketch" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
               <i class="fa-solid fa-pen-nib text-[#FF6B57] mb-1 block text-lg"></i>
-              <span class="text-xs text-gray-300">Etch-a-Sketch</span>
+              <span class="text-xs text-gray-300" data-i18n="odin_sketch">Etch-a-Sketch</span>
             </a>
-            <a href="https://github.com/Xanjip32/rock_sissors_paper-" target="_blank"
-              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/rock_sissors_paper-" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
               <i class="fa-solid fa-hand-scissors text-[#FF6B57] mb-1 block text-lg"></i>
-              <span class="text-xs text-gray-300">Rock Paper Scissors</span>
+              <span class="text-xs text-gray-300" data-i18n="odin_rps">Rock Paper Scissors</span>
             </a>
-            <a href="https://github.com/Xanjip32/tic_tac_toe" target="_blank"
-              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/tic_tac_toe" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
               <i class="fa-solid fa-border-none text-[#FF6B57] mb-1 block text-lg"></i>
-              <span class="text-xs text-gray-300">Tic Tac Toe</span>
+              <span class="text-xs text-gray-300" data-i18n="odin_tic">Tic Tac Toe</span>
             </a>
-            <a href="https://github.com/Xanjip32/odin-recipes" target="_blank"
-              class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+            <a href="https://github.com/Xanjip32/odin-recipes" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
               <i class="fa-solid fa-utensils text-[#FF6B57] mb-1 block text-lg"></i>
-              <span class="text-xs text-gray-300">Odin Recipes</span>
+              <span class="text-xs text-gray-300" data-i18n="odin_recipes">Odin Recipes</span>
             </a>
           </div>
         </div>
-
       </div>
-
     </section>
-
   </main>
-
-  <!-- ================= FOOTER ================= -->
 
   <footer class="border-t border-white/10 bg-[var(--bg-color)] p-8 text-center text-sm text-white">
     <span data-i18n="footer">&copy; 2026 Sanjeev Shrestha. All rights reserved.</span>
@@ -471,22 +323,66 @@
   <script>
     const translations = {
       en: {
+        menu: "Menu",
         nav_home: "Home", nav_about: "About", nav_projects: "Projects", nav_certificates: "Certificates", nav_contact: "Contact",
         lang_switch: "Switch to 한국어",
         proj_badge: "Portfolio", proj_hero_title: "Projects",
         proj_hero_desc: "A collection of projects I've built throughout my learning journey. From web development and machine learning to networking and electronics, each project represents a step toward becoming a better software engineer.",
-        proj_view: "View Projects", proj_featured: "Featured Projects",
+        proj_view: "View Projects", proj_portfolio: "Portfolio", proj_featured: "Featured Projects",
         proj_featured_desc: "These are some of the projects I've worked on throughout my learning journey, covering web development, networking, machine learning, and software engineering.",
+        status_active: "Active", status_ongoing: "Ongoing", status_paused: "Paused",
+        tech_wp_headless: "WordPress (Headless)",
+        live_demo: "Live Demo",
+        koreasathi_desc: "Nepal Korea Student Hub — A free open-source platform centralizing trusted information for Nepali students in South Korea. Built with headless WordPress CMS for content management, Tailwind CSS for styling, and deployed on Vercel. Covers visas, jobs, banking, immigration, emergencies, and more.",
+        proj_solar_title: "Solar-Powered Egg Incubator", tag_hardware: "Hardware Build",
+        proj_solar_desc: "A self-taught electronics build from my school years — inverter PCB, a repurposed transformer, and an old lead-acid battery for backup power. No formal circuit design, no CAD — just YouTube, trial and error, and a soldering iron.",
+        view_github: "View on GitHub",
+        proj_student_title: "Student Management App", tag_coursework: "Coursework Project",
+        proj_student_desc: "Built during coursework on instructor-provided starter code. Extended it with search, filtering, and sorting. Covers Node.js, Express, and REST API basics.",
+        proj_laravel_title: "Full-Stack with Laravel",
+        proj_laravel_desc: "Documenting my full-stack learning journey with Laravel — practice projects and notes covering front-end (HTML, CSS, JavaScript) and back-end (PHP, Laravel).",
+        proj_ccna_title: "CCNA Study Documentation",
+        proj_ccna_desc: "Documenting my CCNA prep — following Jeremy's IT Lab and Cisco Networking Academy. Includes study notes, router/switch configuration examples, and lab practice.",
+        tag_networking: "Networking",
+        proj_cs50_title: "CS50: Web Programming",
+        proj_cs50_desc: "Studied Harvard's CS50 Web Programming — completed assignments through the Python/Flask track and studied Django. Paused here for now, may pick it back up later.",
+        proj_mnist_title: "MNIST Digit Classifier", tag_selfstudy: "Self-Study",
+        proj_mnist_desc: "Followed a tutorial to build an ML pipeline on MNIST — neural networks with NumPy, scikit-learn, and CNNs with TensorFlow. Completed as a learning exercise.",
+        proj_odin_title: "The Odin Project — Foundations", proj_odin_desc: "Core projects completed during The Odin Project foundations course.",
+        odin_calc: "Calculator", odin_landing: "Landing Page", odin_sketch: "Etch-a-Sketch",
+        odin_rps: "Rock Paper Scissors", odin_tic: "Tic Tac Toe", odin_recipes: "Odin Recipes",
         footer: "\u00a9 2026 Sanjeev Shrestha. All rights reserved."
       },
       ko: {
+        menu: "\ub9e4\ub274",
         nav_home: "\ud648", nav_about: "\uc11c\ubcf4", nav_projects: "\ud504\ub85c\uc81d\ud2b8", nav_certificates: "\uc9c8\uc790", nav_contact: "\uc5f0\ub77d",
         lang_switch: "English\ub85c \uc804\ud658",
         proj_badge: "\ud3ec\ud0c0\ud3f4", proj_hero_title: "\ud504\ub85c\uc81d\ud2b8",
         proj_hero_desc: "\ub204\ub9cc\uc758 \ud559\uc2b5 \uacbd\ub825\uc5d0\uc11c \uade0\ud615\ud558\uace0 \uc0dd\uc131\ud55c \ud504\ub85c\uc81d\ud2b8 \ubaa8\uc9d1\uc785\ub2c8\ub2e4. \uc6f9 \uac1c\ubc1c, \uae30\uae30\ud559\uc2b5, \ub124\ud2b8\uc6cc\ud0b9, \uc804\uc790\uae30 \ubd80\ud130, \ub9e4\uac1c \ud504\ub85c\uc81d\ud2b8\ub294 \ub354 \uc624\ub798\uc11c \uc11c\ubc84 \uc6d0\ud65c\uc73c\ub85c \ucc3d\uc5c5\ud558\ub294 \ub2e8\uacc4\ub85c \ub4f1\uc7a5\ub429\ub2c8\ub2e4.",
-        proj_view: "\ud504\ub85c\uc81d\ud2b8 \ubcf4\uae30", proj_featured: "\ud2b9\uc138 \ud504\ub85c\uc81d\ud2b8",
+        proj_view: "\ud504\ub85c\uc81d\ud2b8 \ubcf4\uae30", proj_portfolio: "\ud3ec\ud0c0\ud3f4", proj_featured: "\ud2b9\uc138 \ud504\ub85c\uc81d\ud2b8",
         proj_featured_desc: "\uc6f9 \uac1c\ubc1c, \ub124\ud2b8\uc6cc\ud0b9, \uae30\uae30\ud559\uc2b5, \uc11c\ubc84 \uac1c\ubc1c \ubd80\ud130 \ub2e4\ub978 \ucc3d\uc5c5 \uacbd\ub825\uc5d0\uc11c \uc791\uc5c5\ud558\uace0 \uc788\ub354\ub77c\ub294 \ud504\ub85c\uc81d\ud2b8\ub4e4\uc785\ub2c8\ub2e4.",
-        footer: "\u00a9 2026 Sanjeev Shrestha. \ubaa8\ub4e0 \uad8c\ud55c \ubcf4\uc720\ub41c \uc2dc\ubb38\ud569\ub2c8\ub2e4."
+        status_active: "\ud65c\ub3d9 \uc911", status_ongoing: "\uc9c1\uc811 \uc911", status_paused: "\uc77c\uc2dc \uc911\uc9c0",
+        tech_wp_headless: "WordPress (\ud5e4\ub4e4\ub9ac\uc2a4)",
+        live_demo: "\uc2e4\uc2dc\uac04 \ud655\uc778",
+        koreasathi_desc: "\ub124\ud30c\ub974 \ud55c\uad6d \ud559\uc0dd \ud601\uc2e4\ub85c, \ub124\ud30c\ub974 \ud559\uc0dd\ub4e4\uc5d0\uac8c \ud55c\uad6d \uc0dd\ud65c \uc815\ubcf4\ub97c \uc9c0\uc6d0\ud558\ub294 \ubb34\ub825 \uc624\ud504\uc2dc\ub204 \ud504\ub85c\uc81d\ud2b8\uc785\ub2c8\ub2e4. WordPress CMS, Tailwind CSS\ub85c \uade0\ud615\ud558\uc5ec Vercel\uc5d0 \ud30c\uc6c1\ud588\uc2b5\ub2c8\ub2e4. \ub3c4\uc2a4, \uacfc\uc5c5, \ud604\uae08, \ud658\uc601, \uae43\ub984 \ub4f1 \ub2e4\ub978 \uc815\ubcf4\ub97c \ud1b5\ud574 \ucc9c\uc774\ub7ec\ub2dd \ud569\ub2c8\ub2e4.",
+        proj_solar_title: "\ud0dc\uc591 \ub3d9\ub82c \uacc4\ub2e4\uc2a4 \uae30\uae30", tag_hardware: "\ud558\ub4dc\uc6e8\uc5b4 \uade0\ud615",
+        proj_solar_desc: "\ud559\uad50 \uc2dc\ub304\ubd80\ud130 \uc790\uadfc\ud559\uc2b5\ud55c \uc804\uc790\uae30 \uade0\ud615\uc785\ub2c8\ub2e4. \ubcc0\uc591\uae30 PCB, \ub300\uc6a9 \ubcc0\uc555\uae30, \ubc00 \ub354\ub9ac \uc5d0\ub9ac\ud130\ub85c \ubc30\uae30 \uc804\uc6d0\uc744 \uc0ac\uc6a9\ud588\uc2b5\ub2c8\ub2e4. \uc62c\ubc14\ub978 \ud658\uacbd \uc124\uacc4, CAD \uc5c6\uc774, YouTube, \uc2dc\ud5d8 \uc624\ub958, \ub9e4\ucda8\ub97c \ud1b5\ud574 \uade0\ud615\ud588\uc2b5\ub2c8\ub2e4.",
+        view_github: "GitHub\uc5d0\uc11c \ubcf4\uae30",
+        proj_student_title: "\ud559\uc0dd \uad00\ub9ac \uc571", tag_coursework: "\uacfc\uc815 \ud504\ub85c\uc81d\ud2b8",
+        proj_student_desc: "\uacfc\uc815 \uc911 \uad00\ub9ac\uc790\uac00 \uc81c\uacf5\ud558\ub294 \uc2dc\uc791 \ucf54\ub4dc\ub97c \uae30\ubc18\uc73c\ub85c \uade0\ud615\ud588\uc2b5\ub2c8\ub2e4. \uac80\uc0c9, \ud544\ud130\ub9c1, \uc885\uc5f4 \uae30\ub2a5\uc744 \ud655\uc7a5\ud588\uc2b5\ub2c8\ub2e4. Node.js, Express, REST API \uae30\ubcf8\uc744 \ub2e8\uc218\ub85c \ud559\uc2b5\ud588\uc2b5\ub2c8\ub2e4.",
+        proj_laravel_title: "Laravel \ud65c\ub3d9 \ud504\ub85c\uc81d\ud2b8",
+        proj_laravel_desc: "Laravel\uc744 \ud1b5\ud574 \ud65c\ub3d9 \ud504\ub85c\uc81d\ud2b8 \uac1c\ubc1c \uacbd\ub825\uc744 \ubb38\uc11c\ud654\ud569\ub2c8\ub2e4. HTML, CSS, JavaScript \ud504\ub77c\ub2e4, PHP, Laravel \ubc31\uc5d4\ub4dc \ud504\ub85c\uc81d\ud2b8 \ubc0f \uae30\ub85d\uc774 \ud3ec\ud568\ub429\ub2c8\ub2e4.",
+        proj_ccna_title: "CCNA \uc5c0\ud559 \ubb38\uc11c\ud654",
+        proj_ccna_desc: "CCNA \uc900\ube44 \ubb38\uc11c\ud654\ub97c \ud558\uba70, Jeremy's IT Lab \ubc0f Cisco Networking Academy\ub97c \ucd94\uc801\ud569\ub2c8\ub2e4. \uc5c0\ud559 \ub180\ud788, \ub8e8\ud130/\uc2a4\uc704\uce58 \uc124\uc815 \uc608\uc2dc, \ub77c\ube0c \uc5f0\uc2b5\uc774 \ud3ec\ud568\ub429\ub2c8\ub2e4.",
+        tag_networking: "\ub124\ud2b8\uc6cc\ud0b9",
+        proj_cs50_title: "CS50: \uc6f9 \ud504\ub85c\uadf8\ub798\ubc0d",
+        proj_cs50_desc: "Harvard CS50 \uc6f9 \ud504\ub85c\uadf8\ub798\ubc0d\uc744 \uc5c0\ud559\ud588\uc2b5\ub2c8\ub2e4. Python/Flask \ud2b8\ub799 \ud300 \uc791\uc5c5\uc744 \uc644\ub8cc\ud558\uace0 Django\ub97c \ud559\uc2b5\ud588\uc2b5\ub2c8\ub2e4. \ud604\uc7ac\ub294 \uc77c\uc2dc \uc911\uc9c0\uc785\ub2c8\ub2e4.",
+        proj_mnist_title: "MNIST \uc22b\uc790 \ubd84\ub9ac\uae30", tag_selfstudy: "\uc790\uacfc",
+        proj_mnist_desc: "MNIST \ub370\uc774\ud130\uc5d0 \ub300\ud55c ML \ud30c\uc77c\ub77c\uc778\uc744 \uade0\ud615\ud588\uc2b5\ub2c8\ub2e4. NumPy, scikit-learn\ub85c \uc2e0\uacbd \ub9e4\uc2dc, TensorFlow\ub85c CNN\ub97c \uade0\ud615\ud588\uc2b5\ub2c8\ub2e4. \ud559\uc2b5 \uc5f0\uc2b5\uc73c\ub85c \uc644\ub8cc\ud588\uc2b5\ub2c8\ub2e4.",
+        proj_odin_title: "The Odin Project \u2014 \uae30\ubcf8", proj_odin_desc: "The Odin Project \uae30\ubcf8 \uacfc\uc815 \uc911 \uc644\ub8cc\ud55c \uae30\ubcf8 \ud504\ub85c\uc81d\ud2b8\ub4e4\uc785\ub2c8\ub2e4.",
+        odin_calc: "\uacc4\uc0b0\uae30", odin_landing: "\ub77c\ub2dd\uud398\uc774\uc9c0", odin_sketch: "\uc5d8\uce20\uc544 \uc2a4\uc7a4",
+        odin_rps: "\ubb38\uc11c\ub9ac \uac10\uc790 \ubc14\ub978\uc774", odin_tic: "\ud2f1 \ud0dd \ud1a0\uc774", odin_recipes: "\ub85c\ub4dc \ub9e4\uc2dc",
+        footer: "\u00a9 2026 Sanjeev Shrestha. \ubaa8\ub4e0 \uad8c\ud55c \ubcf4\uc720\ub41c \ub204\uc2dc\ub294 \uc8fc\uc5d0 \ub2e4\ub978 \uc2dc\ubb38\ud569\ub2c8\ub2e4."
       }
     };
     let currentLang = localStorage.getItem('lang') || 'en';

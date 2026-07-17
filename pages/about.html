@@ -59,7 +59,7 @@
     <aside id="drawer-navigation"
       class="fixed left-0 top-0 z-50 h-screen w-80 -translate-x-full overflow-y-auto border-r border-white/10 bg-[#0B1320] p-5 transition-transform md:hidden">
       <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-        <h2 class="text-lg font-semibold">Menu</h2>
+        <h2 class="text-lg font-semibold" data-i18n="menu">Menu</h2>
         <button type="button" data-drawer-hide="drawer-navigation">
           <i class="fa-solid fa-xmark text-xl"></i>
         </button>
@@ -191,12 +191,13 @@
   </main>
 
   <footer class="border-t border-white/10 bg-[var(--bg-color)] p-8 text-center text-sm text-white">
-    &copy; 2026 Sanjeev Shrestha. All rights reserved.
+    <span data-i18n="footer">&copy; 2026 Sanjeev Shrestha. All rights reserved.</span>
   <script>
     const translations = {
       en: {
         nav_home: "Home", nav_about: "About", nav_projects: "Projects", nav_certificates: "Certificates", nav_contact: "Contact",
         lang_switch: "Switch to 한국어",
+        menu: "Menu",
         about_title: "About Me", about_subtitle: "Computer Engineering Student · Full-Stack Developer · Network Enthusiast",
         about_intro: "I'm Sanjeev, an AI & Computer Engineering student at Youngsan University in Busan, South Korea. Before moving into tech, I worked as a Data Specialist and IT Field Support Technician in Nepal — installing networks, solving connectivity issues, and working directly with customers. That hands-on problem-solving experience now shapes how I approach code.",
         about_hl_fullstack: "Full-Stack Dev", about_hl_ccna: "CCNA Networking", about_hl_linux: "Linux / Servers", about_hl_ml: "Python / ML",
@@ -211,6 +212,7 @@
       ko: {
         nav_home: "\ud648", nav_about: "\uc11c\ubcf4", nav_projects: "\ud504\ub85c\uc81d\ud2b8", nav_certificates: "\uc9c8\uc790", nav_contact: "\uc5f0\ub77d",
         lang_switch: "English\ub85c \uc804\ud658",
+        menu: "\ub9e4\ub274",
         about_title: "\uc11c\ubcf4", about_subtitle: "\uc81c\uc57d \uacf5\ud559\uc5d0 \ub300\ud559\uc0dd \u00b7 \ud65c\ub3d9 \ud504\ub85c\uc81d\ud2b8 \uac1c\ubc1c\uc790 \u00b7 \ub124\ud2b8\uc6cc\ud0b9 \uc5d0\ub9cc\uc774\uc2a4\ud2b8",
         about_intro: "\uc0c1\uc5f0\uc785\ub2c8\ub2e4. \ubc15\uc218\uc544\ub294 \ud55c\uad6d \uc608\uc0b0\ub300\ud559\uc5d0\uc11c \uc778\uacf5\uc9c4\ud654 & \uc81c\uc57d\uacf5\ud559\uc744 \ud559\uc2b5 \uc911\uc785\ub2c8\ub2e4. \ud2b8\ud0a4\uc5d0 \ub3cc\uc544\uac00\uae30 \uc804\uc5d0\ub294 \ub124\ud30c\ub974\uc5d0\uc11c \ub370\uc774\ud130 \uc2dc\uc2a4\ud15c \uc9c1\uc6d0\uacfc IT \ud604\uc7a5 \uc9c0\uc6d0 \ud0a4\ud2b8\ub85c \uacf5\uc791\ud588\uc2b5\ub2c8\ub2e4. \ub124\ud2b8\uc6cc\ud0b9 \uc124\uc815, \uc5f0\uacb0 \ubb38\uc81c \ud574\uacb0, \uace0\uac1d\uc5d0\uac8c \uc9c1\uc811 \uc811\uc18d\ud588\uc2b5\ub2c8\ub2e4. \uc774\ub7ec\ud55c \uc2e4\uc808 \ubb38\uc81c \ud574\uacb0 \uacbd\ud5d8\uc774 \ud604\uc7ac \ucf58\ud150\uce20 \uc811\uadfc \ubc29\uc2dd\uc744 \ubcc0\uacbd\ud558\uace0 \uc788\uc2b5\ub2c8\ub2e4.",
         about_hl_fullstack: "\ud65c\ub3d9 \ud504\ub85c\uc81d\ud2b8 \uac1c\ubc1c\uc790", about_hl_ccna: "CCNA \ub124\ud2b8\uc6cc\ud0b9", about_hl_linux: "Linux / \uc11c\ubc84", about_hl_ml: "Python / ML",
