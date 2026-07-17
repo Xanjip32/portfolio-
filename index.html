@@ -40,8 +40,8 @@
       <a href="#home" class="text-xl font-bold tracking-wide">Sanjeev Shrestha</a>
       <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
         <li><a href="#home" class="text-[#FF6B57]" data-i18n="nav.home">Home</a></li>
-        <li><a href="#about" class="transition hover:text-[#FF6B57]" data-i18n="nav.about">About</a></li>
         <li><a href="#projects" class="transition hover:text-[#FF6B57]" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#about" class="transition hover:text-[#FF6B57]" data-i18n="nav.about">About</a></li>
         <li><a href="#languages" class="transition hover:text-[#FF6B57]" data-i18n="nav.languages">Languages</a></li>
         <li><a href="#certificates" class="transition hover:text-[#FF6B57]" data-i18n="nav.certificates">Certificates</a></li>
         <li><a href="#contact" class="transition hover:text-[#FF6B57]" data-i18n="nav.contact">Contact</a></li>
@@ -67,8 +67,8 @@
     </div>
     <ul class="space-y-2">
       <li><a href="#home" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav.home">Home</a></li>
-      <li><a href="#about" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.about">About</a></li>
       <li><a href="#projects" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#about" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.about">About</a></li>
       <li><a href="#languages" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.languages">Languages</a></li>
       <li><a href="#certificates" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.certificates">Certificates</a></li>
       <li><a href="#contact" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.contact">Contact</a></li>
@@ -84,11 +84,11 @@
     <!-- ═══════════════════════════════════════════
          HOME
     ═══════════════════════════════════════════ -->
-    <section id="home" class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('images/bg_v.png')] bg-[center_top_5%] md:bg-[url('images/bg_h.png')] md:bg-center">
+    <section id="home" class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('images/bg_v.png')] bg-[center_top_15%] md:bg-[url('images/bg_h.png')] md:bg-[right_center]">
       <div class="absolute inset-0 bg-slate-950/50"></div>
       <div class="relative z-10 flex min-h-screen flex-col">
         <div class="container mx-auto px-4">
-          <div class="container mx-auto flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6">
+          <div class="flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6 lg:justify-start">
             <div class="w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0 scroll-fade">
               <div class="text-white">
                 <span class="mb-3 block text-lg text-[#FF6B57]" data-i18n="home.greeting">Hi, I'm</span>
@@ -99,10 +99,10 @@
                   <span data-i18n="home.desc">I build practical projects, document my learning, and continuously improve through hands-on practice.</span>
                 </p>
                 <div class="mt-11 flex flex-wrap items-center justify-center gap-6">
-                  <a href="#projects" class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <a href="#projects" class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
                     <i class="fa-solid fa-folder-open mr-2"></i><span data-i18n="home.view_projects">View My projects</span>
                   </a>
-                  <a href="cv/cv.pdf" target="_blank" class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <a href="cv/cv.pdf" target="_blank" class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
                     <span data-i18n="home.download_cv">Download CV</span> <i class="fa-solid fa-download ml-2"></i>
                   </a>
                 </div>
@@ -399,100 +399,6 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         ABOUT
-    ═══════════════════════════════════════════ -->
-    <section id="about" class="bg-[var(--bg-color)] py-20">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto max-w-6xl rounded-2xl border border-white/20 bg-[var(--bg-color)] p-6 sm:p-10 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
-          <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-14">
-
-            <!-- Left: Photo -->
-            <div class="flex justify-center lg:justify-start lg:sticky lg:top-28 lg:self-start">
-              <div class="relative">
-                <img src="images/bg_v.png" alt="Sanjeev Shrestha" class="w-48 h-48 lg:w-[280px] lg:h-[280px] object-cover rounded-2xl border-2 border-[#FF6B57]/40 shadow-[0_0_30px_rgba(255,107,87,.25)]">
-              </div>
-            </div>
-
-            <!-- Right: Content -->
-            <div>
-              <h2 class="text-4xl font-bold text-[#FF6B57] mb-2 tracking-tight" data-i18n="about.title">About Me</h2>
-              <p class="text-gray-400 text-sm mb-6" data-i18n="about.subtitle">Computer Engineering Student &middot; Full-Stack Developer &middot; Network Enthusiast</p>
-              <p class="text-gray-100 leading-relaxed mb-6 text-justify" data-i18n="about.intro">
-                I'm Sanjeev, an AI &amp; Computer Engineering student at Youngsan University in Busan, South Korea.
-                Before moving into tech, I worked as a Data Specialist and IT Field Support Technician in Nepal &mdash;
-                installing networks, solving connectivity issues, and working directly with customers. That
-                hands-on problem-solving experience now shapes how I approach code.
-              </p>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
-                  <i class="fa-solid fa-code text-[#FF6B57] text-lg mb-1"></i>
-                  <p class="text-xs text-gray-300" data-i18n="about.hl_fullstack">Full-Stack Dev</p>
-                </div>
-                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
-                  <i class="fa-solid fa-network-wired text-[#FF6B57] text-lg mb-1"></i>
-                  <p class="text-xs text-gray-300" data-i18n="about.hl_ccna">CCNA Networking</p>
-                </div>
-                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
-                  <i class="fa-solid fa-server text-[#FF6B57] text-lg mb-1"></i>
-                  <p class="text-xs text-gray-300" data-i18n="about.hl_linux">Linux / Servers</p>
-                </div>
-                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
-                  <i class="fa-solid fa-brain text-[#FF6B57] text-lg mb-1"></i>
-                  <p class="text-xs text-gray-300" data-i18n="about.hl_ml">Python / ML</p>
-                </div>
-              </div>
-              <div class="mb-6">
-                <h3 class="flex items-center gap-2 text-[#FF6B57] font-semibold mb-2">
-                  <i class="fa-solid fa-folder-open"></i> <span data-i18n="about.building_title">What I'm Building</span>
-                </h3>
-                <p class="text-gray-100 leading-relaxed text-justify" data-i18n="about.building">
-                  My main project is <span class="font-semibold text-[#FF6B57]">KoreaSathi</span> &mdash;
-                  a free open-source student hub built with headless WordPress CMS, Tailwind CSS, and deployed on Vercel.
-                  It helps Nepali students navigate visas, housing, jobs, and life in Korea.
-                  Something I wish existed when I was figuring it out myself.
-                </p>
-              </div>
-              <div class="mb-6">
-                <h3 class="flex items-center gap-2 text-[#FF6B57] font-semibold mb-2">
-                  <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="about.learning_title">Currently Learning</span>
-                </h3>
-                <p class="text-gray-100 leading-relaxed text-justify" data-i18n="about.learning">
-                  Expanding into full-stack development with
-                  <span class="font-semibold text-[#FF6B57]">Laravel</span> &mdash; PHP, Blade templates, MySQL, and REST APIs.
-                  On the side, studying for my
-                  <span class="font-semibold text-[#FF6B57]">CCNA</span>, since networking is where I want
-                  to take my career long-term. My earlier field support work gave me a taste for it, and I'm now
-                  going deeper on purpose.
-                </p>
-              </div>
-              <div class="mb-6">
-                <h3 class="flex items-center gap-2 text-[#FF6B57] font-semibold mb-2">
-                  <i class="fa-solid fa-language"></i> <span data-i18n="about.languages_title">Languages</span>
-                  <a href="#languages" class="ml-auto text-xs text-gray-400 hover:text-[#FF6B57] transition">View all <i class="fa-solid fa-arrow-right ml-0.5"></i></a>
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                  <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-sm text-white">Nepali <span class="text-xs text-gray-400">(Native)</span></span>
-                  <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-sm text-white">Hindi <span class="text-xs text-gray-400">(Fluent)</span></span>
-                  <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-sm text-white">English <span class="text-xs text-gray-400">(IELTS 6.5)</span></span>
-                  <span class="rounded-full bg-[#FF6B57]/20 border border-[#FF6B57]/40 px-3 py-1 text-sm text-[#FF6B57]">Korean <span class="text-xs">(TOPIK 2)</span></span>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-3 pt-2">
-                <a href="#projects" class="rounded-xl bg-[#FF6B57] px-5 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B57]/40">
-                  <i class="fa-solid fa-folder-open mr-2"></i><span data-i18n="about.cta_projects">View Projects</span>
-                </a>
-                <a href="#contact" class="rounded-xl border border-white px-5 py-2.5 text-sm font-medium transition duration-300 hover:border-[#FF6B57] hover:text-[#FF6B57]">
-                  <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="about.cta_contact">Get In Touch</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
          PROJECTS
     ═══════════════════════════════════════════ -->
     <section id="projects" class="bg-[var(--bg-color)] py-20">
@@ -512,7 +418,7 @@
 
         <div class="overflow-hidden rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 mb-6 scroll-fade">
           <div class="grid gap-0 md:grid-cols-[320px_1fr]">
-            <img src="images/koreasathi-preview.png" alt="KoreaSathi Preview" class="h-64 w-full object-cover md:h-full">
+            <img src="images/koreasathi-preview.png" alt="KoreaSathi Preview" loading="lazy" class="h-64 w-full object-cover md:h-full">
             <div class="p-6">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
@@ -696,6 +602,88 @@
               <i class="fa-solid fa-utensils text-[#FF6B57] mb-1 block text-lg"></i>
               <span class="text-xs text-gray-300" data-i18n="projects.odin_recipes">Odin Recipes</span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════ -->
+    <section id="about" class="bg-[var(--bg-color)] py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-6xl rounded-2xl border border-white/20 bg-[var(--bg-color)] p-6 sm:p-10 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
+          <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-14">
+
+            <!-- Left: Photo -->
+            <div class="flex justify-center lg:justify-start lg:sticky lg:top-28 lg:self-start">
+              <div class="relative">
+                <img src="images/bg_v.png" alt="Sanjeev Shrestha" loading="lazy" class="w-48 h-48 lg:w-[280px] lg:h-[280px] object-cover rounded-2xl border-2 border-[#FF6B57]/40 shadow-[0_0_30px_rgba(255,107,87,.25)]">
+              </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+              <h2 class="text-4xl font-bold text-[#FF6B57] mb-2 tracking-tight" data-i18n="about.title">About Me</h2>
+              <p class="text-gray-400 text-sm mb-6" data-i18n="about.subtitle">Computer Engineering Student &middot; Full-Stack Developer &middot; Network Enthusiast</p>
+              <p class="text-gray-100 leading-relaxed mb-6 text-justify" data-i18n="about.intro">
+                I'm Sanjeev, an AI &amp; Computer Engineering student at Youngsan University in Busan, South Korea.
+                Before moving into tech, I worked as a Data Specialist and IT Field Support Technician in Nepal &mdash;
+                installing networks, solving connectivity issues, and working directly with customers. That
+                hands-on problem-solving experience now shapes how I approach code.
+              </p>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                  <i class="fa-solid fa-code text-[#FF6B57] text-lg mb-1"></i>
+                  <p class="text-xs text-gray-300" data-i18n="about.hl_fullstack">Full-Stack Dev</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                  <i class="fa-solid fa-network-wired text-[#FF6B57] text-lg mb-1"></i>
+                  <p class="text-xs text-gray-300" data-i18n="about.hl_ccna">CCNA Networking</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                  <i class="fa-solid fa-server text-[#FF6B57] text-lg mb-1"></i>
+                  <p class="text-xs text-gray-300" data-i18n="about.hl_linux">Linux / Servers</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                  <i class="fa-solid fa-brain text-[#FF6B57] text-lg mb-1"></i>
+                  <p class="text-xs text-gray-300" data-i18n="about.hl_ml">Python / ML</p>
+                </div>
+              </div>
+              <div class="mb-6">
+                <h3 class="flex items-center gap-2 text-[#FF6B57] font-semibold mb-2">
+                  <i class="fa-solid fa-folder-open"></i> <span data-i18n="about.building_title">What I'm Building</span>
+                </h3>
+                <p class="text-gray-100 leading-relaxed text-justify" data-i18n="about.building">
+                  My main project is <span class="font-semibold text-[#FF6B57]">KoreaSathi</span> &mdash;
+                  a free open-source student hub built with headless WordPress CMS, Tailwind CSS, and deployed on Vercel.
+                  It helps Nepali students navigate visas, housing, jobs, and life in Korea.
+                  Something I wish existed when I was figuring it out myself.
+                </p>
+              </div>
+              <div class="mb-6">
+                <h3 class="flex items-center gap-2 text-[#FF6B57] font-semibold mb-2">
+                  <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="about.learning_title">Currently Learning</span>
+                </h3>
+                <p class="text-gray-100 leading-relaxed text-justify" data-i18n="about.learning">
+                  Expanding into full-stack development with
+                  <span class="font-semibold text-[#FF6B57]">Laravel</span> &mdash; PHP, Blade templates, MySQL, and REST APIs.
+                  On the side, studying for my
+                  <span class="font-semibold text-[#FF6B57]">CCNA</span>, since networking is where I want
+                  to take my career long-term. My earlier field support work gave me a taste for it, and I'm now
+                  going deeper on purpose.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#projects" class="rounded-xl bg-[#FF6B57] px-5 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <i class="fa-solid fa-folder-open mr-2"></i><span data-i18n="about.cta_projects">View Projects</span>
+                </a>
+                <a href="#contact" class="rounded-xl border border-white px-5 py-2.5 text-sm font-medium transition duration-300 hover:border-[#FF6B57] hover:text-[#FF6B57]">
+                  <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="about.cta_contact">Get In Touch</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -929,7 +917,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
-            <img src="images/cert/vianet.jpg" alt="Vianet Experience Letter" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+            <img src="images/cert/vianet.jpg" alt="Vianet Experience Letter" loading="lazy" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center gap-3">
@@ -946,7 +934,7 @@
           </div>
 
           <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
-            <img src="images/cert/cloudfactory experience letter 01.jpg" alt="CloudFactory Experience Letter" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+            <img src="images/cert/cloudfactory experience letter 01.jpg" alt="CloudFactory Experience Letter" loading="lazy" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center gap-3">
@@ -963,7 +951,7 @@
           </div>
 
           <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
-            <img src="images/cert/industrail_electricain.jpg" alt="Industrial Electrician Certificate" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+            <img src="images/cert/industrail_electricain.jpg" alt="Industrial Electrician Certificate" loading="lazy" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center gap-3">
@@ -980,7 +968,7 @@
           </div>
 
           <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
-            <img src="images/cert/cisco_packet_tracer.png" alt="Cisco Packet Tracer Certificate" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+            <img src="images/cert/cisco_packet_tracer.png" alt="Cisco Packet Tracer Certificate" loading="lazy" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center gap-3">
@@ -1014,7 +1002,7 @@
                 Just want to say hi? I'd love to hear from you.
               </p>
               <div class="rounded-xl border border-white/10 bg-white/5 shadow-[0_4px_20px_rgba(0,0,0,0.3)] p-6">
-                <form id="contactForm" class="space-y-5" novalidate>
+                <form id="contactForm" class="space-y-5" novalidate aria-label="Contact form">
                   <input type="hidden" name="access_key" value="5dd7dd3c-b36e-4296-b164-c65cd45603da">
                   <input type="hidden" name="subject" value="New message from portfolio site">
                   <div class="honeypot" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden;">
@@ -1110,7 +1098,7 @@
   </main>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onclick="closeLightbox()">
+  <div id="lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" role="dialog" aria-label="Certificate preview" onclick="closeLightbox()">
     <button type="button" class="absolute top-4 right-4 text-white text-3xl hover:text-[#FF6B57] transition-colors z-50" onclick="closeLightbox()">
       <i class="fa-solid fa-xmark"></i>
     </button>

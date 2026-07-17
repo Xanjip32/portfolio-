@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
+
 :root{
 
 --bg-color:#090f1d;
@@ -75,5 +77,19 @@ nav a.active-section {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
+}
+
+/* Heading font */
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Image skeleton placeholder */
+img {
+  background: linear-gradient(90deg, var(--bg-light) 25%, var(--border) 50%, var(--bg-light) 75%);
+  background-size: 200% 100%;
+}
+img[src] {
+  background: none;
 }
 
