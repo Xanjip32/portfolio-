@@ -89,6 +89,79 @@
     });
   }
 
+  /* ── smooth scroll for anchor links ──────── */
+  function setupSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var id = this.getAttribute('href');
+        if (!id || id === '#') return;
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        /* close mobile drawer if open */
+        var drawer = document.getElementById('drawer-navigation');
+        if (drawer && !drawer.classList.contains('-translate-x-full')) {
+          drawer.classList.add('-translate-x-full');
+        }
+        /* update URL without jump */
+        if (history.pushState) {
+          history.pushState(null, null, id);
+        }
+      });
+    });
+  }
+
+  /* ── scroll-triggered fade-in animations ─── */
+  function setupScrollAnimations() {
+    if (!('IntersectionObserver' in window)) {
+      /* fallback: just show everything */
+      document.querySelectorAll('.scroll-fade').forEach(function (el) {
+        el.classList.add('visible');
+      });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.scroll-fade').forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  /* ── active nav link on scroll ───────────── */
+  function setupActiveNav() {
+    var sections = document.querySelectorAll('section[id]');
+    if (!sections.length) return;
+
+    var navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
+    if (!navLinks.length) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('id');
+          navLinks.forEach(function (link) {
+            link.classList.remove('active-section');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active-section');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
+  }
+
   /* ── auto-apply immediately ──────────────── */
   /* Scripts sit at bottom of <body>, so DOM is already ready.
      Use DOMContentLoaded if it hasn't fired yet, otherwise run now. */
@@ -100,6 +173,9 @@
     }
     applyLang(saved);
     setupDrawer();
+    setupSmoothScroll();
+    setupScrollAnimations();
+    setupActiveNav();
   }
 
   if (document.readyState === 'loading') {

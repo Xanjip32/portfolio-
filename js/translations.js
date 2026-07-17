@@ -19,6 +19,7 @@ var translations = {
       home:       "Home",
       about:      "About",
       projects:   "Projects",
+      languages:  "Languages",
       certificates:"Certificates",
       contact:    "Contact"
     },
@@ -166,6 +167,59 @@ var translations = {
     contact: {
       title: "Get In Touch",
       desc:  "Just want to say hi? I'd love to hear from you."
+    },
+
+    /* — languages.html — */
+    languages: {
+      badge:           "Languages",
+      hero_title:      "Languages",
+      hero_desc:       "Communication across cultures is a skill I value. Growing up multilingual and living abroad has shaped how I connect with people.",
+
+      nepali:          "Nepali",
+      nepali_script:   "Devanagari Script",
+      nepali_desc:     "Nepali is my mother tongue and the language I grew up speaking at home. It's the official language of Nepal and is spoken by over 25 million people worldwide. I use it daily with family and friends from home.",
+      nepali_details_title: "About Nepali",
+      nepali_speakers: "25+ million speakers worldwide",
+      nepali_official: "Official language of Nepal",
+      nepali_script_desc: "Uses Devanagari script (same as Hindi, Sanskrit)",
+      nepali_family:   "Part of the Indo-Aryan language family",
+
+      hindi:           "Hindi",
+      hindi_script:    "Devanagari Script",
+      hindi_desc:      "Hindi is a linguistic cousin of Nepali — both descend from Sanskrit and share the Devanagari writing system. I grew up understanding Hindi through media, culture, and regional proximity. It's mutually intelligible with Nepali in many everyday situations.",
+      hindi_details_title: "About Hindi",
+      hindi_speakers:  "600+ million speakers worldwide",
+      hindi_official:  "Official language of India",
+      hindi_relation:  "Shares Devanagari script and Sanskrit roots with Nepali",
+      hindi_mutual:    "Often mutually intelligible with Nepali",
+
+      english:         "English",
+      english_script:  "Latin Script",
+      english_desc:    "English is the language I use for academics, coding, and professional work. I scored 6.5 on IELTS, which reflects my ability to communicate effectively in academic and workplace settings. I'm comfortable with technical documentation, presentations, and daily conversation.",
+      english_details_title: "About English",
+      english_ielts:   "IELTS Academic: 6.5",
+      english_usage:   "Used daily for coding and academics",
+      english_global:  "Global lingua franca for tech and business",
+      english_university: "Primary language of instruction at Youngsan University",
+
+      korean:          "Korean",
+      korean_script:   "Hangul Script",
+      korean_desc:     "I'm currently studying Korean while living in Busan, South Korea. I've achieved TOPIK Level 2, which covers basic to intermediate proficiency. I can handle daily conversations, read Hangul, and navigate everyday life. I continue to improve through immersion and coursework.",
+      korean_details_title: "About Korean",
+      korean_topik:    "TOPIK II — Level 2 (Basic–Intermediate)",
+      korean_study:    "Studying at Youngsan University in Busan",
+      korean_daily:    "Daily life conversations and navigation",
+      korean_read:     "Can read Hangul and basic texts",
+
+      comparison_title: "Proficiency Overview",
+      th_language:     "Language",
+      th_level:        "Level",
+      th_script:       "Script",
+      th_context:      "Context",
+      ctx_home:        "Home, family, culture",
+      ctx_regional:    "Regional media, neighbors",
+      ctx_academic:    "Academics, tech, work",
+      ctx_living:      "Daily life, university"
     }
   },
 
@@ -182,6 +236,7 @@ var translations = {
       home:       "홈",
       about:      "소개",
       projects:   "프로젝트",
+      languages:  "언어",
       certificates:"자격증",
       contact:    "연락처"
     },
@@ -324,6 +379,58 @@ var translations = {
     contact: {
       title: "연락하기",
       desc:  "그저 인사만 하고 싶으셔도 좋아요. 언제든 연락 주세요."
+    },
+
+    languages: {
+      badge:           "언어",
+      hero_title:      "언어",
+      hero_desc:       "문화를 넘어 소통하는 것은 제가 중요하게 생각하는 능력입니다. 다국어 환경에서 성장하고 해외에서 생활하면서 people과 연결하는 방식이 달라졌습니다.",
+
+      nepali:          "네팔어",
+      nepali_script:   "데바나가리 문자",
+      nepali_desc:     "네팔어는 제 모국어로, 집에서 자라며 사용한 언어입니다. 네팔의 공용어이며 전 세계 2천만 명 이상이 사용합니다. 가족 및 고향 친구들과 매일 사용합니다.",
+      nepali_details_title: "네팔어 소개",
+      nepali_speakers: "전 세계 2천만 명 이상의 화자",
+      nepali_official: "네팔 공화국 공용어",
+      nepali_script_desc: "데바나가리 문자 사용 (힌디어, 산스크리트어와 동일)",
+      nepali_family:   "인도 아리아어족에 속함",
+
+      hindi:           "힌디어",
+      hindi_script:    "데바나가리 문자",
+      hindi_desc:      "힌디어는 네팔어의 언어적 사촌입니다 — 둘 다 산스크리트어에서 유래했으며 데바나가리 문자를 공유합니다. 저는 미디어, 문화, 지역적 근접성을 통해 힌디어를 이해하며 자랐습니다. 일상적인 상황에서 네팔어와 상호 이해가 가능합니다.",
+      hindi_details_title: "힌디어 소개",
+      hindi_speakers:  "전 세계 6억 명 이상의 화자",
+      hindi_official:  "인도 공화국 공용어",
+      hindi_relation:  "네팔어와 데바나가리 문자 및 산스크리트어 뿌리를 공유",
+      hindi_mutual:    "네팔어와 상호 이해 가능",
+
+      english:         "영어",
+      english_script:  "라틴 문자",
+      english_desc:    "영어는 학업, 코딩, 전문 업무에 사용하는 언어입니다. IELTS에서 6.5점을 받았으며, 이는 학계와 직장에서 효과적으로 소통할 수 있는 능력을 반영합니다. 기술 문서 작성, 프레젠테이션, 일상 대화에 능숙합니다.",
+      english_details_title: "영어 소개",
+      english_ielts:   "IELTS Academic: 6.5",
+      english_usage:   "코딩 및 학업에 매일 사용",
+      english_global:  "기술과 비즈니스의 글로벌 링구아 프랑카",
+      english_university: "영산대학교 주요 수업 언어",
+
+      korean:          "한국어",
+      korean_script:   "한글",
+      korean_desc:     "현재 부산에서 거주하며 한국어를 공부하고 있습니다. TOPIK 2급을 취득했으며, 기본~중급 수준의 능력을 보유하고 있습니다. 일상 대화, 한글 읽기, 일상 생활 처리가 가능합니다. 몰입 학습과 수업을 통해 지속적으로 향상시키고 있습니다.",
+      korean_details_title: "한국어 소개",
+      korean_topik:    "TOPIK II — 2급 (기초~중급)",
+      korean_study:    "부산 영산대학교 재학 중",
+      korean_daily:    "일상 대화 및 생활 처리",
+      korean_read:     "한글 및 기본 텍스트 읽기 가능",
+
+      comparison_title: "능력 개요",
+      th_language:     "언어",
+      th_level:        "수준",
+      th_script:       "문자",
+      th_context:      "사용 맥락",
+      ctx_home:        "가정, 가족, 문화",
+      ctx_regional:    "지역 미디어, 이웃",
+      ctx_academic:    "학업, 기술, 업무",
+      ctx_living:      "일상 생활, 대학교"
     }
   }
 };

@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="js/translations.js?v=2"></script>
-  <script src="js/i18n.js?v=2"></script>
+  <script src="js/translations.js?v=3"></script>
+  <script src="js/i18n.js?v=3"></script>
   <script>
     (function() {
       var saved = localStorage.getItem('lang');
@@ -28,94 +28,95 @@
     })();
   </script>
   <style>
+    html { scroll-behavior: smooth; }
     html, body { background: #090f1d; color: #fff; margin: 0; padding: 0; }
   </style>
 </head>
 
 <body style="font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;" class="bg-[var(--bg-color)] text-white">
 
+  <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--bg-color)]/90 backdrop-blur">
+    <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <a href="#home" class="text-xl font-bold tracking-wide">Sanjeev Shrestha</a>
+      <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+        <li><a href="#home" class="text-[#FF6B57]" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" class="transition hover:text-[#FF6B57]" data-i18n="nav.about">About</a></li>
+        <li><a href="#projects" class="transition hover:text-[#FF6B57]" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#languages" class="transition hover:text-[#FF6B57]" data-i18n="nav.languages">Languages</a></li>
+        <li><a href="#certificates" class="transition hover:text-[#FF6B57]" data-i18n="nav.certificates">Certificates</a></li>
+        <li><a href="#contact" class="transition hover:text-[#FF6B57]" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <button id="langToggle" type="button" onclick="toggleLang()" class="flex items-center gap-1.5 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+        <i class="fa-solid fa-globe"></i>
+        <span id="langLabel">EN</span>
+      </button>
+      <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden" data-drawer-target="drawer-navigation"
+        data-drawer-show="drawer-navigation">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </div>
+  </nav>
+
+  <aside id="drawer-navigation"
+    class="fixed left-0 top-0 z-50 h-screen w-80 -translate-x-full overflow-y-auto border-r border-white/10 bg-[#0B1320] p-5 transition-transform md:hidden">
+    <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-lg font-semibold" data-i18n="common.menu">Menu</h2>
+      <button type="button" data-drawer-hide="drawer-navigation">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+    </div>
+    <ul class="space-y-2">
+      <li><a href="#home" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav.home">Home</a></li>
+      <li><a href="#about" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.about">About</a></li>
+      <li><a href="#projects" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#languages" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.languages">Languages</a></li>
+      <li><a href="#certificates" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.certificates">Certificates</a></li>
+      <li><a href="#contact" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <button onclick="toggleLang()" class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-3 text-sm font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+      <i class="fa-solid fa-globe"></i>
+      <span data-i18n="common.lang_switch">Switch to 한국어</span>
+    </button>
+  </aside>
+
   <main>
-    <section
-      class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('images/bg_v.png')] bg-[center_top_5%] md:bg-[url('images/bg_h.png')] md:bg-center ">
-      <div class="absolute inset-0 bg-slate-950/50  "></div>
+
+    <!-- ═══════════════════════════════════════════
+         HOME
+    ═══════════════════════════════════════════ -->
+    <section id="home" class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('images/bg_v.png')] bg-[center_top_5%] md:bg-[url('images/bg_h.png')] md:bg-center">
+      <div class="absolute inset-0 bg-slate-950/50"></div>
       <div class="relative z-10 flex min-h-screen flex-col">
         <div class="container mx-auto px-4">
-          <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--bg-color)]/90 backdrop-blur">
-            <div class="container mx-auto flex items-center justify-between px-4 py-4">
-              <a href="index.html" class="text-xl font-bold tracking-wide">
-                Sanjeev Shrestha
-              </a>
-
-              <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
-                <li><a href="index.html" class="text-[#FF6B57]" data-i18n="nav.home">Home</a></li>
-                <li><a href="pages/about.html" class="text-white transition hover:text-[#FF6B57]" data-i18n="nav.about">About</a></li>
-                <li><a href="pages/project.html" class="text-white transition hover:text-[#FF6B57]" data-i18n="nav.projects">Projects</a></li>
-                <li><a href="pages/certificates.html" class="text-white transition hover:text-[#FF6B57]" data-i18n="nav.certificates">Certificates</a></li>
-                <li><a href="pages/contact.html" class="text-white transition hover:text-[#FF6B57]" data-i18n="nav.contact">Contact</a></li>
-              </ul>
-
-              <button id="langToggle" type="button" onclick="toggleLang()" class="flex items-center gap-1.5 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
-                <i class="fa-solid fa-globe"></i>
-                <span id="langLabel">EN</span>
-              </button>
-
-              <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden" data-drawer-target="drawer-navigation"
-                data-drawer-show="drawer-navigation">
-                <i class="fa-solid fa-bars text-lg"></i>
-              </button>
-            </div>
-          </nav>
-
-          <aside id="drawer-navigation"
-            class="fixed left-0 top-0 z-50 h-screen w-80 -translate-x-full overflow-y-auto border-r border-white/10 bg-[#0B1320] p-5 transition-transform md:hidden">
-            <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-              <h2 class="text-lg font-semibold" data-i18n="common.menu">Menu</h2>
-              <button type="button" data-drawer-hide="drawer-navigation">
-                <i class="fa-solid fa-xmark text-xl"></i>
-              </button>
-            </div>
-            <ul class="space-y-2">
-              <li><a href="index.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav.home">Home</a></li>
-              <li><a href="pages/about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.about">About</a></li>
-              <li><a href="pages/project.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.projects">Projects</a></li>
-              <li><a href="pages/certificates.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.certificates">Certificates</a></li>
-              <li><a href="pages/contact.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.contact">Contact</a></li>
-            </ul>
-            <button onclick="toggleLang()" class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-3 text-sm font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
-              <i class="fa-solid fa-globe"></i>
-              <span data-i18n="common.lang_switch">Switch to 한국어</span>
-            </button>
-          </aside>
-        </div>
-
-        <div class="container mx-auto flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6">
-          <div class="w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0">
-            <div class="text-white">
-              <span class="mb-3 block text-lg text-[#FF6B57]" data-i18n="home.greeting">Hi, I'm</span>
-              <h1 class="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">Sanjeev Shrestha</h1>
-              <p class="max-w-2xl text-base leading-8 sm:text-lg">
-                <strong data-i18n="home.title">Computer Engineering Student</strong><br>
-                <span data-i18n="home.subtitle">Building Full-Stack Projects & Learning Networking</span><br>
-                <span data-i18n="home.desc">I build practical projects, document my learning, and continuously improve through hands-on practice.</span>
-              </p>
-              <div class="mt-11 flex flex-wrap items-center justify-center gap-6">
-                <a href="pages/project.html" class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
-                  <i class="fa-solid fa-folder-open mr-2"></i><span data-i18n="home.view_projects">View My projects</span>
-                </a>
-                <a href="cv/cv.pdf" target="_blank" class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
-                  <span data-i18n="home.download_cv">Download CV</span> <i class="fa-solid fa-download ml-2"></i>
-                </a>
+          <div class="container mx-auto flex flex-1 items-end sm:items-center px-2 py-10 sm:px-4 lg:px-6">
+            <div class="w-full max-w-2xl rounded-2xl border border-white bg-[var(--bg-color)]/90 backdrop-blur-sm p-5 shadow-2xl shadow-[#FF6B57] sm:p-6 md:mx-0 scroll-fade">
+              <div class="text-white">
+                <span class="mb-3 block text-lg text-[#FF6B57]" data-i18n="home.greeting">Hi, I'm</span>
+                <h1 class="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">Sanjeev Shrestha</h1>
+                <p class="max-w-2xl text-base leading-8 sm:text-lg">
+                  <strong data-i18n="home.title">Computer Engineering Student</strong><br>
+                  <span data-i18n="home.subtitle">Building Full-Stack Projects & Learning Networking</span><br>
+                  <span data-i18n="home.desc">I build practical projects, document my learning, and continuously improve through hands-on practice.</span>
+                </p>
+                <div class="mt-11 flex flex-wrap items-center justify-center gap-6">
+                  <a href="#projects" class="rounded-xl border border-white px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:text-white hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                    <i class="fa-solid fa-folder-open mr-2"></i><span data-i18n="home.view_projects">View My projects</span>
+                  </a>
+                  <a href="cv/cv.pdf" target="_blank" class="rounded-xl bg-[#a33223] px-4 py-2 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                    <span data-i18n="home.download_cv">Download CV</span> <i class="fa-solid fa-download ml-2"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-          <div></div>
         </div>
       </div>
     </section>
 
+    <!-- HOME: Focus + Skills + Education -->
     <section class="bg-[var(--bg-color)]">
       <div class="container mx-auto px-4 py-12 flex flex-col gap-6 lg:flex-row">
-        <div class="flex-1 rounded-2xl border border-white/20 bg-[var(--bg-color)] p-5 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-6">
+        <div class="flex-1 rounded-2xl border border-white/20 bg-[var(--bg-color)] p-5 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-6 scroll-fade">
           <div class="text-white">
             <span class="mb-6 flex items-center gap-2 text-lg text-[#FF6B57]">
               <i class="fa-solid fa-bullseye"></i>
@@ -141,7 +142,7 @@
                 <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white">
                   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white">
                     <title>Cisco</title>
-                    <path fill="currentColor" d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206c-.287.132-.54.327-.739.571a2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155zM1.039 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155z"/>
+                    <path fill="currentColor" d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206c-.287.132-.54.327-.739.571a2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155zm-1.764 2.627a.518.518 0 00-.517.518v1.155c0 .286.232.518.517.518a.518.518 0 00.518-.518v-1.155a.518.518 0 00-.518-.518zm-3.495-1.833a.518.518 0 00-.517.518v2.988c0 .286.231.518.517.518a.518.518 0 00.517-.518v-2.988a.518.518 0 00-.517-.518zm-1.764 0a.518.518 0 00-.518.518v2.988c0 .286.232.518.518.518a.518.518 0 00.517-.518v-2.988a.518.518 0 00-.517-.518zm-1.764 0a.518.518 0 00-.517.518v2.988c0 .286.231.518.517.518a.518.518 0 00.518-.518v-2.988a.518.518 0 00-.518-.518zm-1.763 0a.518.518 0 00-.518.518v2.988c0 .286.232.518.518.518a.518.518 0 00.517-.518v-2.988a.518.518 0 00-.517-.518zm-1.764 0a.518.518 0 00-.517.518v2.988c0 .286.231.518.517.518a.518.518 0 00.518-.518v-2.988a.518.518 0 00-.518-.518zm-1.764 0a.518.518 0 00-.517.518v2.988c0 .286.231.518.517.518a.518.518 0 00.518-.518v-2.988a.518.518 0 00-.518-.518zM10.1 2.073c-.263-.043-.529-.043-.793 0L6.33 2.94l1.88 1.361 1.224-.72v7.264l-1.247.733-1.88-1.085-2.497 1.442 1.944 1.123 2.498 1.442 2.498-1.442 1.943-1.123-2.497-1.442-1.88 1.085-1.247-.733V3.58l1.224.72 1.88-1.361-2.977-.867z"/>
                   </svg>
                 </div>
                 <span class="font-semibold">CCNA</span>
@@ -187,7 +188,7 @@
           </div>
         </div>
 
-        <div class="flex-1 rounded-2xl border border-white/20 bg-[var(--bg-color)] p-3 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-4 overflow-y-auto max-h-[650px]">
+        <div class="flex-1 rounded-2xl border border-white/20 bg-[var(--bg-color)] p-3 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] sm:p-4 overflow-y-auto max-h-[650px] scroll-fade">
           <div class="text-white">
             <span class="mb-4 flex items-center gap-2 text-base text-[#FF6B57]">
               <i class="fa-solid fa-graduation-cap"></i>
@@ -216,7 +217,7 @@
                   <p class="text-[#FF6B57] text-sm" data-i18n="home.exp_vianet_company">Vianet Communication</p>
                   <div class="mt-1.5 flex flex-wrap gap-2">
                     <a href="https://www.vianet.com.np/" target="_blank" class="text-xs text-pink-400 hover:underline">vianet.com.np <i class="fa-solid fa-arrow-up-right-from-square ml-0.5 text-[10px]"></i></a>
-                    <a href="pages/certificates.html#vianet" class="text-xs text-pink-400 hover:underline" data-i18n="home.certificate">Certificate <i class="fa-solid fa-arrow-up-right-from-square ml-0.5 text-[10px]"></i></a>
+                    <a href="#certificates" class="text-xs text-pink-400 hover:underline" data-i18n="home.certificate">Certificate <i class="fa-solid fa-arrow-up-right-from-square ml-0.5 text-[10px]"></i></a>
                   </div>
                 </div>
               </div>
@@ -229,7 +230,7 @@
                   <p class="text-[#FF6B57] text-sm" data-i18n="home.exp_cf_company">CloudFactory Nepal</p>
                   <div class="mt-1.5 flex flex-wrap gap-2">
                     <a href="https://www.cloudfactory.com/" target="_blank" class="text-xs text-fuchsia-400 hover:underline">cloudfactory.com <i class="fa-solid fa-arrow-up-right-from-square ml-0.5 text-[10px]"></i></a>
-                    <a href="pages/certificates.html#cloudfactory" class="text-xs text-fuchsia-400 hover:underline" data-i18n="home.certificate">Certificate <i class="fa-solid fa-arrow-up-right-from-square ml-0.5 text-[10px]"></i></a>
+                    <a href="#certificates" class="text-xs text-fuchsia-400 hover:underline" data-i18n="home.certificate">Certificate <i class="fa-solid fa-arrow-up-right-from-square ml-0.5 text-[10px]"></i></a>
                   </div>
                 </div>
               </div>
@@ -251,13 +252,13 @@
       </div>
     </section>
 
+    <!-- HOME: Learning Journey -->
     <section class="bg-[var(--bg-color)] text-white p-4 sm:p-8">
-      <div class="container mx-auto flex flex-col border border-white/20 p-4 sm:p-6 rounded-xl shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+      <div class="container mx-auto flex flex-col border border-white/20 p-4 sm:p-6 rounded-xl shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
         <div class="mb-4">
           <span class="text-xl font-bold ml-2 sm:ml-5"><i class="fa-solid fa-book-open-reader"></i> <span data-i18n="home.section_learning">Learning</span>
             <span data-i18n="home.section_journey">Journey</span></span>
         </div>
-
         <div class="flex flex-col gap-4 md:flex-row">
           <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
             <h3 class="text-[var(--primary)] text-sm sm:text-base">The Odin Project-Foundations</h3>
@@ -268,7 +269,6 @@
             </p>
             <p class="mt-2 text-sm" data-i18n="home.odin_projects">Projects: Landing Page, Calculator, Rock Paper Scissors, Etch-a-Sketch, Recipes</p>
           </div>
-
           <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
             <h3 class="text-[var(--primary)] text-sm sm:text-base">CS50's Web Programming</h3>
             <span class="text-yellow-500 block mb-2 text-sm" data-i18n="home.status_paused">(Paused)</span>
@@ -276,7 +276,6 @@
               Completed assignments through the Python/Flask track and studied Django. Paused for now.
             </p>
           </div>
-
           <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
             <h3 class="text-[var(--primary)] text-sm sm:text-base">Full-Stack with Laravel</h3>
             <span class="text-red-500 block mb-2 text-sm" data-i18n="home.status_inprogress">(In progress)</span>
@@ -284,7 +283,6 @@
               Learning full-stack web development with Laravel — PHP, Blade templates, MySQL, authentication, and REST APIs.
             </p>
           </div>
-
           <div class="bg-[var(--bg-light)] p-4 sm:p-6 rounded-xl flex-1">
             <h3 class="text-[var(--primary)] text-sm sm:text-base">CCNA</h3>
             <span class="text-red-500 block mb-2 text-sm" data-i18n="home.status_inprogress">(In progress)</span>
@@ -296,19 +294,18 @@
       </div>
     </section>
 
+    <!-- HOME: Timeline -->
     <section class="bg-[var(--bg-color)] text-white p-4 sm:p-8">
-      <div class="container mx-auto border border-white/20 rounded-xl p-4 sm:p-6 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+      <div class="container mx-auto border border-white/20 rounded-xl p-4 sm:p-6 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
         <h2 class="flex items-center gap-2 text-white text-xl font-semibold mb-6 sm:mb-10">
           <span data-i18n="home.section_timeline">📈 Timeline</span>
         </h2>
-
         <div class="overflow-x-auto">
           <div class="relative min-w-[700px]">
             <div class="absolute left-0 right-0 top-7 h-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-sky-500"></div>
-
             <div class="grid grid-cols-9 gap-4 sm:gap-6 relative z-10">
               <div class="text-center">
-                <a href="pages/certificates.html#electrician">
+                <a href="#certificates">
                   <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-rose-400 bg-[#090f1d] text-rose-400 shadow-[0_0_18px_rgba(251,113,133,.55)] hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <i class="fa-solid fa-graduation-cap text-sm sm:text-base"></i>
                   </div>
@@ -319,9 +316,8 @@
                   </p>
                 </a>
               </div>
-
               <div class="text-center">
-                <a href="pages/certificates.html#vianet">
+                <a href="#certificates">
                   <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-pink-400 bg-[#090f1d] text-pink-400 shadow-[0_0_18px_rgba(236,72,153,.55)] hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <i class="fa-solid fa-desktop text-sm sm:text-base"></i>
                   </div>
@@ -331,18 +327,14 @@
                   </p>
                 </a>
               </div>
-
               <div class="text-center">
-                <a href="pages/certificates.html#cloudfactory">
+                <a href="#certificates">
                   <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-fuchsia-400 bg-[#090f1d] text-fuchsia-400 shadow-[0_0_18px_rgba(217,70,239,.55)] hover:scale-110 transition-transform duration-300 cursor-pointer">
                     <i class="fa-solid fa-users text-sm sm:text-base"></i>
                   </div>
-                  <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
-                    CloudFactory
-                  </p>
+                  <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">CloudFactory</p>
                 </a>
               </div>
-
               <div class="text-center">
                 <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-violet-400 bg-[#090f1d] text-violet-400 shadow-[0_0_18px_rgba(167,139,250,.55)]">
                   <i class="fa-solid fa-laptop-code text-sm sm:text-base"></i>
@@ -353,7 +345,6 @@
                   <span data-i18n="home.tl_ce_3">Student</span>
                 </p>
               </div>
-
               <div class="text-center">
                 <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-indigo-400 bg-[#090f1d] text-indigo-400 shadow-[0_0_18px_rgba(129,140,248,.55)]">
                   <i class="fa-solid fa-brain text-sm sm:text-base"></i>
@@ -364,7 +355,6 @@
                   <span data-i18n="home.tl_python_3">Learning</span>
                 </p>
               </div>
-
               <div class="text-center">
                 <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-blue-400 bg-[#090f1d] text-blue-400 shadow-[0_0_18px_rgba(96,165,250,.55)]">
                   <i class="fa-brands fa-github text-sm sm:text-base"></i>
@@ -372,10 +362,9 @@
                 <p class="mt-3 text-[10px] sm:text-xs leading-4 sm:leading-5 text-white">
                   <span data-i18n="home.tl_odin_1">The Odin</span><br>
                   <span data-i18n="home.tl_odin_2">Project</span><br>
-                  <span class="text-green-400">✔</span>
+                  <span class="text-green-400">&#10003;</span>
                 </p>
               </div>
-
               <div class="text-center">
                 <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-sky-400 bg-[#090f1d] text-sky-400 shadow-[0_0_18px_rgba(56,189,248,.55)]">
                   <i class="fa-solid fa-book-open text-sm sm:text-base"></i>
@@ -385,7 +374,6 @@
                   <span class="text-gray-400" data-i18n="home.status_inprogress_paren">(In Progress)</span>
                 </p>
               </div>
-
               <div class="text-center">
                 <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#090f1d] text-cyan-400 shadow-[0_0_18px_rgba(34,211,238,.55)]">
                   <i class="fa-solid fa-code text-sm sm:text-base"></i>
@@ -395,7 +383,6 @@
                   <span class="text-gray-400" data-i18n="home.status_current">(Current)</span>
                 </p>
               </div>
-
               <div class="text-center">
                 <div class="mx-auto flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-blue-500 bg-[#090f1d] text-blue-500 shadow-[0_0_18px_rgba(59,130,246,.55)]">
                   <i class="fa-solid fa-network-wired text-sm sm:text-base"></i>
@@ -411,10 +398,698 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════ -->
+    <section id="about" class="bg-[var(--bg-color)] py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-6xl rounded-2xl border border-white/20 bg-[var(--bg-color)] p-6 sm:p-10 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
+          <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-14">
+
+            <!-- Left: Photo -->
+            <div class="flex justify-center lg:justify-start lg:sticky lg:top-28 lg:self-start">
+              <div class="relative">
+                <img src="images/bg_v.png" alt="Sanjeev Shrestha" class="w-48 h-48 lg:w-[280px] lg:h-[280px] object-cover rounded-2xl border-2 border-[#FF6B57]/40 shadow-[0_0_30px_rgba(255,107,87,.25)]">
+              </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+              <h2 class="text-4xl font-bold text-[#FF6B57] mb-2 tracking-tight" data-i18n="about.title">About Me</h2>
+              <p class="text-gray-400 text-sm mb-6" data-i18n="about.subtitle">Computer Engineering Student &middot; Full-Stack Developer &middot; Network Enthusiast</p>
+              <p class="text-gray-100 leading-relaxed mb-6 text-justify" data-i18n="about.intro">
+                I'm Sanjeev, an AI &amp; Computer Engineering student at Youngsan University in Busan, South Korea.
+                Before moving into tech, I worked as a Data Specialist and IT Field Support Technician in Nepal &mdash;
+                installing networks, solving connectivity issues, and working directly with customers. That
+                hands-on problem-solving experience now shapes how I approach code.
+              </p>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                  <i class="fa-solid fa-code text-[#FF6B57] text-lg mb-1"></i>
+                  <p class="text-xs text-gray-300" data-i18n="about.hl_fullstack">Full-Stack Dev</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                  <i class="fa-solid fa-network-wired text-[#FF6B57] text-lg mb-1"></i>
+                  <p class="text-xs text-gray-300" data-i18n="about.hl_ccna">CCNA Networking</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                  <i class="fa-solid fa-server text-[#FF6B57] text-lg mb-1"></i>
+                  <p class="text-xs text-gray-300" data-i18n="about.hl_linux">Linux / Servers</p>
+                </div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+                  <i class="fa-solid fa-brain text-[#FF6B57] text-lg mb-1"></i>
+                  <p class="text-xs text-gray-300" data-i18n="about.hl_ml">Python / ML</p>
+                </div>
+              </div>
+              <div class="mb-6">
+                <h3 class="flex items-center gap-2 text-[#FF6B57] font-semibold mb-2">
+                  <i class="fa-solid fa-folder-open"></i> <span data-i18n="about.building_title">What I'm Building</span>
+                </h3>
+                <p class="text-gray-100 leading-relaxed text-justify" data-i18n="about.building">
+                  My main project is <span class="font-semibold text-[#FF6B57]">KoreaSathi</span> &mdash;
+                  a free open-source student hub built with headless WordPress CMS, Tailwind CSS, and deployed on Vercel.
+                  It helps Nepali students navigate visas, housing, jobs, and life in Korea.
+                  Something I wish existed when I was figuring it out myself.
+                </p>
+              </div>
+              <div class="mb-6">
+                <h3 class="flex items-center gap-2 text-[#FF6B57] font-semibold mb-2">
+                  <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="about.learning_title">Currently Learning</span>
+                </h3>
+                <p class="text-gray-100 leading-relaxed text-justify" data-i18n="about.learning">
+                  Expanding into full-stack development with
+                  <span class="font-semibold text-[#FF6B57]">Laravel</span> &mdash; PHP, Blade templates, MySQL, and REST APIs.
+                  On the side, studying for my
+                  <span class="font-semibold text-[#FF6B57]">CCNA</span>, since networking is where I want
+                  to take my career long-term. My earlier field support work gave me a taste for it, and I'm now
+                  going deeper on purpose.
+                </p>
+              </div>
+              <div class="mb-6">
+                <h3 class="flex items-center gap-2 text-[#FF6B57] font-semibold mb-2">
+                  <i class="fa-solid fa-language"></i> <span data-i18n="about.languages_title">Languages</span>
+                  <a href="#languages" class="ml-auto text-xs text-gray-400 hover:text-[#FF6B57] transition">View all <i class="fa-solid fa-arrow-right ml-0.5"></i></a>
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-sm text-white">Nepali <span class="text-xs text-gray-400">(Native)</span></span>
+                  <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-sm text-white">Hindi <span class="text-xs text-gray-400">(Fluent)</span></span>
+                  <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-sm text-white">English <span class="text-xs text-gray-400">(IELTS 6.5)</span></span>
+                  <span class="rounded-full bg-[#FF6B57]/20 border border-[#FF6B57]/40 px-3 py-1 text-sm text-[#FF6B57]">Korean <span class="text-xs">(TOPIK 2)</span></span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a href="#projects" class="rounded-xl bg-[#FF6B57] px-5 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <i class="fa-solid fa-folder-open mr-2"></i><span data-i18n="about.cta_projects">View Projects</span>
+                </a>
+                <a href="#contact" class="rounded-xl border border-white px-5 py-2.5 text-sm font-medium transition duration-300 hover:border-[#FF6B57] hover:text-[#FF6B57]">
+                  <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="about.cta_contact">Get In Touch</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PROJECTS
+    ═══════════════════════════════════════════ -->
+    <section id="projects" class="bg-[var(--bg-color)] py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-14 text-center scroll-fade">
+          <span class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
+            <i class="fa-solid fa-folder-open"></i>
+            <span data-i18n="projects.portfolio">Portfolio</span>
+          </span>
+          <h2 class="mt-5 text-4xl font-bold" data-i18n="projects.featured">Featured Projects</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-gray-400 leading-7" data-i18n="projects.featured_desc">
+            These are some of the projects I've worked on throughout my learning
+            journey, covering web development, networking, machine learning,
+            and software engineering.
+          </p>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 mb-6 scroll-fade">
+          <div class="grid gap-0 md:grid-cols-[320px_1fr]">
+            <img src="images/koreasathi-preview.png" alt="KoreaSathi Preview" class="h-64 w-full object-cover md:h-full">
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-earth-asia text-[#FF6B57] text-xl"></i>
+                  <h3 class="text-2xl font-bold">KoreaSathi</h3>
+                </div>
+                <span class="rounded-full bg-green-500/20 px-3 py-1 text-xs text-green-400">
+                  <i class="fa-solid fa-circle text-[8px] mr-1"></i><span data-i18n="projects.status_active">Active</span>
+                </span>
+              </div>
+              <p class="mt-4 text-gray-300 leading-7" data-i18n="projects.koreasathi_desc">
+                Nepal Korea Student Hub &mdash; A free open-source platform centralizing trusted information for Nepali students
+                in South Korea. Built with headless WordPress CMS for content management, Tailwind CSS for styling, and
+                deployed on Vercel. Covers visas, jobs, banking, immigration, emergencies, and more.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">HTML</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">Tailwind CSS</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">JavaScript</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs" data-i18n="projects.tech_wp_headless">WordPress (Headless)</span>
+                <span class="rounded-full bg-[#FF6B57]/20 px-3 py-1 text-xs">Vercel</span>
+              </div>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="https://korea-sathi.vercel.app/" target="_blank" class="rounded-xl bg-[#FF6B57] px-5 py-2.5 text-sm text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B57]/40">
+                  <span data-i18n="projects.live_demo">Live Demo</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+                </a>
+                <a href="https://github.com/Xanjip32/KoreaSathi" target="_blank" class="rounded-lg border border-white px-5 py-2.5 text-sm transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+                  <i class="fa-brands fa-github mr-2"></i>GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-solar-panel text-[#FF6B57] text-xl"></i>
+                <h4 class="text-base font-bold text-white" data-i18n="projects.solar_title">Solar-Powered Egg Incubator</h4>
+              </div>
+              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20" data-i18n="projects.tag_hardware">Hardware Build</span>
+            </div>
+            <p class="text-gray-300 mb-3 text-sm leading-relaxed" data-i18n="projects.solar_desc">
+              A self-taught electronics build from my school years &mdash; inverter PCB, a repurposed
+              transformer, and an old lead-acid battery for backup power. No formal circuit design,
+              no CAD &mdash; just YouTube, trial and error, and a soldering iron.
+            </p>
+            <a href="https://github.com/Xanjip32/Nepal-Solar-Hybrid-Incubator" target="_blank" class="text-sm text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="projects.view_github">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-users-gear text-[#FF6B57] text-xl"></i>
+                <h4 class="text-base font-bold text-white" data-i18n="projects.student_title">Student Management App</h4>
+              </div>
+              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20" data-i18n="projects.tag_coursework">Coursework Project</span>
+            </div>
+            <p class="text-gray-300 mb-3 text-sm leading-relaxed" data-i18n="projects.student_desc">
+              Built during coursework on instructor-provided starter code. Extended it with search,
+              filtering, and sorting. Covers Node.js, Express, and REST API basics.
+            </p>
+            <a href="https://github.com/Xanjip32/Student-Management-App" target="_blank" class="text-sm text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="projects.view_github">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-[#FF6B57] text-sm"></i>
+                <h4 class="text-sm font-bold text-white leading-tight" data-i18n="projects.laravel_title">Full-Stack<br>with Laravel</h4>
+              </div>
+              <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full border border-yellow-500/40">
+                <i class="fa-solid fa-circle-notch fa-spin mr-1"></i><span data-i18n="projects.status_ongoing">Ongoing</span>
+              </span>
+            </div>
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed" data-i18n="projects.laravel_desc">
+              Documenting my full-stack learning journey with Laravel &mdash; practice projects and notes
+              covering front-end (HTML, CSS, JavaScript) and back-end (PHP, Laravel).
+            </p>
+            <a href="https://github.com/Xanjip32/full-Stack-development-with-Laravel-" target="_blank" class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="projects.view_github">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-network-wired text-[#FF6B57] text-sm"></i>
+                <h4 class="text-sm font-bold text-white" data-i18n="projects.ccna_title">CCNA Study Documentation</h4>
+              </div>
+              <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full border border-yellow-500/40 whitespace-nowrap">
+                <i class="fa-solid fa-circle-notch fa-spin mr-1"></i><span data-i18n="projects.status_ongoing">Ongoing</span>
+              </span>
+            </div>
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed" data-i18n="projects.ccna_desc">
+              Documenting my CCNA prep &mdash; following Jeremy's IT Lab and Cisco Networking Academy.
+              Includes study notes, router/switch configuration examples, and lab practice.
+            </p>
+            <div class="flex flex-wrap gap-1 mb-3">
+              <span class="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full border border-white/20" data-i18n="projects.tag_networking">Networking</span>
+              <span class="text-xs bg-white/10 text-gray-200 px-2 py-0.5 rounded-full border border-white/20">Cisco</span>
+            </div>
+            <a href="https://github.com/Xanjip32/CCNA" target="_blank" class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="projects.view_github">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-[#FF6B57] text-sm"></i>
+                <h4 class="text-sm font-bold text-white" data-i18n="projects.cs50_title">CS50: Web Programming</h4>
+              </div>
+              <span class="text-xs bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full border border-gray-500/40 whitespace-nowrap">
+                <i class="fa-solid fa-pause mr-1"></i><span data-i18n="projects.status_paused">Paused</span>
+              </span>
+            </div>
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed" data-i18n="projects.cs50_desc">
+              Studied Harvard's CS50 Web Programming &mdash; completed assignments through the Python/Flask
+              track and studied Django. Paused here for now, may pick it back up later.
+            </p>
+            <a href="https://github.com/Xanjip32/CS50-s-Web-Programming-with-Python-and-JavaScript" target="_blank" class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="projects.view_github">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-5 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 scroll-fade">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-brain text-[#FF6B57] text-sm"></i>
+                <h4 class="text-sm font-bold text-white" data-i18n="projects.mnist_title">MNIST Digit Classifier</h4>
+              </div>
+              <span class="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded-full border border-white/20 whitespace-nowrap">
+                <i class="fa-solid fa-book-open mr-1"></i><span data-i18n="projects.tag_selfstudy">Self-Study</span>
+              </span>
+            </div>
+            <p class="text-gray-300 mb-3 text-xs leading-relaxed" data-i18n="projects.mnist_desc">
+              Followed a tutorial to build an ML pipeline on MNIST &mdash; neural networks with NumPy,
+              scikit-learn, and CNNs with TensorFlow. Completed as a learning exercise.
+            </p>
+            <a href="https://github.com/Xanjip32/mnist_project" target="_blank" class="text-xs text-gray-300 underline hover:text-[#FF6B57] transition" data-i18n="projects.view_github">
+              View on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/50 backdrop-blur-sm p-6 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_20px_#FF6B57]/20 scroll-fade">
+          <div class="flex items-center gap-2 mb-1">
+            <i class="fa-solid fa-laptop-code text-[#FF6B57]"></i>
+            <h4 class="text-base font-bold text-white" data-i18n="projects.odin_title">The Odin Project &mdash; Foundations</h4>
+          </div>
+          <p class="text-gray-400 text-xs mb-4" data-i18n="projects.odin_desc">
+            Core projects completed during The Odin Project foundations course.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            <a href="https://github.com/Xanjip32/Calculator" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-calculator text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300" data-i18n="projects.odin_calc">Calculator</span>
+            </a>
+            <a href="https://github.com/Xanjip32/Landing_page" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-window-maximize text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300" data-i18n="projects.odin_landing">Landing Page</span>
+            </a>
+            <a href="https://github.com/Xanjip32/etch-a-sketch" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-pen-nib text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300" data-i18n="projects.odin_sketch">Etch-a-Sketch</span>
+            </a>
+            <a href="https://github.com/Xanjip32/rock_sissors_paper-" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-hand-scissors text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300" data-i18n="projects.odin_rps">Rock Paper Scissors</span>
+            </a>
+            <a href="https://github.com/Xanjip32/tic_tac_toe" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-border-none text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300" data-i18n="projects.odin_tic">Tic Tac Toe</span>
+            </a>
+            <a href="https://github.com/Xanjip32/odin-recipes" target="_blank" class="rounded-xl border border-white/10 bg-white/5 p-3 text-center hover:border-[#FF6B57]/40 transition shadow-[0_2px_10px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_15px_#FF6B57]/25">
+              <i class="fa-solid fa-utensils text-[#FF6B57] mb-1 block text-lg"></i>
+              <span class="text-xs text-gray-300" data-i18n="projects.odin_recipes">Odin Recipes</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         LANGUAGES
+    ═══════════════════════════════════════════ -->
+    <section id="languages" class="bg-[var(--bg-color)] py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-14 text-center scroll-fade">
+          <span class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
+            <i class="fa-solid fa-language"></i>
+            <span data-i18n="languages.badge">Languages</span>
+          </span>
+          <h2 class="mt-5 text-4xl font-bold" data-i18n="languages.hero_title">Languages</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-gray-400 leading-7" data-i18n="languages.hero_desc">
+            Communication across cultures is a skill I value. Growing up multilingual and living abroad has shaped how I connect with people.
+          </p>
+        </div>
+
+        <!-- Nepali -->
+        <div class="mb-16">
+          <div class="flex flex-col gap-8 lg:flex-row scroll-fade">
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-rose-400 bg-[#090f1d] text-rose-400 shadow-[0_0_18px_rgba(251,113,133,.55)]">
+                  <span class="text-2xl font-bold">&#127475;&#127473;</span>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white" data-i18n="lang.nepali">Nepali</h2>
+                  <p class="text-sm text-gray-400" data-i18n="lang.nepali_script">Devanagari Script</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="rounded-full bg-rose-500/20 border border-rose-500/40 px-4 py-1.5 text-sm text-rose-400 font-medium" data-i18n="lang.native">Native</span>
+                <span class="rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm text-white" data-i18n="lang.mother_tongue">Mother Tongue</span>
+              </div>
+              <p class="text-gray-300 leading-relaxed text-justify" data-i18n="lang.nepali_desc">
+                Nepali is my mother tongue and the language I grew up speaking at home. It's the official language of Nepal and is spoken by over 25 million people worldwide. I use it daily with family and friends from home.
+              </p>
+            </div>
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-circle-info text-rose-400"></i>
+                <h3 class="text-lg font-semibold text-[#FF6B57]" data-i18n="lang.nepali_details_title">About Nepali</h3>
+              </div>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li class="flex items-start gap-3"><i class="fa-solid fa-users mt-1 text-rose-400"></i><span data-i18n="lang.nepali_speakers">25+ million speakers worldwide</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-landmark mt-1 text-rose-400"></i><span data-i18n="lang.nepali_official">Official language of Nepal</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-font mt-1 text-rose-400"></i><span data-i18n="lang.nepali_script_desc">Uses Devanagari script (same as Hindi, Sanskrit)</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-earth-asia mt-1 text-rose-400"></i><span data-i18n="lang.nepali_family">Part of the Indo-Aryan language family</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hindi -->
+        <div class="mb-16">
+          <div class="flex flex-col gap-8 lg:flex-row scroll-fade">
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-orange-400 bg-[#090f1d] text-orange-400 shadow-[0_0_18px_rgba(251,146,60,.55)]">
+                  <span class="text-2xl font-bold">&#127470;&#127475;</span>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white" data-i18n="lang.hindi">Hindi</h2>
+                  <p class="text-sm text-gray-400" data-i18n="lang.hindi_script">Devanagari Script</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="rounded-full bg-orange-500/20 border border-orange-500/40 px-4 py-1.5 text-sm text-orange-400 font-medium" data-i18n="lang.fluent">Fluent</span>
+                <span class="rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm text-white" data-i18n="lang.linguistic_cousin">Linguistic Cousin of Nepali</span>
+              </div>
+              <p class="text-gray-300 leading-relaxed text-justify" data-i18n="lang.hindi_desc">
+                Hindi is a linguistic cousin of Nepali &mdash; both descend from Sanskrit and share the Devanagari writing system. I grew up understanding Hindi through media, culture, and regional proximity. It's mutually intelligible with Nepali in many everyday situations.
+              </p>
+            </div>
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-circle-info text-orange-400"></i>
+                <h3 class="text-lg font-semibold text-[#FF6B57]" data-i18n="lang.hindi_details_title">About Hindi</h3>
+              </div>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li class="flex items-start gap-3"><i class="fa-solid fa-users mt-1 text-orange-400"></i><span data-i18n="lang.hindi_speakers">600+ million speakers worldwide</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-landmark mt-1 text-orange-400"></i><span data-i18n="lang.hindi_official">Official language of India</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-link mt-1 text-orange-400"></i><span data-i18n="lang.hindi_relation">Shares Devanagari script and Sanskrit roots with Nepali</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-comments mt-1 text-orange-400"></i><span data-i18n="lang.hindi_mutual">Often mutually intelligible with Nepali</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- English -->
+        <div class="mb-16">
+          <div class="flex flex-col gap-8 lg:flex-row scroll-fade">
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-sky-400 bg-[#090f1d] text-sky-400 shadow-[0_0_18px_rgba(56,189,248,.55)]">
+                  <span class="text-2xl font-bold">&#127468;&#127463;</span>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white" data-i18n="lang.english">English</h2>
+                  <p class="text-sm text-gray-400" data-i18n="lang.english_script">Latin Script</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="rounded-full bg-sky-500/20 border border-sky-500/40 px-4 py-1.5 text-sm text-sky-400 font-medium" data-i18n="lang.intermediate_upper">Intermediate&ndash;Upper</span>
+                <span class="rounded-full bg-sky-500/20 border border-sky-500/40 px-4 py-1.5 text-sm text-sky-400 font-medium">IELTS 6.5</span>
+              </div>
+              <p class="text-gray-300 leading-relaxed text-justify" data-i18n="lang.english_desc">
+                English is the language I use for academics, coding, and professional work. I scored 6.5 on IELTS, which reflects my ability to communicate effectively in academic and workplace settings. I'm comfortable with technical documentation, presentations, and daily conversation.
+              </p>
+            </div>
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-circle-info text-sky-400"></i>
+                <h3 class="text-lg font-semibold text-[#FF6B57]" data-i18n="lang.english_details_title">About English</h3>
+              </div>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li class="flex items-start gap-3"><i class="fa-solid fa-certificate mt-1 text-sky-400"></i><span data-i18n="lang.english_ielts">IELTS Academic: 6.5</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-code mt-1 text-sky-400"></i><span data-i18n="lang.english_usage">Used daily for coding and academics</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-globe mt-1 text-sky-400"></i><span data-i18n="lang.english_global">Global lingua franca for tech and business</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-graduation-cap mt-1 text-sky-400"></i><span data-i18n="lang.english_university">Primary language of instruction at Youngsan University</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Korean -->
+        <div class="mb-16">
+          <div class="flex flex-col gap-8 lg:flex-row scroll-fade">
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-violet-400 bg-[#090f1d] text-violet-400 shadow-[0_0_18px_rgba(167,139,250,.55)]">
+                  <span class="text-2xl font-bold">&#127472;&#127479;</span>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white" data-i18n="lang.korean">Korean</h2>
+                  <p class="text-sm text-gray-400" data-i18n="lang.korean_script">Hangul Script</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="rounded-full bg-violet-500/20 border border-violet-500/40 px-4 py-1.5 text-sm text-violet-400 font-medium" data-i18n="lang.basic_conversational">Basic&ndash;Conversational</span>
+                <span class="rounded-full bg-violet-500/20 border border-violet-500/40 px-4 py-1.5 text-sm text-violet-400 font-medium">TOPIK II (Level 2)</span>
+              </div>
+              <p class="text-gray-300 leading-relaxed text-justify" data-i18n="lang.korean_desc">
+                I'm currently studying Korean while living in Busan, South Korea. I've achieved TOPIK Level 2, which covers basic to intermediate proficiency. I can handle daily conversations, read Hangul, and navigate everyday life. I continue to improve through immersion and coursework.
+              </p>
+            </div>
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-circle-info text-violet-400"></i>
+                <h3 class="text-lg font-semibold text-[#FF6B57]" data-i18n="lang.korean_details_title">About Korean</h3>
+              </div>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li class="flex items-start gap-3"><i class="fa-solid fa-certificate mt-1 text-violet-400"></i><span data-i18n="lang.korean_topik">TOPIK II &mdash; Level 2 (Basic&ndash;Intermediate)</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-school mt-1 text-violet-400"></i><span data-i18n="lang.korean_study">Studying at Youngsan University in Busan</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-comments mt-1 text-violet-400"></i><span data-i18n="lang.korean_daily">Daily life conversations and navigation</span></li>
+                <li class="flex items-start gap-3"><i class="fa-solid fa-book-open mt-1 text-violet-400"></i><span data-i18n="lang.korean_read">Can read Hangul and basic texts</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
+          <div class="flex items-center gap-3 mb-6">
+            <i class="fa-solid fa-table text-[#FF6B57] text-xl"></i>
+            <h2 class="text-2xl font-bold text-white" data-i18n="lang.comparison_title">Proficiency Overview</h2>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="pb-3 pr-4 text-[#FF6B57] font-semibold" data-i18n="lang.th_language">Language</th>
+                  <th class="pb-3 pr-4 text-[#FF6B57] font-semibold" data-i18n="lang.th_level">Level</th>
+                  <th class="pb-3 pr-4 text-[#FF6B57] font-semibold" data-i18n="lang.th_script">Script</th>
+                  <th class="pb-3 text-[#FF6B57] font-semibold" data-i18n="lang.th_context">Context</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300">
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-4 font-medium text-white">&#127475;&#127473; Nepali</td>
+                  <td class="py-3 pr-4"><span class="text-rose-400" data-i18n="lang.native">Native</span></td>
+                  <td class="py-3 pr-4">Devanagari</td>
+                  <td class="py-3" data-i18n="lang.ctx_home">Home, family, culture</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-4 font-medium text-white">&#127470;&#127475; Hindi</td>
+                  <td class="py-3 pr-4"><span class="text-orange-400" data-i18n="lang.fluent">Fluent</span></td>
+                  <td class="py-3 pr-4">Devanagari</td>
+                  <td class="py-3" data-i18n="lang.ctx_regional">Regional media, neighbors</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-4 font-medium text-white">&#127468;&#127463; English</td>
+                  <td class="py-3 pr-4"><span class="text-sky-400">IELTS 6.5</span></td>
+                  <td class="py-3 pr-4">Latin</td>
+                  <td class="py-3" data-i18n="lang.ctx_academic">Academics, tech, work</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 font-medium text-white">&#127472;&#127479; Korean</td>
+                  <td class="py-3 pr-4"><span class="text-violet-400">TOPIK 2</span></td>
+                  <td class="py-3 pr-4">Hangul</td>
+                  <td class="py-3" data-i18n="lang.ctx_living">Daily life, university</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CERTIFICATES
+    ═══════════════════════════════════════════ -->
+    <section id="certificates" class="bg-[var(--bg-color)] py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-14 text-center scroll-fade">
+          <span class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
+            <i class="fa-solid fa-award"></i>
+            <span data-i18n="certificates.badge">Experience</span>
+          </span>
+          <h2 class="mt-5 text-4xl font-bold" data-i18n="certificates.section_title">Experience Letters</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-gray-400 leading-7" data-i18n="certificates.section_desc">
+            Documents from my professional roles in Nepal &mdash; spanning IT support,
+            field engineering, and electrical work.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
+            <img src="images/cert/vianet.jpg" alt="Vianet Experience Letter" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-desktop text-[#FF6B57] text-xl"></i>
+                  <h3 class="text-lg font-bold text-white" data-i18n="certificates.vianet_title">IT Support</h3>
+                </div>
+                <span class="rounded-full bg-pink-500/20 px-3 py-1 text-xs text-pink-400 border border-pink-500/40">Vianet</span>
+              </div>
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="certificates.vianet_desc">
+                Experience letter from my role as an IT Support Technician at Vianet &mdash;
+                network installation, troubleshooting, and customer support.
+              </p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
+            <img src="images/cert/cloudfactory experience letter 01.jpg" alt="CloudFactory Experience Letter" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-users text-[#FF6B57] text-xl"></i>
+                  <h3 class="text-lg font-bold text-white">CloudFactory</h3>
+                </div>
+                <span class="rounded-full bg-fuchsia-500/20 px-3 py-1 text-xs text-fuchsia-400 border border-fuchsia-500/40" data-i18n="certificates.tag_exp_letter">Experience Letter</span>
+              </div>
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="certificates.cf_desc">
+                Experience letter from CloudFactory &mdash; data operations and
+                field support role.
+              </p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
+            <img src="images/cert/industrail_electricain.jpg" alt="Industrial Electrician Certificate" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-bolt text-[#FF6B57] text-xl"></i>
+                  <h3 class="text-lg font-bold text-white" data-i18n="certificates.elec_title">Industrial Electrician</h3>
+                </div>
+                <span class="rounded-full bg-rose-500/20 px-3 py-1 text-xs text-rose-400 border border-rose-500/40" data-i18n="certificates.tag_diploma">Diploma</span>
+              </div>
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="certificates.elec_desc">
+                Electrical Engineering Diploma &mdash; foundational qualification in
+                electrical systems and industrial wiring.
+              </p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_#FF6B57]/25 transition-all duration-300 hover:-translate-y-1 overflow-hidden scroll-fade">
+            <img src="images/cert/cisco_packet_tracer.png" alt="Cisco Packet Tracer Certificate" class="h-56 w-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-network-wired text-[#FF6B57] text-xl"></i>
+                  <h3 class="text-lg font-bold text-white" data-i18n="certificates.cisco_title">Cisco Packet Tracer</h3>
+                </div>
+                <span class="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-400 border border-sky-500/40" data-i18n="certificates.tag_certificate">Certificate</span>
+              </div>
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="certificates.cisco_desc">
+                Getting Started with Cisco Packet Tracer &mdash; networking fundamentals
+                and packet simulation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════ -->
+    <section id="contact" class="bg-[var(--bg-color)] py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-6xl rounded-2xl border border-white/20 bg-[var(--bg-color)] p-6 sm:p-10 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)] scroll-fade">
+          <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10">
+
+            <!-- Left: Form -->
+            <div>
+              <h2 class="text-3xl font-bold text-white mb-2 tracking-tight" data-i18n="contact.title">Get In Touch</h2>
+              <p class="text-gray-400 mb-6 leading-relaxed" data-i18n="contact.desc">
+                Just want to say hi? I'd love to hear from you.
+              </p>
+              <div class="overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScM-2tBlgOJK4B3xjB0FSjNm0T0C02oiW1UaIJB2jTVMC4PNg/viewform?embedded=true"
+                  width="100%" height="650" frameborder="0" marginheight="0" marginwidth="0"
+                  allow="cookies"
+                  title="Contact Form" class="w-full">
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Right: Sidebar -->
+            <div class="flex flex-col gap-6">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <h3 class="text-lg font-semibold text-[#FF6B57] mb-4"><i class="fa-solid fa-share-nodes mr-2"></i>Reach Me</h3>
+                <ul class="space-y-4">
+                  <li>
+                    <a href="mailto:aaryassuu40@gmail.com" class="flex items-center gap-3 text-gray-300 hover:text-[#FF6B57] transition group">
+                      <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 group-hover:border-[#FF6B57]/40 group-hover:bg-[#FF6B57]/10 transition">
+                        <i class="fa-solid fa-envelope text-sm"></i>
+                      </span>
+                      <span class="text-sm">aaryassuu40@gmail.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/sanjeev-shrestha-225006382/" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-[#FF6B57] transition group">
+                      <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 group-hover:border-[#FF6B57]/40 group-hover:bg-[#FF6B57]/10 transition">
+                        <i class="fa-brands fa-linkedin text-sm"></i>
+                      </span>
+                      <span class="text-sm">Sanjeev Shrestha</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Xanjip32" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-[#FF6B57] transition group">
+                      <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 group-hover:border-[#FF6B57]/40 group-hover:bg-[#FF6B57]/10 transition">
+                        <i class="fa-brands fa-github text-sm"></i>
+                      </span>
+                      <span class="text-sm">Xanjip32</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <h3 class="text-lg font-semibold text-[#FF6B57] mb-3"><i class="fa-solid fa-location-dot mr-2"></i>Based In</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">Busan, South Korea</p>
+                <p class="text-gray-500 text-xs mt-1">Youngsan University</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onclick="closeLightbox()">
+    <button type="button" class="absolute top-4 right-4 text-white text-3xl hover:text-[#FF6B57] transition-colors z-50" onclick="closeLightbox()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="Certificate" class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+  </div>
+
   <footer class="border-t border-white/10 bg-[var(--bg-color)] p-8 text-center text-sm text-white">
     <span data-i18n="common.footer">&copy; 2026 Sanjeev Shrestha. All rights reserved.</span>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
 </html>

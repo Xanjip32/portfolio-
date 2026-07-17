@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' https://cdn.jsdelivr.net data:; frame-src https://docs.google.com; connect-src 'self';">
+  <title>Languages | Sanjeev Shrestha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="../js/translations.js?v=2"></script>
+  <script src="../js/i18n.js?v=2"></script>
+  <script>
+    (function() {
+      var saved = localStorage.getItem('lang');
+      if (!saved) {
+        var bl = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        saved = bl.startsWith('ko') ? 'ko' : 'en';
+      }
+      document.documentElement.lang = saved;
+    })();
+  </script>
+  <style>
+    html, body { background: #090f1d; color: #fff; margin: 0; padding: 0; }
+  </style>
+</head>
+
+<body style="font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;" class="bg-[var(--bg-color)] text-white">
+
+  <header>
+    <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--bg-color)]/90 backdrop-blur">
+      <div class="container mx-auto flex items-center justify-between px-4 py-4">
+        <a href="../index.html" class="text-xl font-bold tracking-wide">Sanjeev Shrestha</a>
+        <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+          <li><a href="../index.html" class="transition hover:text-[#FF6B57]" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" class="transition hover:text-[#FF6B57]" data-i18n="nav.about">About</a></li>
+          <li><a href="project.html" class="transition hover:text-[#FF6B57]" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="languages.html" class="text-[#FF6B57]" data-i18n="nav.languages">Languages</a></li>
+          <li><a href="certificates.html" class="transition hover:text-[#FF6B57]" data-i18n="nav.certificates">Certificates</a></li>
+          <li><a href="contact.html" class="transition hover:text-[#FF6B57]" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <button id="langToggle" type="button" onclick="toggleLang()" class="flex items-center gap-1.5 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+          <i class="fa-solid fa-globe"></i>
+          <span id="langLabel">EN</span>
+        </button>
+        <button id="menuBtn" type="button" class="rounded-lg p-2 md:hidden" data-drawer-target="drawer-navigation"
+          data-drawer-show="drawer-navigation">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </nav>
+
+    <aside id="drawer-navigation"
+      class="fixed left-0 top-0 z-50 h-screen w-80 -translate-x-full overflow-y-auto border-r border-white/10 bg-[#0B1320] p-5 transition-transform md:hidden">
+      <div class="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+        <h2 class="text-lg font-semibold" data-i18n="common.menu">Menu</h2>
+        <button type="button" data-drawer-hide="drawer-navigation">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <ul class="space-y-2">
+        <li><a href="../index.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.about">About</a></li>
+        <li><a href="project.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="languages.html" class="block rounded-lg bg-[#FF6B57] px-4 py-3" data-i18n="nav.languages">Languages</a></li>
+        <li><a href="certificates.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.certificates">Certificates</a></li>
+        <li><a href="contact.html" class="block rounded-lg px-4 py-3 hover:bg-white/10" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <button onclick="toggleLang()" class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-3 text-sm font-medium transition hover:border-[#FF6B57] hover:text-[#FF6B57]">
+        <i class="fa-solid fa-globe"></i>
+        <span data-i18n="common.lang_switch">Switch to 한국어</span>
+      </button>
+    </aside>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative flex min-h-[45vh] items-center overflow-hidden bg-[var(--bg-color)] md:min-h-[50vh]">
+      <div class="absolute inset-0 mx-auto max-w-[1920px] bg-cover bg-top bg-no-repeat bg-[url('../images/bg_v.png')] md:bg-[url('../images/bg_h.png')] md:bg-center"></div>
+      <div class="absolute inset-0 bg-slate-950/60"></div>
+      <div class="relative z-10 container mx-auto px-4">
+        <div class="max-w-3xl">
+          <span class="inline-flex items-center gap-2 rounded-full border border-[#FF6B57]/40 bg-[#FF6B57]/10 px-4 py-2 text-sm text-[#FF6B57]">
+            <i class="fa-solid fa-language"></i>
+            <span data-i18n="languages.badge">Languages</span>
+          </span>
+          <h1 class="mt-6 text-5xl font-bold tracking-tight md:text-6xl" data-i18n="languages.hero_title">Languages</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-gray-300" data-i18n="languages.hero_desc">
+            Communication across cultures is a skill I value. Growing up multilingual and living abroad has shaped how I connect with people.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-b from-transparent to-[var(--bg-color)]"></div>
+    </section>
+
+    <!-- Languages Grid -->
+    <section id="languages" class="bg-[var(--bg-color)] py-20">
+      <div class="container mx-auto px-4">
+
+        <!-- Nepali -->
+        <div class="mb-16">
+          <div class="flex flex-col gap-8 lg:flex-row">
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-rose-400 bg-[#090f1d] text-rose-400 shadow-[0_0_18px_rgba(251,113,133,.55)]">
+                  <span class="text-2xl font-bold">🇳🇵</span>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white" data-i18n="lang.nepali">Nepali</h2>
+                  <p class="text-sm text-gray-400" data-i18n="lang.nepali_script">Devanagari Script</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="rounded-full bg-rose-500/20 border border-rose-500/40 px-4 py-1.5 text-sm text-rose-400 font-medium" data-i18n="lang.native">Native</span>
+                <span class="rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm text-white" data-i18n="lang.mother_tongue">Mother Tongue</span>
+              </div>
+              <p class="text-gray-300 leading-relaxed text-justify" data-i18n="lang.nepali_desc">
+                Nepali is my mother tongue and the language I grew up speaking at home. It's the official language of Nepal and is spoken by over 25 million people worldwide. I use it daily with family and friends from home.
+              </p>
+            </div>
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-circle-info text-rose-400"></i>
+                <h3 class="text-lg font-semibold text-[#FF6B57]" data-i18n="lang.nepali_details_title">About Nepali</h3>
+              </div>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-users mt-1 text-rose-400"></i>
+                  <span data-i18n="lang.nepali_speakers">25+ million speakers worldwide</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-landmark mt-1 text-rose-400"></i>
+                  <span data-i18n="lang.nepali_official">Official language of Nepal</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-font mt-1 text-rose-400"></i>
+                  <span data-i18n="lang.nepali_script_desc">Uses Devanagari script (same as Hindi, Sanskrit)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-earth-asia mt-1 text-rose-400"></i>
+                  <span data-i18n="lang.nepali_family">Part of the Indo-Aryan language family</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hindi -->
+        <div class="mb-16">
+          <div class="flex flex-col gap-8 lg:flex-row">
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-orange-400 bg-[#090f1d] text-orange-400 shadow-[0_0_18px_rgba(251,146,60,.55)]">
+                  <span class="text-2xl font-bold">🇮🇳</span>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white" data-i18n="lang.hindi">Hindi</h2>
+                  <p class="text-sm text-gray-400" data-i18n="lang.hindi_script">Devanagari Script</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="rounded-full bg-orange-500/20 border border-orange-500/40 px-4 py-1.5 text-sm text-orange-400 font-medium" data-i18n="lang.fluent">Fluent</span>
+                <span class="rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm text-white" data-i18n="lang.linguistic_cousin">Linguistic Cousin of Nepali</span>
+              </div>
+              <p class="text-gray-300 leading-relaxed text-justify" data-i18n="lang.hindi_desc">
+                Hindi is a linguistic cousin of Nepali — both descend from Sanskrit and share the Devanagari writing system. I grew up understanding Hindi through media, culture, and regional proximity. It's mutually intelligible with Nepali in many everyday situations.
+              </p>
+            </div>
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-circle-info text-orange-400"></i>
+                <h3 class="text-lg font-semibold text-[#FF6B57]" data-i18n="lang.hindi_details_title">About Hindi</h3>
+              </div>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-users mt-1 text-orange-400"></i>
+                  <span data-i18n="lang.hindi_speakers">600+ million speakers worldwide</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-landmark mt-1 text-orange-400"></i>
+                  <span data-i18n="lang.hindi_official">Official language of India</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-link mt-1 text-orange-400"></i>
+                  <span data-i18n="lang.hindi_relation">Shares Devanagari script and Sanskrit roots with Nepali</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-comments mt-1 text-orange-400"></i>
+                  <span data-i18n="lang.hindi_mutual">Often mutually intelligible with Nepali</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- English -->
+        <div class="mb-16">
+          <div class="flex flex-col gap-8 lg:flex-row">
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-sky-400 bg-[#090f1d] text-sky-400 shadow-[0_0_18px_rgba(56,189,248,.55)]">
+                  <span class="text-2xl font-bold">🇬🇧</span>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white" data-i18n="lang.english">English</h2>
+                  <p class="text-sm text-gray-400" data-i18n="lang.english_script">Latin Script</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="rounded-full bg-sky-500/20 border border-sky-500/40 px-4 py-1.5 text-sm text-sky-400 font-medium" data-i18n="lang.intermediate_upper">Intermediate–Upper</span>
+                <span class="rounded-full bg-sky-500/20 border border-sky-500/40 px-4 py-1.5 text-sm text-sky-400 font-medium">IELTS 6.5</span>
+              </div>
+              <p class="text-gray-300 leading-relaxed text-justify" data-i18n="lang.english_desc">
+                English is the language I use for academics, coding, and professional work. I scored 6.5 on IELTS, which reflects my ability to communicate effectively in academic and workplace settings. I'm comfortable with technical documentation, presentations, and daily conversation.
+              </p>
+            </div>
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-circle-info text-sky-400"></i>
+                <h3 class="text-lg font-semibold text-[#FF6B57]" data-i18n="lang.english_details_title">About English</h3>
+              </div>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-certificate mt-1 text-sky-400"></i>
+                  <span data-i18n="lang.english_ielts">IELTS Academic: 6.5</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-code mt-1 text-sky-400"></i>
+                  <span data-i18n="lang.english_usage">Used daily for coding and academics</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-globe mt-1 text-sky-400"></i>
+                  <span data-i18n="lang.english_global">Global lingua franca for tech and business</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-graduation-cap mt-1 text-sky-400"></i>
+                  <span data-i18n="lang.english_university">Primary language of instruction at Youngsan University</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Korean -->
+        <div class="mb-16">
+          <div class="flex flex-col gap-8 lg:flex-row">
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-violet-400 bg-[#090f1d] text-violet-400 shadow-[0_0_18px_rgba(167,139,250,.55)]">
+                  <span class="text-2xl font-bold">🇰🇷</span>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-white" data-i18n="lang.korean">Korean</h2>
+                  <p class="text-sm text-gray-400" data-i18n="lang.korean_script">Hangul Script</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="rounded-full bg-violet-500/20 border border-violet-500/40 px-4 py-1.5 text-sm text-violet-400 font-medium" data-i18n="lang.basic_conversational">Basic–Conversational</span>
+                <span class="rounded-full bg-violet-500/20 border border-violet-500/40 px-4 py-1.5 text-sm text-violet-400 font-medium">TOPIK II (Level 2)</span>
+              </div>
+              <p class="text-gray-300 leading-relaxed text-justify" data-i18n="lang.korean_desc">
+                I'm currently studying Korean while living in Busan, South Korea. I've achieved TOPIK Level 2, which covers basic to intermediate proficiency. I can handle daily conversations, read Hangul, and navigate everyday life. I continue to improve through immersion and coursework.
+              </p>
+            </div>
+            <div class="flex-1 rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-circle-info text-violet-400"></i>
+                <h3 class="text-lg font-semibold text-[#FF6B57]" data-i18n="lang.korean_details_title">About Korean</h3>
+              </div>
+              <ul class="space-y-3 text-gray-300 text-sm">
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-certificate mt-1 text-violet-400"></i>
+                  <span data-i18n="lang.korean_topik">TOPIK II — Level 2 (Basic–Intermediate)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-school mt-1 text-violet-400"></i>
+                  <span data-i18n="lang.korean_study">Studying at Youngsan University in Busan</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-comments mt-1 text-violet-400"></i>
+                  <span data-i18n="lang.korean_daily">Daily life conversations and navigation</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-book-open mt-1 text-violet-400"></i>
+                  <span data-i18n="lang.korean_read">Can read Hangul and basic texts</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Language Comparison Table -->
+        <div class="rounded-2xl border border-white/10 bg-[var(--bg-color)]/70 backdrop-blur-sm p-8 shadow-[0_6px_15px_-5px_var(--shadow),-6px_0_15px_-5px_var(--shadow)]">
+          <div class="flex items-center gap-3 mb-6">
+            <i class="fa-solid fa-table text-[#FF6B57] text-xl"></i>
+            <h2 class="text-2xl font-bold text-white" data-i18n="lang.comparison_title">Proficiency Overview</h2>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="pb-3 pr-4 text-[#FF6B57] font-semibold" data-i18n="lang.th_language">Language</th>
+                  <th class="pb-3 pr-4 text-[#FF6B57] font-semibold" data-i18n="lang.th_level">Level</th>
+                  <th class="pb-3 pr-4 text-[#FF6B57] font-semibold" data-i18n="lang.th_script">Script</th>
+                  <th class="pb-3 text-[#FF6B57] font-semibold" data-i18n="lang.th_context">Context</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300">
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-4 font-medium text-white">🇳🇵 Nepali</td>
+                  <td class="py-3 pr-4"><span class="text-rose-400" data-i18n="lang.native">Native</span></td>
+                  <td class="py-3 pr-4">Devanagari</td>
+                  <td class="py-3" data-i18n="lang.ctx_home">Home, family, culture</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-4 font-medium text-white">🇮🇳 Hindi</td>
+                  <td class="py-3 pr-4"><span class="text-orange-400" data-i18n="lang.fluent">Fluent</span></td>
+                  <td class="py-3 pr-4">Devanagari</td>
+                  <td class="py-3" data-i18n="lang.ctx_regional">Regional media, neighbors</td>
+                </tr>
+                <tr class="border-b border-white/5">
+                  <td class="py-3 pr-4 font-medium text-white">🇬🇧 English</td>
+                  <td class="py-3 pr-4"><span class="text-sky-400">IELTS 6.5</span></td>
+                  <td class="py-3 pr-4">Latin</td>
+                  <td class="py-3" data-i18n="lang.ctx_academic">Academics, tech, work</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 font-medium text-white">🇰🇷 Korean</td>
+                  <td class="py-3 pr-4"><span class="text-violet-400">TOPIK 2</span></td>
+                  <td class="py-3 pr-4">Hangul</td>
+                  <td class="py-3" data-i18n="lang.ctx_living">Daily life, university</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-[var(--bg-color)] p-8 text-center text-sm text-white">
+    <span data-i18n="common.footer">&copy; 2026 Sanjeev Shrestha. All rights reserved.</span>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
