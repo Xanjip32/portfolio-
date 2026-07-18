@@ -14,9 +14,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="js/translations.js?v=3"></script>
-  <script src="js/i18n.js?v=3"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
   <script>
     (function() {
       var saved = localStorage.getItem('lang');
@@ -34,6 +34,8 @@
 </head>
 
 <body style="font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;" class="bg-[var(--bg-color)] text-white">
+
+  <canvas id="particle-canvas" class="fixed inset-0 z-0 pointer-events-none"></canvas>
 
   <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[var(--bg-color)]/90 backdrop-blur">
     <div class="container mx-auto flex items-center justify-between px-4 py-4">
@@ -85,6 +87,7 @@
          HOME
     ═══════════════════════════════════════════ -->
     <section id="home" class="relative min-h-screen overflow-hidden bg-cover bg-no-repeat bg-[url('images/bg_v.png')] bg-[center_top_15%] md:bg-[url('images/bg_h.png')] md:bg-[right_center]">
+      <div id="hero-glow" class="pointer-events-none absolute inset-0 z-[1] opacity-0 transition-opacity duration-300" style="background: radial-gradient(600px circle at 50% 50%, rgba(255,107,87,0.14), transparent 60%);"></div>
       <div class="absolute inset-0 bg-slate-950/50"></div>
       <div class="relative z-10 flex min-h-screen flex-col">
         <div class="container mx-auto px-4">
@@ -129,12 +132,12 @@
         <div class="grid grid-cols-1 gap-6 xl:grid-cols-12">
 
           <!-- LEFT COLUMN -->
-          <div class="flex flex-col gap-6 xl:col-span-6">
+          <div class="flex flex-col gap-6 xl:col-span-6" style="min-height: 600px;">
 
             <!-- Current Focus -->
             <!-- We'll add this next -->
              <!-- ================= Current Focus ================= -->
-<div class="rounded-xl border border-white/20 bg-[var(--bg-color)]/70 backdrop-blur-sm p-4 flex-1 flex flex-col">
+<div class="rounded-xl border border-white/20 bg-[var(--bg-color)]/70 backdrop-blur-sm p-4 h-1/2 flex flex-col">
 
   <h3 class="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-300">
     <i class="fa-solid fa-bullseye text-[#FF6B57]"></i>
@@ -160,6 +163,11 @@
         data-i18n="home.focus_laravel_desc">
         Full-Stack Web Development
       </p>
+      <p
+        class="mt-1.5 text-xs leading-4 text-gray-400"
+        data-i18n="home.focus_laravel_ext">
+        Building full-stack apps with PHP, Blade templates, authentication, and REST APIs.
+      </p>
 
     </div>
 
@@ -179,6 +187,11 @@
         class="mt-1 text-[10px] leading-4 text-gray-300"
         data-i18n="home.focus_linux_desc">
         Server Management
+      </p>
+      <p
+        class="mt-1.5 text-xs leading-4 text-gray-400"
+        data-i18n="home.focus_linux_ext">
+        Managing servers, configuring services, and automating deployments.
       </p>
 
     </div>
@@ -200,6 +213,11 @@
         data-i18n="home.focus_mysql_desc">
         Database Design
       </p>
+      <p
+        class="mt-1.5 text-xs leading-4 text-gray-400"
+        data-i18n="home.focus_mysql_ext">
+        Designing relational databases with optimized queries and schemas.
+      </p>
 
     </div>
 
@@ -219,6 +237,11 @@
         data-i18n="home.focus_ccna_desc">
         Networking
       </p>
+      <p
+        class="mt-1.5 text-xs leading-4 text-gray-400"
+        data-i18n="home.focus_ccna_ext">
+        Studying network fundamentals, routing, switching, and TCP/IP protocols.
+      </p>
 
     </div>
 
@@ -229,7 +252,7 @@
             <!-- Tech Stack -->
             <!-- We'll add this after Current Focus -->
              <!-- ================= Tech Stack ================= -->
-<div class="rounded-xl border border-white/20 bg-[var(--bg-color)]/70 backdrop-blur-sm p-4 flex-1 flex flex-col">
+<div class="rounded-xl border border-white/20 bg-[var(--bg-color)]/70 backdrop-blur-sm p-4 h-1/2 flex flex-col">
 
   <h3 class="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-300">
     <i class="fa-solid fa-layer-group text-[#FF6B57]"></i>
@@ -597,7 +620,6 @@
               <span data-i18n="home.section_timeline">Timeline</span>
             </span>
 
-            <!-- Vertical Timeline -->
             <div class="relative ml-3 pl-6 space-y-7">
               <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-rose-500 via-fuchsia-500 to-violet-500 shadow-[0_0_8px_rgba(217,70,239,.6),0_0_16px_rgba(217,70,239,.3)]"></div>
 
@@ -1481,5 +1503,10 @@
       });
     })();
   </script>
+  <script defer src="js/translations.js?v=4"></script>
+  <script defer src="js/i18n.js?v=4"></script>
+  <script defer src="js/hero-particles.js"></script>
+  <script defer src="js/hero-animations.js"></script>
+  <script defer src="js/scroll-animations.js"></script>
 </body>
 </html>

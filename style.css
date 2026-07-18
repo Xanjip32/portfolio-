@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
-
 :root{
 
 --bg-color:#090f1d;
@@ -91,5 +89,21 @@ img {
 }
 img[src] {
   background: none;
+}
+
+/* Typing cursor blink */
+.typing-cursor {
+  animation: blink 0.7s step-end infinite;
+  color: var(--primary);
+  font-weight: 300;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Scroll animation will-states (JS sets these, CSS fallback) */
+.anim-ready {
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
