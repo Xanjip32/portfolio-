@@ -165,7 +165,9 @@ var translations = {
       elec_desc:      "Electrical Engineering Diploma — foundational qualification in electrical systems and industrial wiring.",
       cisco_title:    "Cisco Packet Tracer",
       tag_certificate:"Certificate",
-      cisco_desc:     "Getting Started with Cisco Packet Tracer — networking fundamentals and packet simulation."
+      cisco_desc:     "Getting Started with Cisco Packet Tracer — networking fundamentals and packet simulation.",
+      networking_basics_title: "Networking Basics",
+      networking_basics_desc:  "Networking Basics — fundamental networking concepts, protocols, and infrastructure."
     },
 
     /* — contact.html — */
@@ -380,7 +382,9 @@ var translations = {
       elec_desc:      "전기공학 디플로마 — 전기 시스템 및 산업 배선 기초 자격.",
       cisco_title:    "Cisco Packet Tracer",
       tag_certificate:"자격증",
-      cisco_desc:     "Cisco Packet Tracer 입문 — 네트워크 기초 및 패킷 시뮬레이션."
+      cisco_desc:     "Cisco Packet Tracer 입문 — 네트워크 기초 및 패킷 시뮬레이션.",
+      networking_basics_title: "네트워킹 기초",
+      networking_basics_desc:  "네트워킹 기초 — 네트워크 기본 개념, 프로토콜, 인프라."
     },
 
     contact: {
